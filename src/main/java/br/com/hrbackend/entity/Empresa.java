@@ -54,13 +54,13 @@ public class Empresa implements Serializable {
 	private String logoMarca;
 
 	@Column(name = "is_filial")
-	private Boolean isFilial;
+	private boolean isFilial;
 
 	@Column(name = "empresa_controller")
 	private int empresaController;
 
 	@Column(name = "is_matriz")
-	private Boolean isMatriz;
+	private boolean isMatriz;
 
 	private String status;
 }
