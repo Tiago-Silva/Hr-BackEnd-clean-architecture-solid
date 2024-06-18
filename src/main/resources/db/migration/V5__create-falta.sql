@@ -1,5 +1,5 @@
 CREATE TABLE falta (
-    idfaltas INT AUTO_INCREMENT,
+    idfalta INT AUTO_INCREMENT,
     data DATE,
     dias DECIMAL(10,2),
     horas DECIMAL(10,2),
@@ -23,6 +23,6 @@ CREATE TABLE falta (
     idfilial INT,
     idlembrete INT,
     funcionario_idfuncionario INT,
-    PRIMARY KEY (idfaltas),
+    PRIMARY KEY (idfalta),
     FOREIGN KEY (funcionario_idfuncionario) REFERENCES funcionario(idfuncionario)
 );
