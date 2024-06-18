@@ -32,7 +32,7 @@ CREATE TABLE funcionario (
     admissao DATE,
     demissao DATE,
     status VARCHAR(45),
-    motivoDemissao VARCHAR(45),
+    motivo_demissao VARCHAR(45),
     departamento VARCHAR(45),
     cargo VARCHAR(45),
     cargo_descricao VARCHAR(45),
