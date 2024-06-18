@@ -7,7 +7,7 @@ CREATE TABLE afastamento (
     funcionario_nome VARCHAR(255),
     setor VARCHAR(255),
     retorno DATE,
-    filial INT,
+    empresa INT,
     idfuncionario INT,
     idlembrete INT,
     funcionario_idfuncionario INT,
