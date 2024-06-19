@@ -13,7 +13,7 @@ CREATE TABLE ponto (
     funcionario VARCHAR(45),
     idfuncionario INT,
     cnpj VARCHAR(45),
-    filial_nome VARCHAR(45),
+    empresa_nome VARCHAR(45),
     atrasado_entrada BOOLEAN,
     empresa_idempresa INT,
     PRIMARY KEY (idponto),
