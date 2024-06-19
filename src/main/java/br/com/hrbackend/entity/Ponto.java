@@ -3,6 +3,7 @@ package br.com.hrbackend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
@@ -15,6 +16,7 @@ import java.sql.Time;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idponto")
 public class Ponto implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
