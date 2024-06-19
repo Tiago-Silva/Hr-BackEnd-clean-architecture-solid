@@ -11,8 +11,8 @@ CREATE TABLE beneficio (
     data_corte DATE,
     vencimento_contrato DATE,
     custo_emp VARCHAR(45),
-    filial_nome VARCHAR(45),
-    idfilial INT,
+    empresa_nome VARCHAR(45),
+    idempresa INT,
     empresa_idempresa INT,
     PRIMARY KEY (idbeneficio),
     FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
