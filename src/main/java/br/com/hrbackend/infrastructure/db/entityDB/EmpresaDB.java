@@ -1,4 +1,4 @@
-package br.com.hrbackend.entity;
+package br.com.hrbackend.infrastructure.db.entityDB;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idempresa")
-public class Empresa implements Serializable {
+public class EmpresaDB implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 	

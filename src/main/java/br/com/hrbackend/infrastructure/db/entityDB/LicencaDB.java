@@ -1,4 +1,4 @@
-package br.com.hrbackend.entity;
+package br.com.hrbackend.infrastructure.db.entityDB;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,19 +8,23 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name = "afastamento")
+@Table(name = "licenca")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idafastamento")
-public class Afastamento implements Serializable {
+@EqualsAndHashCode(of = "idlicenca")
+public class LicencaDB implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idafastamento;
+    private int idlicenca;
+
+    private String tipo;
+
+    private String descricao;
 
     @Column(name = "data_inicio")
     private Date dataInicio;
@@ -28,24 +32,20 @@ public class Afastamento implements Serializable {
     @Column(name = "data_fim")
     private Date dataFim;
 
-    private String motivo;
-
-    private String descricao;
+    private Date retorno;
 
     @Column(name = "funcionario_nome")
     private String funcionarioNome;
 
+    private int idfuncionario;
+
     private String setor;
 
-    private Date retorno;
-
     private int empresa;
-
-    private int idfuncionario;
 
     private int idlembrete;
 
     @ManyToOne
     @JoinColumn(name = "funcionario_idfuncionario")
-    private Funcionario funcionario;
+    private FuncionarioDB funcionario;
 }

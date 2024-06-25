@@ -1,4 +1,4 @@
-package br.com.hrbackend.entity;
+package br.com.hrbackend.infrastructure.db.entityDB;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,7 +14,7 @@ import java.sql.Time;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idperiodo")
-public class Periodo implements Serializable {
+public class PeriodoDB implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -38,5 +38,5 @@ public class Periodo implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "empresa_idempresa")
-    private Empresa empresa;
+    private EmpresaDB empresa;
 }
