@@ -7,6 +7,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Date;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "funcionario")
@@ -152,4 +153,25 @@ public class FuncionarioDB implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "periodo_idperiodo")
 	private PeriodoDB periodo;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<AdmissaoDB> admissoes;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<AdvertenciaDB> advertencias;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<AfastamentoDB> afastamentos;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<AvisoPrevioDB> avisosPrevios;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<DocumentosDB> documentos;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<FaltaDB> faltas;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
+	private List<LicencaDB> licencas;
 }
