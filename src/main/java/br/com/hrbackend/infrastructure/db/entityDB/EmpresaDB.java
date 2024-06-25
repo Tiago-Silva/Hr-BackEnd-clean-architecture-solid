@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "empresa")
@@ -63,4 +64,22 @@ public class EmpresaDB implements Serializable {
 	private boolean isMatriz;
 
 	private String status;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<UsuarioDB> usuarios;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<FuncionarioDB> funcionarios;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<PeriodoDB> periodos;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<PontoDB> pontos;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<RelogioPontoDB> relogios;
+
+	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+	private List<BeneficioDB> beneficios;
 }
