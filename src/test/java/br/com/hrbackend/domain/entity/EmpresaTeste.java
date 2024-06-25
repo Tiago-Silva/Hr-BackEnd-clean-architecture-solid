@@ -1,4 +1,4 @@
-package br.com.hrbackend.entity;
+package br.com.hrbackend.domain.entity;
 
 
 import br.com.hrbackend.domain.entity.Empresa;
