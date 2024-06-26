@@ -71,7 +71,7 @@ public class FaltaDB implements Serializable {
 
     private String departamento;
 
-    private int idfilial;
+    private int empresa;
 
     private int idlembrete;
 
