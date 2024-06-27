@@ -1,6 +1,5 @@
 package br.com.hrbackend.infrastructure.repository;
 
-import br.com.hrbackend.application.gateway.GenericRepository;
 import br.com.hrbackend.infrastructure.db.entityDB.EmpresaDB;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;

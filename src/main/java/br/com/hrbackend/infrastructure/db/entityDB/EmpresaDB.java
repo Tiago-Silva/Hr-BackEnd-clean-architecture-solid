@@ -1,5 +1,6 @@
 package br.com.hrbackend.infrastructure.db.entityDB;
 
+import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -82,4 +83,21 @@ public class EmpresaDB implements Serializable {
 
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
 	private List<BeneficioDB> beneficios;
+
+	public EmpresaDB(EmpresaRequestDTO requestDTO) {
+		this.nomeFantasia = requestDTO.nomeFantasia();
+		this.razaoSocial = requestDTO.razaoSocial();
+		this.cnpj = requestDTO.cnpj();
+		this.inscricaoEstadual = requestDTO.inscricaoEstadual();
+		this.bairro = requestDTO.bairro();
+		this.cidade = requestDTO.cidade();
+		this.endereco = requestDTO.endereco();
+		this.estado = requestDTO.estado();
+		this.telefone = requestDTO.telefone();
+		this.logoMarca = requestDTO.logoMarca();
+		this.isFilial = requestDTO.filial();
+		this.empresaController = requestDTO.empresaController();
+		this.isMatriz = requestDTO.matriz();
+		this.status = requestDTO.status();
+	}
 }
