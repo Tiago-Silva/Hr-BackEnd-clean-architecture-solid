@@ -1,4 +1,4 @@
-package br.com.hrbackend.application.dto;
+package br.com.hrbackend.infrastructure.dto;
 
 public record UsuarioRequestDTO(
         String nome,

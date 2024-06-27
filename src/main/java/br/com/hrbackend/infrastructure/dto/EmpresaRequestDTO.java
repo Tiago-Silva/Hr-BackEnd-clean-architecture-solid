@@ -1,7 +1,6 @@
-package br.com.hrbackend.application.dto;
+package br.com.hrbackend.infrastructure.dto;
 
-public record EmpresaResponseDTO(
-        int idempresa,
+public record EmpresaRequestDTO(
         String nomeFantasia,
         String razaoSocial,
         String cnpj,
@@ -16,5 +15,4 @@ public record EmpresaResponseDTO(
         int empresaController,
         boolean matriz,
         String status
-) {
-}
+) {}

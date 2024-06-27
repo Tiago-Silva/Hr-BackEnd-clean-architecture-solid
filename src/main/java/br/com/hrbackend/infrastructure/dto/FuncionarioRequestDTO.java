@@ -1,4 +1,4 @@
-package br.com.hrbackend.application.dto;
+package br.com.hrbackend.infrastructure.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;

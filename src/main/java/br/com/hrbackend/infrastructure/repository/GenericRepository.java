@@ -1,4 +1,4 @@
-package br.com.hrbackend.application.gateway;
+package br.com.hrbackend.infrastructure.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
