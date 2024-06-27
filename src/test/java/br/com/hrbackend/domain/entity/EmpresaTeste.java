@@ -1,14 +1,11 @@
 package br.com.hrbackend.domain.entity;
 
 
-import br.com.hrbackend.domain.entity.Empresa;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@SpringBootTest
 public class EmpresaTeste {
 
     private Empresa createEmployee() {
