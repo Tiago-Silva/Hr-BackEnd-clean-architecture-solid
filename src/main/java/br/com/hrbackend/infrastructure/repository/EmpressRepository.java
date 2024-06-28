@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class EmpressRepository extends GenericRepository {
 
-    public List<EmpresaDB> getAllEmpresas() {
+    public List<EmpresaDB> getAllEmpress() {
         CriteriaBuilder builder = super.getCriteriaBuilder();
         CriteriaQuery<EmpresaDB> query = builder.createQuery(EmpresaDB.class);
         Root<EmpresaDB> root = query.from(EmpresaDB.class);
@@ -19,11 +19,11 @@ public class EmpressRepository extends GenericRepository {
         return super.em.createQuery(query).getResultList();
     }
 
-    public EmpresaDB getEmpresaById(int idempresa) {
+    public EmpresaDB getEmpressById(int idempresa) {
         return super.em.find(EmpresaDB.class, idempresa);
     }
 
-    public List<EmpresaDB> getEmpresasControllers() {
+    public List<EmpresaDB> getEmpressControllers() {
         CriteriaBuilder builder = super.getCriteriaBuilder();
         CriteriaQuery<EmpresaDB> query = builder.createQuery(EmpresaDB.class);
         Root<EmpresaDB> root = query.from(EmpresaDB.class);

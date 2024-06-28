@@ -33,17 +33,17 @@ public class EmpressRepositoryGateway implements EmpressGateway {
 
     @Override
     public List<Empresa> getAllEmpress() {
-        return this.repository.getAllEmpresas().stream().map(this.mapper::toEmpress).toList();
+        return this.repository.getAllEmpress().stream().map(this.mapper::toEmpress).toList();
     }
 
     @Override
     public Empresa getEmpressById(int id) {
-        return this.mapper.toEmpress(this.repository.getEmpresaById(id));
+        return this.mapper.toEmpress(this.repository.getEmpressById(id));
     }
 
     @Override
     public List<Empresa> getEmpressController() {
-        return this.repository.getEmpresasControllers().stream().map(this.mapper::toEmpress).toList();
+        return this.repository.getEmpressControllers().stream().map(this.mapper::toEmpress).toList();
     }
 
     @Override
