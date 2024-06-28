@@ -13,11 +13,20 @@ import static org.mockito.Mockito.times;
 
 class EmpressInteractTest {
 
+    private Empresa createEmpress() {
+        Empresa empresa = new Empresa();
+        empresa.setIdempresa(1);
+        empresa.setCnpj("12345678901234");
+        empresa.setRazaoSocial("Razao Social");
+        empresa.setNomeFantasia("Nome Fantasia");
+        return empresa;
+    }
+
     @Test
     public void testCreateEmpress() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
 
-        Empresa empresa = new Empresa();
+        Empresa empresa = this.createEmpress();
 
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
@@ -29,7 +38,7 @@ class EmpressInteractTest {
     @Test
     public void testUpdateEmpress() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        Empresa empresa = new Empresa();
+        Empresa empresa = this.createEmpress();
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
         empressInteract.updateEmpress(empresa);
@@ -40,7 +49,7 @@ class EmpressInteractTest {
     @Test
     public void testDeleteEmpress() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        Empresa empresa = new Empresa();
+        Empresa empresa = this.createEmpress();
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
         empressInteract.deleteEmpress(empresa);
@@ -53,7 +62,7 @@ class EmpressInteractTest {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
-        List<Empresa> empresas = Collections.singletonList(new Empresa());
+        List<Empresa> empresas = Collections.singletonList(this.createEmpress());
         Mockito.when(empressGateway.getAllEmpress()).thenReturn(empresas);
 
         List<Empresa> result = empressInteract.getAllEmpress();
@@ -67,7 +76,7 @@ class EmpressInteractTest {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
-        Empresa empresa = new Empresa();
+        Empresa empresa = this.createEmpress();
         Mockito.when(empressGateway.getEmpressById(1)).thenReturn(empresa);
 
         Empresa result = empressInteract.getEmpressById(1);
@@ -81,7 +90,7 @@ class EmpressInteractTest {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
-        List<Empresa> empresasController = Collections.singletonList(new Empresa());
+        List<Empresa> empresasController = Collections.singletonList(this.createEmpress());
         Mockito.when(empressGateway.getEmpressController()).thenReturn(empresasController);
 
         List<Empresa> result = empressInteract.getEmpressController();
@@ -95,7 +104,7 @@ class EmpressInteractTest {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
-        List<Empresa> empresaList = Collections.singletonList(new Empresa());
+        List<Empresa> empresaList = Collections.singletonList(this.createEmpress());
         Mockito.when(empressGateway.getEmpressFilial()).thenReturn(empresaList);
 
         List<Empresa> result = empressInteract.getEmpressFilial();
