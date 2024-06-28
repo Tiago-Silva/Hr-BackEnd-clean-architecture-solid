@@ -1,5 +1,6 @@
 package br.com.hrbackend.infrastructure.db.entityDB;
 
+import br.com.hrbackend.domain.entity.Empresa;
 import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -84,20 +85,21 @@ public class EmpresaDB implements Serializable {
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
 	private List<BeneficioDB> beneficios;
 
-	public EmpresaDB(EmpresaRequestDTO requestDTO) {
-		this.nomeFantasia = requestDTO.nomeFantasia();
-		this.razaoSocial = requestDTO.razaoSocial();
-		this.cnpj = requestDTO.cnpj();
-		this.inscricaoEstadual = requestDTO.inscricaoEstadual();
-		this.bairro = requestDTO.bairro();
-		this.cidade = requestDTO.cidade();
-		this.endereco = requestDTO.endereco();
-		this.estado = requestDTO.estado();
-		this.telefone = requestDTO.telefone();
-		this.logoMarca = requestDTO.logoMarca();
-		this.isFilial = requestDTO.filial();
-		this.empresaController = requestDTO.empresaController();
-		this.isMatriz = requestDTO.matriz();
-		this.status = requestDTO.status();
+	public EmpresaDB(Empresa empresa) {
+		this.idempresa = empresa.getIdempresa();
+		this.nomeFantasia = empresa.getNomeFantasia();
+		this.razaoSocial = empresa.getRazaoSocial();
+		this.cnpj = empresa.getCnpj();
+		this.inscricaoEstadual = empresa.getInscricaoEstadual();
+		this.bairro = empresa.getBairro();
+		this.cidade = empresa.getCidade();
+		this.endereco = empresa.getEndereco();
+		this.estado = empresa.getEstado();
+		this.telefone = empresa.getTelefone();
+		this.logoMarca = empresa.getLogoMarca();
+		this.isFilial = empresa.isFilial();
+		this.empresaController = empresa.getEmpresaController();
+		this.isMatriz = empresa.isMatriz();
+		this.status = empresa.getStatus();
 	}
 }
