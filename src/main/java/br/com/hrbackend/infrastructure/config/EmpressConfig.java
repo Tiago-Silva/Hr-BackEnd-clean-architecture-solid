@@ -22,6 +22,11 @@ public class EmpressConfig {
     }
 
     @Bean
+    EmpressRepository empressRepository() {
+        return new EmpressRepository();
+    }
+
+    @Bean
     EmpressMapper empressMapper() {
         return new EmpressMapper();
     }

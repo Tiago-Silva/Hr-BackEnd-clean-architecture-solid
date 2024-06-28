@@ -4,11 +4,9 @@ import br.com.hrbackend.infrastructure.db.entityDB.EmpresaDB;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public class EmpressRepository extends GenericRepository {
 
     public List<EmpresaDB> getAllEmpress() {
