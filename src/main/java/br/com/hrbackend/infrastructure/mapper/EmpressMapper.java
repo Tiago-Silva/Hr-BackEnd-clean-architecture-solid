@@ -5,7 +5,7 @@ import br.com.hrbackend.infrastructure.db.entityDB.EmpresaDB;
 import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
 import br.com.hrbackend.infrastructure.dto.EmpresaResponseDTO;
 
-public class EmpresaMapper {
+public class EmpressMapper {
 
     public EmpresaRequestDTO domainObjectToRequestDTO(Empresa empresa) {
         return new EmpresaRequestDTO(
