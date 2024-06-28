@@ -3,15 +3,15 @@ package br.com.hrbackend.infrastructure.gateway;
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.domain.entity.Empresa;
 import br.com.hrbackend.infrastructure.mapper.EmpressMapper;
-import br.com.hrbackend.infrastructure.repository.EmpresaRepository;
+import br.com.hrbackend.infrastructure.repository.EmpressRepository;
 
 import java.util.List;
 
 public class EmpressRepositoryGateway implements EmpressGateway {
 
-    private final EmpresaRepository repository;
+    private final EmpressRepository repository;
     private final EmpressMapper mapper;
-    public EmpressRepositoryGateway(EmpresaRepository repository, EmpressMapper mapper) {
+    public EmpressRepositoryGateway(EmpressRepository repository, EmpressMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }

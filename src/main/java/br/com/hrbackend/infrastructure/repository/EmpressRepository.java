@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class EmpresaRepository extends GenericRepository {
+public class EmpressRepository extends GenericRepository {
 
     public List<EmpresaDB> getAllEmpresas() {
         CriteriaBuilder builder = super.getCriteriaBuilder();
