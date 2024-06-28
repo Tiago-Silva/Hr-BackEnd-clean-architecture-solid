@@ -86,7 +86,7 @@ public class EmpresaDB implements Serializable {
 	private List<BeneficioDB> beneficios;
 
 	public EmpresaDB(Empresa empresa) {
-		this.idempresa = empresa.getIdempresa();
+		this.idempresa = empresa.getIdempresa() <= 0 ? null : empresa.getIdempresa();
 		this.nomeFantasia = empresa.getNomeFantasia();
 		this.razaoSocial = empresa.getRazaoSocial();
 		this.cnpj = empresa.getCnpj();
