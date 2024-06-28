@@ -13,7 +13,10 @@ public class EmpressRepository extends GenericRepository {
 
     public List<EmpresaDB> getAllEmpresas() {
         CriteriaBuilder builder = super.getCriteriaBuilder();
-        return super.em.createQuery(builder.createQuery(EmpresaDB.class)).getResultList();
+        CriteriaQuery<EmpresaDB> query = builder.createQuery(EmpresaDB.class);
+        Root<EmpresaDB> root = query.from(EmpresaDB.class);
+        query.select(root);
+        return super.em.createQuery(query).getResultList();
     }
 
     public EmpresaDB getEmpresaById(int idempresa) {
