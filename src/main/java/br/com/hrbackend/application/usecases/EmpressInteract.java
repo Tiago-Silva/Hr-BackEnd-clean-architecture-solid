@@ -13,14 +13,28 @@ public class EmpressInteract {
     }
 
     public void createEmpress(Empresa empresa) {
+        if (
+            empresa == null ||
+            empresa.getCnpj().isEmpty() ||
+            empresa.getRazaoSocial().isEmpty() ||
+            empresa.getNomeFantasia().isEmpty()
+        ) {
+            throw new IllegalArgumentException("Invalid arguments");
+        }
         this.empressGateway.createEmpress(empresa);
     }
 
     public void updateEmpress(Empresa empresa) {
+        if (empresa == null || empresa.getIdempresa() <= 0) {
+            throw new IllegalArgumentException("Invalid arguments");
+        }
         this.empressGateway.updateEmpress(empresa);
     }
 
     public void deleteEmpress(Empresa empresa) {
+        if (empresa == null || empresa.getIdempresa() <= 0) {
+            throw new IllegalArgumentException("Invalid arguments");
+        }
         this.empressGateway.deleteEmpress(empresa);
     }
 
