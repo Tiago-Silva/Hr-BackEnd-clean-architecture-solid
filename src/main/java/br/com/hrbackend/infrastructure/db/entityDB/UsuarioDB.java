@@ -1,5 +1,6 @@
 package br.com.hrbackend.infrastructure.db.entityDB;
 
+import br.com.hrbackend.domain.entity.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -54,4 +55,22 @@ public class UsuarioDB implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "empresa_idempresa")
 	private EmpresaDB empresa;
+
+	public UsuarioDB(Usuario usuario) {
+		this.idusuario = usuario.getIdusuario();
+		this.nome = usuario.getNome();
+		this.sobrenome = usuario.getSobrenome();
+		this.login = usuario.getLogin();
+		this.senha = usuario.getSenha();
+		this.token = usuario.getToken();
+		this.image = usuario.getImage();
+		this.foto = usuario.getFoto();
+		this.tipo = usuario.getTipo();
+		this.role = usuario.getRole();
+		this.accountNonExpired = usuario.isAccountNonExpired();
+		this.accountNonLocked = usuario.isAccountNonLocked();
+		this.credentialsNonExpired = usuario.isCredentialsNonExpired();
+		this.enabled = usuario.isEnabled();
+		this.empresa = new EmpresaDB(usuario.getEmpresa());
+	}
 }
