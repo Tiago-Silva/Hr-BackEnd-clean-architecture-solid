@@ -15,6 +15,6 @@ public record UsuarioResponseDTO(
         boolean accountNonLocked,
         boolean credentialsNonExpired,
         boolean enabled,
-        EmpresaRequestDTO empresa
+        EmpresaResponseDTO empresa
 ) {
 }
