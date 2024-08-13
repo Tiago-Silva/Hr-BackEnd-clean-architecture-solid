@@ -55,6 +55,6 @@ public record EmployeeResponseDTO(
         String localExame,
         String urlImage,
         EmpresaResponseDTO empresa,
-        PeriodoResponseDTO periodo
+        PeriodResponseDTO periodo
 ) {
 }

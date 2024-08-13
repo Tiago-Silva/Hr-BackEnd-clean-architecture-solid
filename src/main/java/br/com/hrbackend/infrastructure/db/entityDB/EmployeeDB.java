@@ -1,12 +1,13 @@
 package br.com.hrbackend.infrastructure.db.entityDB;
 
+import br.com.hrbackend.domain.entity.Employee;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.sql.Date;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -174,4 +175,60 @@ public class EmployeeDB implements Serializable {
 
 	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
 	private List<LicencaDB> licencas;
+
+	public EmployeeDB(Employee employee) {
+		this.idfuncionario = employee.getIdfuncionario();
+		this.nome = employee.getNome();
+		this.sobrenome = employee.getSobrenome();
+		this.pis = employee.getPis();
+		this.cpf = employee.getCpf();
+		this.rg = employee.getRg();
+		this.expedicaoRg = employee.getExpedicaoRg();
+		this.emissorRg = employee.getEmissorRg();
+		this.ufRg = employee.getUfRg();
+		this.carteiraMotorista = employee.getCarteiraMotorista();
+		this.categoriaCnh = employee.getCategoriaCnh();
+		this.expedicaoCnh = employee.getExpedicaoCnh();
+		this.validadeCnh = employee.getValidadeCnh();
+		this.carteiraTrabalho = employee.getCarteiraTrabalho();
+		this.serieCtps = employee.getSerieCtps();
+		this.ufCtps = employee.getUfCtps();
+		this.tituloEleitor = employee.getTituloEleitor();
+		this.nascimento = employee.getNascimento();
+		this.nacionalidade = employee.getNacionalidade();
+		this.cep = employee.getCep();
+		this.estado = employee.getEstado();
+		this.bairro = employee.getBairro();
+		this.cidade = employee.getCidade();
+		this.endereco = employee.getEndereco();
+		this.sexo = employee.getSexo();
+		this.estadoCivil = employee.getEstadoCivil();
+		this.mae = employee.getMae();
+		this.pai = employee.getPai();
+		this.cracha = employee.getCracha();
+		this.telefone = employee.getTelefone();
+		this.admissao = employee.getAdmissao();
+		this.demissao = employee.getDemissao();
+		this.status = employee.getStatus();
+		this.motivoDemissao = employee.getMotivoDemissao();
+		this.departamento = employee.getDepartamento();
+		this.cargo = employee.getCargo();
+		this.cargoDescricao = employee.getCargoDescricao();
+		this.exameAdmissional = employee.getExameAdmissional();
+		this.periodoExperiencia = employee.getPeriodoExperiencia();
+		this.primeiroEmprego = employee.getPrimeiroEmprego();
+		this.contribuicaoSocial = employee.getContribuicaoSocial();
+		this.idadmissao = employee.getIdadmissao();
+		this.vinculo = employee.getVinculo();
+		this.salario = employee.getSalario();
+		this.banco = employee.getBanco();
+		this.agencia = employee.getAgencia();
+		this.conta = employee.getConta();
+		this.emailGoogle = employee.getEmailGoogle();
+		this.emailHotmail = employee.getEmailHotmail();
+		this.localExame = employee.getLocalExame();
+		this.urlImage = employee.getUrlImage();
+		this.empresa = new EmpresaDB(employee.getEmpresa());
+		this.periodo = new PeriodoDB(employee.getPeriodo());
+	}
 }
