@@ -77,5 +77,5 @@ public class FaltaDB implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "funcionario_idfuncionario")
-    private FuncionarioDB funcionario;
+    private EmployeeDB funcionario;
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idfuncionario")
-public class FuncionarioDB implements Serializable {
+public class EmployeeDB implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 

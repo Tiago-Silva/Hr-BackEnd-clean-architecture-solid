@@ -23,7 +23,7 @@ class LicencaTest {
         Mockito.when(licenca.getSetor()).thenReturn("Setor");
         Mockito.when(licenca.getEmpresa()).thenReturn(1);
         Mockito.when(licenca.getIdlembrete()).thenReturn(1);
-        Mockito.when(licenca.getFuncionario()).thenReturn(new Funcionario()); // Substitua por um mock de Funcionario se necessário
+        Mockito.when(licenca.getEmployee()).thenReturn(new Employee()); // Substitua por um mock de Funcionario se necessário
         return licenca;
     }
 
@@ -41,6 +41,6 @@ class LicencaTest {
         assertEquals("Setor", licenca.getSetor());
         assertEquals(1, licenca.getEmpresa());
         assertEquals(1, licenca.getIdlembrete());
-        assertNotNull(licenca.getFuncionario());
+        assertNotNull(licenca.getEmployee());
     }
 }

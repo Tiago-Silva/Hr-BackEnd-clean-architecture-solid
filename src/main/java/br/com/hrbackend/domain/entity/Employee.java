@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idfuncionario")
-public class Funcionario implements Serializable {
+public class Employee implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 

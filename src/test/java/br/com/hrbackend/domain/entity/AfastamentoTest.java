@@ -22,7 +22,7 @@ public class AfastamentoTest {
         Mockito.when(afastamento.getEmpresa()).thenReturn(1);
         Mockito.when(afastamento.getIdfuncionario()).thenReturn(1);
         Mockito.when(afastamento.getIdlembrete()).thenReturn(1);
-        Mockito.when(afastamento.getFuncionario()).thenReturn(new Funcionario()); // Substitua por um mock de Funcionario se necessário
+        Mockito.when(afastamento.getEmployee()).thenReturn(new Employee()); // Substitua por um mock de Funcionario se necessário
         return afastamento;
     }
 
@@ -40,6 +40,6 @@ public class AfastamentoTest {
         assertEquals(1, afastamento.getEmpresa());
         assertEquals(1, afastamento.getIdfuncionario());
         assertEquals(1, afastamento.getIdlembrete());
-        assertEquals(new Funcionario(), afastamento.getFuncionario());
+        assertEquals(new Employee(), afastamento.getEmployee());
     }
 }

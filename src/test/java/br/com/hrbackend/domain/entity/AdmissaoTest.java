@@ -20,7 +20,7 @@ public class AdmissaoTest {
         Mockito.when(admissao.getDepartamento()).thenReturn("Desenvolvimento");
         Mockito.when(admissao.getCargo()).thenReturn("Desenvolvedor");
         Mockito.when(admissao.getPeriodo()).thenReturn("Integral");
-        Mockito.when(admissao.getFuncionario()).thenReturn(new Funcionario()); // Substitua por um mock de Funcionario se necessário
+        Mockito.when(admissao.getEmployee()).thenReturn(new Employee()); // Substitua por um mock de Funcionario se necessário
         return admissao;
     }
 
@@ -34,6 +34,6 @@ public class AdmissaoTest {
         assertEquals("Desenvolvimento", admissao.getDepartamento());
         assertEquals("Desenvolvedor", admissao.getCargo());
         assertEquals("Integral", admissao.getPeriodo());
-        assertEquals(new Funcionario(), admissao.getFuncionario()); // Substitua por uma verificação adequada se necessário
+        assertEquals(new Employee(), admissao.getEmployee()); // Substitua por uma verificação adequada se necessário
     }
 }

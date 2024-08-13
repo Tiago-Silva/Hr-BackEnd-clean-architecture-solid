@@ -1,7 +1,6 @@
 package br.com.hrbackend.infrastructure.db.entityDB;
 
 import br.com.hrbackend.domain.entity.Empresa;
-import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -71,7 +70,7 @@ public class EmpresaDB implements Serializable {
 	private List<UsuarioDB> usuarios;
 
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
-	private List<FuncionarioDB> funcionarios;
+	private List<EmployeeDB> funcionarios;
 
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
 	private List<PeriodoDB> periodos;

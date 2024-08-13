@@ -27,5 +27,5 @@ public class Advertencia implements Serializable {
 
     private String tipo;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

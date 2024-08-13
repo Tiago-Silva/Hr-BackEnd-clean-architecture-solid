@@ -33,5 +33,5 @@ public class Admissao implements Serializable {
 
     private String periodo;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

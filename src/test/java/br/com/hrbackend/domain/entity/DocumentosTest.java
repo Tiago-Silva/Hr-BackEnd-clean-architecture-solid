@@ -23,7 +23,7 @@ class DocumentosTest {
         Mockito.when(documentos.getEmpresa()).thenReturn(1);
         Mockito.when(documentos.getData()).thenReturn(now);
         Mockito.when(documentos.getIdfalta()).thenReturn(1);
-        Mockito.when(documentos.getFuncionario()).thenReturn(new Funcionario());
+        Mockito.when(documentos.getEmployee()).thenReturn(new Employee());
         return documentos;
     }
 
@@ -42,6 +42,6 @@ class DocumentosTest {
         assertEquals(1, documentos.getEmpresa());
         assertEquals(now, documentos.getData());
         assertEquals(1, documentos.getIdfalta());
-        assertEquals(new Funcionario(), documentos.getFuncionario());
+        assertEquals(new Employee(), documentos.getEmployee());
     }
 }

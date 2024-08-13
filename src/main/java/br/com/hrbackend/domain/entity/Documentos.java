@@ -35,5 +35,5 @@ public class Documentos implements Serializable {
 
     private int idfalta;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

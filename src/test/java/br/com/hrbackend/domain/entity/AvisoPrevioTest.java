@@ -24,7 +24,7 @@ public class AvisoPrevioTest {
         Mockito.when(avisoPrevio.getIdlembrete()).thenReturn(1);
         Mockito.when(avisoPrevio.getTipoAviso()).thenReturn("Tipo");
         Mockito.when(avisoPrevio.getDias()).thenReturn("30");
-        Mockito.when(avisoPrevio.getFuncionario()).thenReturn(new Funcionario()); // Substitua por um mock de Funcionario se necessário
+        Mockito.when(avisoPrevio.getEmployee()).thenReturn(new Employee()); // Substitua por um mock de Funcionario se necessário
         return avisoPrevio;
     }
 
@@ -44,6 +44,6 @@ public class AvisoPrevioTest {
         assertEquals(1, avisoPrevio.getIdlembrete());
         assertEquals("Tipo", avisoPrevio.getTipoAviso());
         assertEquals("30", avisoPrevio.getDias());
-        assertEquals(new Funcionario(), avisoPrevio.getFuncionario());
+        assertEquals(new Employee(), avisoPrevio.getEmployee());
     }
 }

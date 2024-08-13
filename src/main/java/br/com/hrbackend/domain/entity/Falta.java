@@ -64,5 +64,5 @@ public class Falta implements Serializable {
 
     private int idlembrete;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

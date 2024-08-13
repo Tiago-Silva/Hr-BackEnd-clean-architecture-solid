@@ -41,5 +41,5 @@ public class AvisoPrevio implements Serializable {
 
     private String dias;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

@@ -37,5 +37,5 @@ public class Licenca implements Serializable {
 
     private int idlembrete;
 
-    private Funcionario funcionario;
+    private Employee employee;
 }

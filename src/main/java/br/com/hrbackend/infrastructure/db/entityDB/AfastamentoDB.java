@@ -47,5 +47,5 @@ public class AfastamentoDB implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "funcionario_idfuncionario")
-    private FuncionarioDB funcionario;
+    private EmployeeDB funcionario;
 }

@@ -39,7 +39,7 @@ class FaltaTest {
         Mockito.when(falta.getDepartamento()).thenReturn("Departamento");
         Mockito.when(falta.getEmpresa()).thenReturn(1);
         Mockito.when(falta.getIdlembrete()).thenReturn(1);
-        Mockito.when(falta.getFuncionario()).thenReturn(new Funcionario());
+        Mockito.when(falta.getEmployee()).thenReturn(new Employee());
         return falta;
     }
 
@@ -71,6 +71,6 @@ class FaltaTest {
         assertEquals("Departamento", falta.getDepartamento());
         assertEquals(1, falta.getEmpresa());
         assertEquals(1, falta.getIdlembrete());
-        assertEquals(new Funcionario(), falta.getFuncionario());
+        assertEquals(new Employee(), falta.getEmployee());
     }
 }

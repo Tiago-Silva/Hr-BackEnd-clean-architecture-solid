@@ -18,7 +18,7 @@ public class AdvertenciaTest {
         Mockito.when(advertencia.getHora()).thenReturn(Time.valueOf("12:00:00"));
         Mockito.when(advertencia.getResponsavel()).thenReturn("Responsavel");
         Mockito.when(advertencia.getTipo()).thenReturn("Tipo");
-        Mockito.when(advertencia.getFuncionario()).thenReturn(new Funcionario()); // Substitua por um mock de Funcionario se necessário
+        Mockito.when(advertencia.getEmployee()).thenReturn(new Employee()); // Substitua por um mock de Funcionario se necessário
         return advertencia;
     }
 
@@ -30,6 +30,6 @@ public class AdvertenciaTest {
         assertEquals(Time.valueOf("12:00:00"), advertencia.getHora());
         assertEquals("Responsavel", advertencia.getResponsavel());
         assertEquals("Tipo", advertencia.getTipo());
-        assertEquals(new Funcionario(), advertencia.getFuncionario()); // Substitua por uma verificação adequada se necessário
+        assertEquals(new Employee(), advertencia.getEmployee()); // Substitua por uma verificação adequada se necessário
     }
 }
