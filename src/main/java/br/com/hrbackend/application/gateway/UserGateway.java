@@ -5,8 +5,8 @@ import br.com.hrbackend.domain.entity.Usuario;
 
 public interface UserGateway {
 
-    void createUser(Usuario usuario);
-    void updateUser(Usuario usuario);
+    Usuario createUser(Usuario usuario);
+    Usuario updateUser(Usuario usuario);
     void deleteUser(Usuario usuario);
     Usuario getUserById(int id);
 }
