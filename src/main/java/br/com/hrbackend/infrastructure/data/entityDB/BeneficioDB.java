@@ -1,4 +1,4 @@
-package br.com.hrbackend.infrastructure.db.entityDB;
+package br.com.hrbackend.infrastructure.data.entityDB;
 
 import jakarta.persistence.*;
 import lombok.*;
