@@ -19,7 +19,7 @@ public class PeriodInteract {
             periodo.getIntervaloSaida() == null ||
             periodo.getJornada().isEmpty() ||
             periodo.getTipo().isEmpty() ||
-            periodo.getEmpresa() == null
+            periodo.getEmpress() == null
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }

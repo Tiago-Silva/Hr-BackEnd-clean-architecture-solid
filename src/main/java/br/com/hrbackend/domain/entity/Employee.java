@@ -121,7 +121,7 @@ public class Employee implements Serializable {
 
     private String urlImage;
 
-    private Empresa empresa;
+    private Empress empress;
 
     private Periodo periodo;
 
@@ -176,7 +176,7 @@ public class Employee implements Serializable {
         this.emailHotmail = requestDTO.emailHotmail();
         this.localExame = requestDTO.localExame();
         this.urlImage = requestDTO.urlImage();
-        this.empresa = new Empresa(requestDTO.empresa());
+        this.empress = new Empress(requestDTO.empresa());
         this.periodo = new Periodo(requestDTO.periodo());
     }
 
@@ -232,7 +232,7 @@ public class Employee implements Serializable {
         this.emailHotmail = responseDTO.emailHotmail();
         this.localExame = responseDTO.localExame();
         this.urlImage = responseDTO.urlImage();
-        this.empresa = new Empresa(responseDTO.empresa());
+        this.empress = new Empress(responseDTO.empresa());
         this.periodo = new Periodo(responseDTO.periodo());
     }
 
@@ -288,7 +288,7 @@ public class Employee implements Serializable {
         this.emailHotmail = employeeDB.getEmailHotmail();
         this.localExame = employeeDB.getLocalExame();
         this.urlImage = employeeDB.getUrlImage();
-        this.empresa = new Empresa(employeeDB.getEmpresa());
+        this.empress = new Empress(employeeDB.getEmpresa());
         this.periodo = new Periodo(employeeDB.getPeriodo());
     }
 }

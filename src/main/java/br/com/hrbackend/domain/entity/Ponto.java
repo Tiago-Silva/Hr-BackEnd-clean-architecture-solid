@@ -48,5 +48,5 @@ public class Ponto implements Serializable {
 
     private boolean atrasadoEntrada;
 
-    private Empresa empresa;
+    private Empress empress;
 }

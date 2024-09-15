@@ -1,5 +1,5 @@
 # Backend para sistema RH
-Sistema desenvolvido para gestão de pessoas de pequenas e grandes empresas
+Sistema desenvolvido para gestão de pessoas de pequenas e grandes empresses
 
 <h1 align="center">
     <img src="./public/clean-arch.png" width="300"/>
@@ -8,7 +8,7 @@ Sistema desenvolvido para gestão de pessoas de pequenas e grandes empresas
 
 ## 🚀 Motivaçao / objetivo
 
-Em 2015 aproximadamente eu havia desenvolvido esse sistema para um empresa local usando java + angular (angular 1 e terminei no 2). A idéia é refatorar todo o sistema usando clean-archtecture e solid.
+Em 2015 aproximadamente eu havia desenvolvido esse sistema para um empress local usando java + angular (angular 1 e terminei no 2). A idéia é refatorar todo o sistema usando clean-archtecture e solid.
 
 
 ## 💻 Requisitos

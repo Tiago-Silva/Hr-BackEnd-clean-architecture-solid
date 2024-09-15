@@ -1,6 +1,6 @@
 package br.com.hrbackend.infrastructure.data.entityDB;
 
-import br.com.hrbackend.domain.entity.Empresa;
+import br.com.hrbackend.domain.entity.Empress;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -84,21 +84,21 @@ public class EmpresaDB implements Serializable {
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
 	private List<BeneficioDB> beneficios;
 
-	public EmpresaDB(Empresa empresa) {
-		this.idempresa = empresa.getIdempresa();
-		this.nomeFantasia = empresa.getNomeFantasia();
-		this.razaoSocial = empresa.getRazaoSocial();
-		this.cnpj = empresa.getCnpj();
-		this.inscricaoEstadual = empresa.getInscricaoEstadual();
-		this.bairro = empresa.getBairro();
-		this.cidade = empresa.getCidade();
-		this.endereco = empresa.getEndereco();
-		this.estado = empresa.getEstado();
-		this.telefone = empresa.getTelefone();
-		this.logoMarca = empresa.getLogoMarca();
-		this.isFilial = empresa.isFilial();
-		this.empresaController = empresa.getEmpresaController();
-		this.isMatriz = empresa.isMatriz();
-		this.status = empresa.getStatus();
+	public EmpresaDB(Empress empress) {
+		this.idempresa = empress.getIdempresa();
+		this.nomeFantasia = empress.getNomeFantasia();
+		this.razaoSocial = empress.getRazaoSocial();
+		this.cnpj = empress.getCnpj();
+		this.inscricaoEstadual = empress.getInscricaoEstadual();
+		this.bairro = empress.getBairro();
+		this.cidade = empress.getCidade();
+		this.endereco = empress.getEndereco();
+		this.estado = empress.getEstado();
+		this.telefone = empress.getTelefone();
+		this.logoMarca = empress.getLogoMarca();
+		this.isFilial = empress.isFilial();
+		this.empresaController = empress.getEmpresaController();
+		this.isMatriz = empress.isMatriz();
+		this.status = empress.getStatus();
 	}
 }

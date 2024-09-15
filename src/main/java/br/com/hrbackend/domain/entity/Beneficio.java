@@ -41,6 +41,6 @@ public class Beneficio implements Serializable {
 
     private int idempresa;
 
-    private Empresa empresa;
+    private Empress empress;
 }
 

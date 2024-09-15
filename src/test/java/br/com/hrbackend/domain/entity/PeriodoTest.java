@@ -18,7 +18,7 @@ public class PeriodoTest {
         Mockito.when(periodo.getIntervaloSaida()).thenReturn(Time.valueOf("13:00:00"));
         Mockito.when(periodo.getJornada()).thenReturn("8 horas");
         Mockito.when(periodo.getTipo()).thenReturn("Comercial");
-        Mockito.when(periodo.getEmpresa()).thenReturn(new Empresa()); // Substitua por um mock de Empresa se necessário
+        Mockito.when(periodo.getEmpress()).thenReturn(new Empress()); // Substitua por um mock de Empresa se necessário
         return periodo;
     }
 
@@ -32,6 +32,6 @@ public class PeriodoTest {
         assertEquals(Time.valueOf("13:00:00"), periodo.getIntervaloSaida());
         assertEquals("8 horas", periodo.getJornada());
         assertEquals("Comercial", periodo.getTipo());
-        assertEquals(new Empresa(), periodo.getEmpresa()); // Substitua por uma verificação adequada se necessário
+        assertEquals(new Empress(), periodo.getEmpress()); // Substitua por uma verificação adequada se necessário
     }
 }

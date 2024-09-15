@@ -48,7 +48,7 @@ public class PeriodController {
     public ResponseEntity<PeriodResponseDTO> getPeriodById(@RequestParam("idperiodo") int idperiodo) {
         Periodo periodo = this.periodInteract.getPeriodById(idperiodo);
         return ResponseEntity.ok(
-            this.mapper.domainObjectToResponseDTO(periodo, this.empressMapper.domainObjecToResponseDTO(periodo.getEmpresa()))
+            this.mapper.domainObjectToResponseDTO(periodo, this.empressMapper.domainObjecToResponseDTO(periodo.getEmpress()))
         );
     }
 }

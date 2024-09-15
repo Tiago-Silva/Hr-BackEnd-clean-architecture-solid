@@ -15,5 +15,5 @@ CREATE TABLE usuario (
     enabled BOOLEAN,
     empresa_idempresa INT,
     PRIMARY KEY (idusuario),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa)
 );

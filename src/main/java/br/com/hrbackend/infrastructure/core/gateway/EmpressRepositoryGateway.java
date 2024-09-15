@@ -1,7 +1,7 @@
 package br.com.hrbackend.infrastructure.core.gateway;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
-import br.com.hrbackend.domain.entity.Empresa;
+import br.com.hrbackend.domain.entity.Empress;
 import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
 import br.com.hrbackend.infrastructure.data.repository.EmpressRepository;
 
@@ -17,37 +17,37 @@ public class EmpressRepositoryGateway implements EmpressGateway {
     }
 
     @Override
-    public void createEmpress(Empresa empressDomain) {
+    public void createEmpress(Empress empressDomain) {
         this.repository.save(this.mapper.toEmpressDB(empressDomain));
     }
 
     @Override
-    public void updateEmpress(Empresa empressDomain) {
+    public void updateEmpress(Empress empressDomain) {
         this.repository.update(this.mapper.toEmpressDB(empressDomain));
     }
 
     @Override
-    public void deleteEmpress(Empresa empressDomain) {
+    public void deleteEmpress(Empress empressDomain) {
         this.repository.delete(this.mapper.toEmpressDB(empressDomain));
     }
 
     @Override
-    public List<Empresa> getAllEmpress() {
+    public List<Empress> getAllEmpress() {
         return this.repository.getAllEmpress().stream().map(this.mapper::toEmpress).toList();
     }
 
     @Override
-    public Empresa getEmpressById(int id) {
+    public Empress getEmpressById(int id) {
         return this.mapper.toEmpress(this.repository.getEmpressById(id));
     }
 
     @Override
-    public List<Empresa> getEmpressController() {
+    public List<Empress> getEmpressController() {
         return this.repository.getEmpressControllers().stream().map(this.mapper::toEmpress).toList();
     }
 
     @Override
-    public List<Empresa> getEmpressFilial() {
+    public List<Empress> getEmpressFilial() {
         return this.repository.getFiliais().stream().map(this.mapper::toEmpress).toList();
     }
 }

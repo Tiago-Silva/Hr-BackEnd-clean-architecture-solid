@@ -1,64 +1,64 @@
 package br.com.hrbackend.infrastructure.core.mapper;
 
-import br.com.hrbackend.domain.entity.Empresa;
+import br.com.hrbackend.domain.entity.Empress;
 import br.com.hrbackend.infrastructure.data.entityDB.EmpresaDB;
 import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
 
 public class EmpressMapper {
 
-    public EmpresaRequestDTO domainObjectToRequestDTO(Empresa empresa) {
+    public EmpresaRequestDTO domainObjectToRequestDTO(Empress empress) {
         return new EmpresaRequestDTO(
-                empresa.getNomeFantasia(),
-                empresa.getRazaoSocial(),
-                empresa.getCnpj(),
-                empresa.getInscricaoEstadual(),
-                empresa.getBairro(),
-                empresa.getCidade(),
-                empresa.getEndereco(),
-                empresa.getEstado(),
-                empresa.getTelefone(),
-                empresa.getLogoMarca(),
-                empresa.isFilial(),
-                empresa.getEmpresaController(),
-                empresa.isMatriz(),
-                empresa.getStatus()
+                empress.getNomeFantasia(),
+                empress.getRazaoSocial(),
+                empress.getCnpj(),
+                empress.getInscricaoEstadual(),
+                empress.getBairro(),
+                empress.getCidade(),
+                empress.getEndereco(),
+                empress.getEstado(),
+                empress.getTelefone(),
+                empress.getLogoMarca(),
+                empress.isFilial(),
+                empress.getEmpresaController(),
+                empress.isMatriz(),
+                empress.getStatus()
         );
     }
 
-    public EmpresaResponseDTO domainObjecToResponseDTO (Empresa empresa) {
+    public EmpresaResponseDTO domainObjecToResponseDTO (Empress empress) {
         return new EmpresaResponseDTO(
-                empresa.getIdempresa(),
-                empresa.getNomeFantasia(),
-                empresa.getRazaoSocial(),
-                empresa.getCnpj(),
-                empresa.getInscricaoEstadual(),
-                empresa.getBairro(),
-                empresa.getCidade(),
-                empresa.getEndereco(),
-                empresa.getEstado(),
-                empresa.getTelefone(),
-                empresa.getLogoMarca(),
-                empresa.isFilial(),
-                empresa.getEmpresaController(),
-                empresa.isMatriz(),
-                empresa.getStatus()
+                empress.getIdempresa(),
+                empress.getNomeFantasia(),
+                empress.getRazaoSocial(),
+                empress.getCnpj(),
+                empress.getInscricaoEstadual(),
+                empress.getBairro(),
+                empress.getCidade(),
+                empress.getEndereco(),
+                empress.getEstado(),
+                empress.getTelefone(),
+                empress.getLogoMarca(),
+                empress.isFilial(),
+                empress.getEmpresaController(),
+                empress.isMatriz(),
+                empress.getStatus()
         );
     }
 
-    public Empresa requestDTOToDomainObject (EmpresaRequestDTO requestDTO) {
-        return new Empresa(requestDTO);
+    public Empress requestDTOToDomainObject (EmpresaRequestDTO requestDTO) {
+        return new Empress(requestDTO);
     }
 
-    public Empresa responseDTOToDomainObject (EmpresaResponseDTO responseDTO) {
-        return new Empresa(responseDTO);
+    public Empress responseDTOToDomainObject (EmpresaResponseDTO responseDTO) {
+        return new Empress(responseDTO);
     }
 
-    public EmpresaDB toEmpressDB(Empresa empresa) {
-        return new EmpresaDB(empresa);
+    public EmpresaDB toEmpressDB(Empress empress) {
+        return new EmpresaDB(empress);
     }
 
-    public Empresa toEmpress(EmpresaDB empresaDB) {
-        return new Empresa(empresaDB);
+    public Empress toEmpress(EmpresaDB empresaDB) {
+        return new Empress(empresaDB);
     }
 }

@@ -48,7 +48,7 @@ public class UserController {
     public ResponseEntity<UsuarioResponseDTO> getUserById(@PathVariable("idusuario") int idusuario) {
         Usuario usuario = this.userInteract.getUserById(idusuario);
         return ResponseEntity.ok(
-            this.mapper.domainObjectToResponseDTO(usuario, this.empressMapper.domainObjecToResponseDTO(usuario.getEmpresa()))
+            this.mapper.domainObjectToResponseDTO(usuario, this.empressMapper.domainObjecToResponseDTO(usuario.getEmpress()))
         );
     }
 }

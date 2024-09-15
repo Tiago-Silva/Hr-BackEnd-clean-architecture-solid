@@ -1,4 +1,4 @@
-CREATE TABLE empresa (
+CREATE TABLE empress (
     idempresa INT NOT NULL AUTO_INCREMENT,
     nome_fantasia VARCHAR(45) NOT NULL,
     razao_social VARCHAR(45) NOT NULL,

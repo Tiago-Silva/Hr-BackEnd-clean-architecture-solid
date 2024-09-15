@@ -71,6 +71,6 @@ public class UsuarioDB implements Serializable {
 		this.accountNonLocked = usuario.isAccountNonLocked();
 		this.credentialsNonExpired = usuario.isCredentialsNonExpired();
 		this.enabled = usuario.isEnabled();
-		this.empresa = new EmpresaDB(usuario.getEmpresa());
+		this.empresa = new EmpresaDB(usuario.getEmpress());
 	}
 }

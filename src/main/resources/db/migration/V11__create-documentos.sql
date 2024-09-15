@@ -7,7 +7,7 @@ CREATE TABLE documentos (
     idfuncionario INT,
     funcionario_nome VARCHAR(45),
     departamento VARCHAR(45),
-    empresa INT,
+    empress INT,
     data DATE,
     idfalta INT,
     funcionario_idfuncionario INT,

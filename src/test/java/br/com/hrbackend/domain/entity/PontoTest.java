@@ -29,7 +29,7 @@ class PontoTest {
         Mockito.when(ponto.getCnpj()).thenReturn("Cnpj");
         Mockito.when(ponto.getEmpresaNome()).thenReturn("EmpresaNome");
         Mockito.when(ponto.isAtrasadoEntrada()).thenReturn(true);
-        Mockito.when(ponto.getEmpresa()).thenReturn(new Empresa()); // Substitua por um mock de Empresa se necessário
+        Mockito.when(ponto.getEmpress()).thenReturn(new Empress()); // Substitua por um mock de Empresa se necessário
         return ponto;
     }
 
@@ -52,6 +52,6 @@ class PontoTest {
         assertEquals("Cnpj", ponto.getCnpj());
         assertEquals("EmpresaNome", ponto.getEmpresaNome());
         assertTrue(ponto.isAtrasadoEntrada());
-        assertNotNull(ponto.getEmpresa());
+        assertNotNull(ponto.getEmpress());
     }
 }

@@ -8,5 +8,5 @@ CREATE TABLE periodo (
     tipo VARCHAR(45),
     empresa_idempresa INT,
     PRIMARY KEY (idperiodo),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa)
 );

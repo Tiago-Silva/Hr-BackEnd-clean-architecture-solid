@@ -49,6 +49,6 @@ public class PeriodoDB implements Serializable {
         this.intervaloSaida = period.getIntervaloSaida();
         this.jornada = period.getJornada();
         this.tipo = period.getTipo();
-        this.empresa = new EmpresaDB(period.getEmpresa());
+        this.empresa = new EmpresaDB(period.getEmpress());
     }
 }

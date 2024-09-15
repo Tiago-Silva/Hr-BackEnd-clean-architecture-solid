@@ -26,7 +26,7 @@ class BeneficioTest {
         Mockito.when(beneficio.getCustoEmp()).thenReturn("CustoEmp");
         Mockito.when(beneficio.getEmpresaNome()).thenReturn("EmpresaNome");
         Mockito.when(beneficio.getIdempresa()).thenReturn(1);
-        Mockito.when(beneficio.getEmpresa()).thenReturn(new Empresa()); // Substitua por um mock de Empresa se necessário
+        Mockito.when(beneficio.getEmpress()).thenReturn(new Empress()); // Substitua por um mock de Empresa se necessário
         return beneficio;
     }
 
@@ -48,6 +48,6 @@ class BeneficioTest {
         assertEquals("CustoEmp", beneficio.getCustoEmp());
         assertEquals("EmpresaNome", beneficio.getEmpresaNome());
         assertEquals(1, beneficio.getIdempresa());
-        assertEquals(new Empresa(), beneficio.getEmpresa()); // Substitua por uma verificação adequada se necessário
+        assertEquals(new Empress(), beneficio.getEmpress()); // Substitua por uma verificação adequada se necessário
     }
 }

@@ -44,7 +44,7 @@ public class EmployeeTest {
         Mockito.when(employeeMock.getAgencia()).thenReturn("1234");
         Mockito.when(employeeMock.getConta()).thenReturn("123456");
         Mockito.when(employeeMock.getEmailGoogle()).thenReturn("funcionario@gmail.com");
-        Mockito.when(employeeMock.getEmpresa()).thenReturn(new Empresa());
+        Mockito.when(employeeMock.getEmpress()).thenReturn(new Empress());
         Mockito.when(employeeMock.getPeriodo()).thenReturn(new Periodo());
 
         return employeeMock;
@@ -78,7 +78,7 @@ public class EmployeeTest {
         assertEquals("1234", employee.getAgencia());
         assertEquals("123456", employee.getConta());
         assertEquals("funcionario@gmail.com", employee.getEmailGoogle());
-        assertEquals(new Empresa(), employee.getEmpresa());
+        assertEquals(new Empress(), employee.getEmpress());
         assertEquals(new Periodo(), employee.getPeriodo());
     }
 }

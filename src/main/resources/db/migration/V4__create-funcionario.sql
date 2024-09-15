@@ -54,6 +54,6 @@ CREATE TABLE funcionario (
     empresa_idempresa INT,
     periodo_idperiodo INT,
     PRIMARY KEY (idfuncionario),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa),
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa),
     FOREIGN KEY (periodo_idperiodo) REFERENCES periodo(idperiodo)
 );

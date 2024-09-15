@@ -8,7 +8,7 @@ CREATE TABLE licenca (
     funcionario_nome VARCHAR(45),
     idfuncionario INT,
     setor VARCHAR(45),
-    empresa INT,
+    empress INT,
     idlembrete INT,
     funcionario_idfuncionario INT,
     PRIMARY KEY (idlicenca),

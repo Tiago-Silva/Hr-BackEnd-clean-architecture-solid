@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "idempresa")
-public class Empresa implements Serializable {
+public class Empress implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 	
@@ -47,7 +47,7 @@ public class Empresa implements Serializable {
 
 	private String status;
 
-    public Empresa(EmpresaRequestDTO requestDTO) {
+    public Empress(EmpresaRequestDTO requestDTO) {
 		this.nomeFantasia = requestDTO.nomeFantasia();
 		this.razaoSocial = requestDTO.razaoSocial();
 		this.cnpj = requestDTO.cnpj();
@@ -64,7 +64,7 @@ public class Empresa implements Serializable {
 		this.status = requestDTO.status();
     }
 
-	public Empresa(EmpresaResponseDTO responseDTO) {
+	public Empress(EmpresaResponseDTO responseDTO) {
 		this.idempresa = responseDTO.idempresa();
 		this.nomeFantasia = responseDTO.nomeFantasia();
 		this.razaoSocial = responseDTO.razaoSocial();
@@ -82,7 +82,7 @@ public class Empresa implements Serializable {
 		this.status = responseDTO.status();
 	}
 
-	public Empresa(EmpresaDB empresaDB) {
+	public Empress(EmpresaDB empresaDB) {
 		this.idempresa = empresaDB.getIdempresa();
 		this.nomeFantasia = empresaDB.getNomeFantasia();
 		this.razaoSocial = empresaDB.getRazaoSocial();

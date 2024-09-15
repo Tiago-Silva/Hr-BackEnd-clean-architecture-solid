@@ -1,7 +1,7 @@
 package br.com.hrbackend.infrastructure.web.controller;
 
 import br.com.hrbackend.application.usecases.EmpressInteract;
-import br.com.hrbackend.domain.entity.Empresa;
+import br.com.hrbackend.domain.entity.Empress;
 import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
 import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
@@ -24,22 +24,22 @@ public class EmpressController {
 
     @PostMapping
     public ResponseEntity createEmpress(@RequestBody EmpresaRequestDTO requestDTO) {
-        Empresa empresa = this.mapper.requestDTOToDomainObject(requestDTO);
-        this.empressInteract.createEmpress(empresa);
+        Empress empress = this.mapper.requestDTOToDomainObject(requestDTO);
+        this.empressInteract.createEmpress(empress);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity updateEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
-        Empresa empresa = this.mapper.responseDTOToDomainObject(responseDTO);
-        this.empressInteract.updateEmpress(empresa);
+        Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
+        this.empressInteract.updateEmpress(empress);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping
     public ResponseEntity deleteEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
-        Empresa empresa = this.mapper.responseDTOToDomainObject(responseDTO);
-        this.empressInteract.deleteEmpress(empresa);
+        Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
+        this.empressInteract.deleteEmpress(empress);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

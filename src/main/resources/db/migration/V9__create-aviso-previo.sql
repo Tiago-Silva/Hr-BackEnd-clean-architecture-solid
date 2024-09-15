@@ -7,7 +7,7 @@ CREATE TABLE aviso_previo (
     funcionario_nome VARCHAR(45),
     idfuncionario INT,
     setor VARCHAR(45),
-    empresa INT,
+    empress INT,
     retorno DATE,
     idlembrete INT,
     tipo_aviso VARCHAR(45),

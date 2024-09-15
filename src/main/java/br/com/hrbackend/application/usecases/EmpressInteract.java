@@ -1,7 +1,7 @@
 package br.com.hrbackend.application.usecases;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
-import br.com.hrbackend.domain.entity.Empresa;
+import br.com.hrbackend.domain.entity.Empress;
 
 import java.util.List;
 
@@ -12,45 +12,45 @@ public class EmpressInteract {
         this.empressGateway = empressGateway;
     }
 
-    public void createEmpress(Empresa empresa) {
+    public void createEmpress(Empress empress) {
         if (
-            empresa == null ||
-            empresa.getCnpj().isEmpty() ||
-            empresa.getRazaoSocial().isEmpty() ||
-            empresa.getNomeFantasia().isEmpty()
+            empress == null ||
+            empress.getCnpj().isEmpty() ||
+            empress.getRazaoSocial().isEmpty() ||
+            empress.getNomeFantasia().isEmpty()
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.empressGateway.createEmpress(empresa);
+        this.empressGateway.createEmpress(empress);
     }
 
-    public void updateEmpress(Empresa empresa) {
-        if (empresa == null || empresa.getIdempresa() <= 0) {
+    public void updateEmpress(Empress empress) {
+        if (empress == null || empress.getIdempresa() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.empressGateway.updateEmpress(empresa);
+        this.empressGateway.updateEmpress(empress);
     }
 
-    public void deleteEmpress(Empresa empresa) {
-        if (empresa == null || empresa.getIdempresa() <= 0) {
+    public void deleteEmpress(Empress empress) {
+        if (empress == null || empress.getIdempresa() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.empressGateway.deleteEmpress(empresa);
+        this.empressGateway.deleteEmpress(empress);
     }
 
-    public List<Empresa> getAllEmpress() {
+    public List<Empress> getAllEmpress() {
         return this.empressGateway.getAllEmpress();
     }
 
-    public Empresa getEmpressById(int id) {
+    public Empress getEmpressById(int id) {
         return this.empressGateway.getEmpressById(id);
     }
 
-    public List<Empresa> getEmpressController() {
+    public List<Empress> getEmpressController() {
         return this.empressGateway.getEmpressController();
     }
 
-    public List<Empresa> getEmpressFilial() {
+    public List<Empress> getEmpressFilial() {
         return this.empressGateway.getEmpressFilial();
     }
 }

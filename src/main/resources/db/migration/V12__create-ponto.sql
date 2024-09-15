@@ -17,5 +17,5 @@ CREATE TABLE ponto (
     atrasado_entrada BOOLEAN,
     empresa_idempresa INT,
     PRIMARY KEY (idponto),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa)
 );

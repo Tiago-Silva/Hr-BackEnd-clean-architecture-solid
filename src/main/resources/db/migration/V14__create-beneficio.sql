@@ -15,5 +15,5 @@ CREATE TABLE beneficio (
     idempresa INT,
     empresa_idempresa INT,
     PRIMARY KEY (idbeneficio),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa)
 );

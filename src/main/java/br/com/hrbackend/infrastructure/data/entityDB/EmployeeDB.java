@@ -228,7 +228,7 @@ public class EmployeeDB implements Serializable {
 		this.emailHotmail = employee.getEmailHotmail();
 		this.localExame = employee.getLocalExame();
 		this.urlImage = employee.getUrlImage();
-		this.empresa = new EmpresaDB(employee.getEmpresa());
+		this.empresa = new EmpresaDB(employee.getEmpress());
 		this.periodo = new PeriodoDB(employee.getPeriodo());
 	}
 }

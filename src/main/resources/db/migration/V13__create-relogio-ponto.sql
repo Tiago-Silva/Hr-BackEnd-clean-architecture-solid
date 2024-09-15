@@ -5,5 +5,5 @@ CREATE TABLE relogio_ponto (
     descricao VARCHAR(45),
     empresa_idempresa INT,
     PRIMARY KEY (idrelogio_ponto),
-    FOREIGN KEY (empresa_idempresa) REFERENCES empresa(idempresa)
+    FOREIGN KEY (empresa_idempresa) REFERENCES empress(idempresa)
 );

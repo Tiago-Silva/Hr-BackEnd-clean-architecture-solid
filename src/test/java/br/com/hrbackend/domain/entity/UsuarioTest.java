@@ -22,7 +22,7 @@ public class UsuarioTest {
         Mockito.when(usuarioMock.isAccountNonLocked()).thenReturn(true);
         Mockito.when(usuarioMock.isCredentialsNonExpired()).thenReturn(true);
         Mockito.when(usuarioMock.isEnabled()).thenReturn(true);
-        Mockito.when(usuarioMock.getEmpresa()).thenReturn(new Empresa());
+        Mockito.when(usuarioMock.getEmpress()).thenReturn(new Empress());
 
         return usuarioMock;
     }
@@ -42,6 +42,6 @@ public class UsuarioTest {
         assertTrue(true, String.valueOf(usuario.isAccountNonLocked()));
         assertTrue(true, String.valueOf(usuario.isCredentialsNonExpired()));
         assertTrue(true, String.valueOf(usuario.isEnabled()));
-        assertEquals(new Empresa(), usuario.getEmpresa());
+        assertEquals(new Empress(), usuario.getEmpress());
     }
 }
