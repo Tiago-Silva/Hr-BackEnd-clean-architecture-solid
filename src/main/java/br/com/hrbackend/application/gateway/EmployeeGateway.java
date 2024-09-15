@@ -4,8 +4,8 @@ import br.com.hrbackend.domain.entity.Employee;
 
 public interface EmployeeGateway {
 
-    void createEmployee(Employee employee);
-    void updateEmployee(Employee employee);
+    Employee createEmployee(Employee employee);
+    Employee updateEmployee(Employee employee);
     void deleteEmployee(Employee employee);
     Employee getEmployeeById(int id);
 }
