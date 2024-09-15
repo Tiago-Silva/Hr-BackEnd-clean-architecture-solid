@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface EmpressGateway {
 
-    void createEmpress(Empress empress);
-    void updateEmpress(Empress empress);
-    void deleteEmpress(Empress empress);
+    Empress createEmpress(Empress empress);
+    Empress updateEmpress(Empress empress);
+    Empress deleteEmpress(Empress empress);
     List<Empress> getAllEmpress();
     Empress getEmpressById(int id);
     List<Empress> getEmpressController();
-    List<Empress> getEmpressFilial();
+    List<Empress> getBranchesByIdEmpressController(int empressController);
 }
