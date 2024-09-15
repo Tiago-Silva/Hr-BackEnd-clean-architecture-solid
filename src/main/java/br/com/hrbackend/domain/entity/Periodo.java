@@ -1,8 +1,8 @@
 package br.com.hrbackend.domain.entity;
 
-import br.com.hrbackend.infrastructure.db.entityDB.PeriodoDB;
-import br.com.hrbackend.infrastructure.dto.PeriodRequestDTO;
-import br.com.hrbackend.infrastructure.dto.PeriodResponseDTO;
+import br.com.hrbackend.infrastructure.data.entityDB.PeriodoDB;
+import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
 import lombok.*;
 
 import java.io.Serial;
