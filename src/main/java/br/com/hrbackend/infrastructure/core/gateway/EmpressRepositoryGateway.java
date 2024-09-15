@@ -17,23 +17,21 @@ public class EmpressRepositoryGateway implements EmpressGateway {
     }
 
     @Override
-    public void createEmpress(Empress empressDomain) {
+    public Empress createEmpress(Empress empressDomain) {
         this.repository.save(this.mapper.toEmpressDB(empressDomain));
+        return empressDomain;
     }
 
     @Override
-    public void updateEmpress(Empress empressDomain) {
+    public Empress updateEmpress(Empress empressDomain) {
         this.repository.update(this.mapper.toEmpressDB(empressDomain));
+        return empressDomain;
     }
 
     @Override
-    public void deleteEmpress(Empress empressDomain) {
+    public Empress deleteEmpress(Empress empressDomain) {
         this.repository.delete(this.mapper.toEmpressDB(empressDomain));
-    }
-
-    @Override
-    public List<Empress> getAllEmpress() {
-        return this.repository.getAllEmpress().stream().map(this.mapper::toEmpress).toList();
+        return empressDomain;
     }
 
     @Override
@@ -42,12 +40,7 @@ public class EmpressRepositoryGateway implements EmpressGateway {
     }
 
     @Override
-    public List<Empress> getEmpressController() {
-        return this.repository.getEmpressControllers().stream().map(this.mapper::toEmpress).toList();
-    }
-
-    @Override
-    public List<Empress> getEmpressFilial() {
+    public List<Empress> getBranchesByIdEmpressController(int empressController) {
         return this.repository.getFiliais().stream().map(this.mapper::toEmpress).toList();
     }
 }
