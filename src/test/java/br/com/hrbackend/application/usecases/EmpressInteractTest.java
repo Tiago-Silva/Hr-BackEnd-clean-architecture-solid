@@ -105,11 +105,11 @@ class EmpressInteractTest {
         EmpressInteract empressInteract = new EmpressInteract(empressGateway);
 
         List<Empress> empressList = Collections.singletonList(this.createEmpress());
-        Mockito.when(empressGateway.getEmpressFilial()).thenReturn(empressList);
+        Mockito.when(empressGateway.getBranchesByIdEmpressController()).thenReturn(empressList);
 
         List<Empress> result = empressInteract.getEmpressFilial();
 
         assertEquals(empressList, result);
-        Mockito.verify(empressGateway, times(1)).getEmpressFilial();
+        Mockito.verify(empressGateway, times(1)).getBranchesByIdEmpressController();
     }
 }
