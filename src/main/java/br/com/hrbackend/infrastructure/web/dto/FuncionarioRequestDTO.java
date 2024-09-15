@@ -1,25 +1,26 @@
-package br.com.hrbackend.infrastructure.dto;
+package br.com.hrbackend.infrastructure.web.dto;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
-public record EmployeeRequestDTO(
+public record FuncionarioRequestDTO(
         String nome,
         String sobrenome,
         String pis,
         String cpf,
         String rg,
-        String expedicaoRg,
+        Date expedicaoRg,
         String emissorRg,
         String ufRg,
         String carteiraMotorista,
         String categoriaCnh,
-        String expedicaoCnh,
-        String validadeCnh,
+        Date expedicaoCnh,
+        Date validadeCnh,
         String carteiraTrabalho,
         String serieCtps,
         String ufCtps,
         String tituloEleitor,
-        String nascimento,
+        Date nascimento,
         String nacionalidade,
         String cep,
         String estado,
@@ -32,14 +33,14 @@ public record EmployeeRequestDTO(
         String pai,
         String cracha,
         String telefone,
-        String admissao,
-        String demissao,
+        Date admissao,
+        Date demissao,
         String status,
         String motivoDemissao,
         String departamento,
         String cargo,
         String cargoDescricao,
-        String exameAdmissional,
+        Date exameAdmissional,
         String periodoExperiencia,
         String primeiroEmprego,
         String contribuicaoSocial,
@@ -54,6 +55,6 @@ public record EmployeeRequestDTO(
         String localExame,
         String urlImage,
         EmpresaResponseDTO empresa,
-        PeriodResponseDTO periodo
+        PeriodoResponseDTO periodo
 ) {
 }

@@ -1,4 +1,4 @@
-package br.com.hrbackend.infrastructure.dto;
+package br.com.hrbackend.infrastructure.web.dto;
 
 public record EmpresaResponseDTO(
         int idempresa,

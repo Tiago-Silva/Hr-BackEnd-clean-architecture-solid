@@ -1,6 +1,7 @@
-package br.com.hrbackend.infrastructure.dto;
+package br.com.hrbackend.infrastructure.web.dto;
 
-public record UsuarioRequestDTO(
+public record UsuarioResponseDTO(
+        int idusuario,
         String nome,
         String sobrenome,
         String login,

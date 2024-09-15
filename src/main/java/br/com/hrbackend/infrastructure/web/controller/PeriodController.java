@@ -1,11 +1,11 @@
-package br.com.hrbackend.infrastructure.controller;
+package br.com.hrbackend.infrastructure.web.controller;
 
 import br.com.hrbackend.application.usecases.PeriodInteract;
 import br.com.hrbackend.domain.entity.Periodo;
-import br.com.hrbackend.infrastructure.dto.PeriodRequestDTO;
-import br.com.hrbackend.infrastructure.dto.PeriodResponseDTO;
-import br.com.hrbackend.infrastructure.mapper.EmpressMapper;
-import br.com.hrbackend.infrastructure.mapper.PeriodMapper;
+import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
+import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

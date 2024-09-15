@@ -1,10 +1,10 @@
-package br.com.hrbackend.infrastructure.config;
+package br.com.hrbackend.infrastructure.web.config;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.application.usecases.UserInteract;
-import br.com.hrbackend.infrastructure.gateway.UserRepositoryGateway;
-import br.com.hrbackend.infrastructure.mapper.UserMapper;
-import br.com.hrbackend.infrastructure.repository.UserRepository;
+import br.com.hrbackend.infrastructure.core.gateway.UserRepositoryGateway;
+import br.com.hrbackend.infrastructure.core.mapper.UserMapper;
+import br.com.hrbackend.infrastructure.data.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

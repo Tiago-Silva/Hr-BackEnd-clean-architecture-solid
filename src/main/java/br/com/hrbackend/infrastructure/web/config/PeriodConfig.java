@@ -1,10 +1,10 @@
-package br.com.hrbackend.infrastructure.config;
+package br.com.hrbackend.infrastructure.web.config;
 
 import br.com.hrbackend.application.gateway.PeriodGateway;
 import br.com.hrbackend.application.usecases.PeriodInteract;
-import br.com.hrbackend.infrastructure.gateway.PeriodRepositoryGateway;
-import br.com.hrbackend.infrastructure.mapper.PeriodMapper;
-import br.com.hrbackend.infrastructure.repository.PeriodRepository;
+import br.com.hrbackend.infrastructure.core.gateway.PeriodRepositoryGateway;
+import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
+import br.com.hrbackend.infrastructure.data.repository.PeriodRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

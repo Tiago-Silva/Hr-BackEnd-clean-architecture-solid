@@ -1,10 +1,10 @@
-package br.com.hrbackend.infrastructure.config;
+package br.com.hrbackend.infrastructure.web.config;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.EmpressInteract;
-import br.com.hrbackend.infrastructure.gateway.EmpressRepositoryGateway;
-import br.com.hrbackend.infrastructure.mapper.EmpressMapper;
-import br.com.hrbackend.infrastructure.repository.EmpressRepository;
+import br.com.hrbackend.infrastructure.core.gateway.EmpressRepositoryGateway;
+import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.data.repository.EmpressRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

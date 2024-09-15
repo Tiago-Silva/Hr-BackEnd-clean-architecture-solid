@@ -1,10 +1,10 @@
-package br.com.hrbackend.infrastructure.controller;
+package br.com.hrbackend.infrastructure.web.controller;
 
 import br.com.hrbackend.application.usecases.EmpressInteract;
 import br.com.hrbackend.domain.entity.Empresa;
-import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
-import br.com.hrbackend.infrastructure.dto.EmpresaResponseDTO;
-import br.com.hrbackend.infrastructure.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
