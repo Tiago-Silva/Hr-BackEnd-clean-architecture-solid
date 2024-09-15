@@ -1,9 +1,9 @@
-package br.com.hrbackend.infrastructure.gateway;
+package br.com.hrbackend.infrastructure.core.gateway;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.domain.entity.Empresa;
-import br.com.hrbackend.infrastructure.mapper.EmpressMapper;
-import br.com.hrbackend.infrastructure.repository.EmpressRepository;
+import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.data.repository.EmpressRepository;
 
 import java.util.List;
 

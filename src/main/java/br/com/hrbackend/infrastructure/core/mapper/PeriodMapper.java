@@ -1,10 +1,10 @@
-package br.com.hrbackend.infrastructure.mapper;
+package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.Periodo;
-import br.com.hrbackend.infrastructure.db.entityDB.PeriodoDB;
-import br.com.hrbackend.infrastructure.dto.EmpresaResponseDTO;
-import br.com.hrbackend.infrastructure.dto.PeriodRequestDTO;
-import br.com.hrbackend.infrastructure.dto.PeriodResponseDTO;
+import br.com.hrbackend.infrastructure.data.entityDB.PeriodoDB;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
 
 public class PeriodMapper {
 

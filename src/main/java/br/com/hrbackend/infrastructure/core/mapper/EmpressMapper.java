@@ -1,9 +1,9 @@
-package br.com.hrbackend.infrastructure.mapper;
+package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.Empresa;
-import br.com.hrbackend.infrastructure.db.entityDB.EmpresaDB;
-import br.com.hrbackend.infrastructure.dto.EmpresaRequestDTO;
-import br.com.hrbackend.infrastructure.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.data.entityDB.EmpresaDB;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
 
 public class EmpressMapper {
 

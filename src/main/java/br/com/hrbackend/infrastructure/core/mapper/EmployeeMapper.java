@@ -1,11 +1,11 @@
-package br.com.hrbackend.infrastructure.mapper;
+package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.Employee;
-import br.com.hrbackend.infrastructure.db.entityDB.EmployeeDB;
-import br.com.hrbackend.infrastructure.dto.EmployeeRequestDTO;
-import br.com.hrbackend.infrastructure.dto.EmployeeResponseDTO;
-import br.com.hrbackend.infrastructure.dto.EmpresaResponseDTO;
-import br.com.hrbackend.infrastructure.dto.PeriodResponseDTO;
+import br.com.hrbackend.infrastructure.data.entityDB.EmployeeDB;
+import br.com.hrbackend.infrastructure.web.dto.EmployeeRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmployeeResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
 
 public class EmployeeMapper {
 

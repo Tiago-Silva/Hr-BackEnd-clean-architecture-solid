@@ -1,9 +1,9 @@
-package br.com.hrbackend.infrastructure.gateway;
+package br.com.hrbackend.infrastructure.core.gateway;
 
 import br.com.hrbackend.application.gateway.PeriodGateway;
 import br.com.hrbackend.domain.entity.Periodo;
-import br.com.hrbackend.infrastructure.mapper.PeriodMapper;
-import br.com.hrbackend.infrastructure.repository.PeriodRepository;
+import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
+import br.com.hrbackend.infrastructure.data.repository.PeriodRepository;
 
 public class PeriodRepositoryGateway implements PeriodGateway {
 

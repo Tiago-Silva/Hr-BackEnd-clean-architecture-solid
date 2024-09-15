@@ -1,9 +1,9 @@
-package br.com.hrbackend.infrastructure.gateway;
+package br.com.hrbackend.infrastructure.core.gateway;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.domain.entity.Usuario;
-import br.com.hrbackend.infrastructure.mapper.UserMapper;
-import br.com.hrbackend.infrastructure.repository.UserRepository;
+import br.com.hrbackend.infrastructure.core.mapper.UserMapper;
+import br.com.hrbackend.infrastructure.data.repository.UserRepository;
 
 public class UserRepositoryGateway implements UserGateway {
 
