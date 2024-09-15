@@ -1,6 +1,7 @@
 package br.com.hrbackend.application.usecases;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
+import br.com.hrbackend.application.usecases.Empress.*;
 import br.com.hrbackend.domain.entity.Empress;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -28,9 +29,9 @@ class EmpressInteractTest {
 
         Empress empress = this.createEmpress();
 
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
+        CreateEmpressUseCase createEmpressUseCase = new CreateEmpressUseCase(empressGateway);
 
-        empressInteract.createEmpress(empress);
+        createEmpressUseCase.execute(empress);
 
         Mockito.verify(empressGateway, times(1)).createEmpress(empress);
     }
@@ -39,9 +40,9 @@ class EmpressInteractTest {
     public void testUpdateEmpress() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         Empress empress = this.createEmpress();
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
+        UpdateEmpressUseCase updateEmpressUseCase = new UpdateEmpressUseCase(empressGateway);
 
-        empressInteract.updateEmpress(empress);
+        updateEmpressUseCase.execute(empress);
 
         Mockito.verify(empressGateway, times(1)).updateEmpress(empress);
     }
@@ -50,66 +51,38 @@ class EmpressInteractTest {
     public void testDeleteEmpress() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
         Empress empress = this.createEmpress();
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
+        DeleteEmpressUseCase deleteEmpressUseCase = new DeleteEmpressUseCase(empressGateway);
 
-        empressInteract.deleteEmpress(empress);
+        deleteEmpressUseCase.execute(empress);
 
         Mockito.verify(empressGateway, times(1)).deleteEmpress(empress);
     }
 
     @Test
-    public void testGetAllEmpress() {
-        EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
-
-        List<Empress> empresses = Collections.singletonList(this.createEmpress());
-        Mockito.when(empressGateway.getAllEmpress()).thenReturn(empresses);
-
-        List<Empress> result = empressInteract.getAllEmpress();
-
-        assertEquals(empresses, result);
-        Mockito.verify(empressGateway, times(1)).getAllEmpress();
-    }
-
-    @Test
     public void testGetEmpressById() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
+        GetEmpressByIdUseCase getEmpressByIdUseCase = new GetEmpressByIdUseCase(empressGateway);
 
         Empress empress = this.createEmpress();
         Mockito.when(empressGateway.getEmpressById(1)).thenReturn(empress);
 
-        Empress result = empressInteract.getEmpressById(1);
+        Empress result = getEmpressByIdUseCase.execute(1);
 
         assertEquals(empress, result);
         Mockito.verify(empressGateway, times(1)).getEmpressById(1);
     }
 
     @Test
-    public void testGetEmpressController() {
+    public void testGetBranchesById() {
         EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
-
-        List<Empress> empresasController = Collections.singletonList(this.createEmpress());
-        Mockito.when(empressGateway.getEmpressController()).thenReturn(empresasController);
-
-        List<Empress> result = empressInteract.getEmpressController();
-
-        assertEquals(empresasController, result);
-        Mockito.verify(empressGateway, times(1)).getEmpressController();
-    }
-
-    @Test
-    public void testGetEmpressFilial() {
-        EmpressGateway empressGateway = Mockito.mock(EmpressGateway.class);
-        EmpressInteract empressInteract = new EmpressInteract(empressGateway);
+        GetBranchesByIdEmpressControllerUseCase getBranchesByIdEmpressControllerUseCase = new GetBranchesByIdEmpressControllerUseCase(empressGateway);
 
         List<Empress> empressList = Collections.singletonList(this.createEmpress());
-        Mockito.when(empressGateway.getBranchesByIdEmpressController()).thenReturn(empressList);
+        Mockito.when(empressGateway.getBranchesByIdEmpressController(1)).thenReturn(empressList);
 
-        List<Empress> result = empressInteract.getEmpressFilial();
+        List<Empress> result = getBranchesByIdEmpressControllerUseCase.execute(1);
 
         assertEquals(empressList, result);
-        Mockito.verify(empressGateway, times(1)).getBranchesByIdEmpressController();
+        Mockito.verify(empressGateway, times(1)).getBranchesByIdEmpressController(1);
     }
 }
