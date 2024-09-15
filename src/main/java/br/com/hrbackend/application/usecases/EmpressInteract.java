@@ -51,6 +51,6 @@ public class EmpressInteract {
     }
 
     public List<Empress> getEmpressFilial() {
-        return this.empressGateway.getEmpressFilial();
+        return this.empressGateway.getBranchesByIdEmpressController();
     }
 }
