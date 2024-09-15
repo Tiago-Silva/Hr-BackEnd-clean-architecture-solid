@@ -4,8 +4,8 @@ import br.com.hrbackend.domain.entity.Periodo;
 
 public interface PeriodGateway {
 
-    void createPeriod(Periodo periodo);
-    void updatePeriod(Periodo periodo);
+    Periodo createPeriod(Periodo periodo);
+    Periodo updatePeriod(Periodo periodo);
     void deletePeriod(Periodo periodo);
     Periodo getPeriodById(int id);
 }
