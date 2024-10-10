@@ -26,6 +26,6 @@ public class CreateEmployeeUseCase implements UseCase<Employee, Employee> {
             throw new IllegalArgumentException("Invalid arguments");
         }
 
-        return this.employeeGateway.createEmployee(inputDTO);
+        return this.employeeGateway.save(inputDTO);
     }
 }

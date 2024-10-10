@@ -23,27 +23,27 @@ public class EmployeeInteract {
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.employeeGateway.createEmployee(employee);
+        this.employeeGateway.save(employee);
     }
 
     public void updateEmployee(Employee employee) {
         if (employee == null || employee.getIdfuncionario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.employeeGateway.updateEmployee(employee);
+        this.employeeGateway.update(employee);
     }
 
     public void deleteEmployee(Employee employee) {
         if (employee == null || employee.getIdfuncionario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.employeeGateway.deleteEmployee(employee);
+        this.employeeGateway.delete(employee);
     }
 
     public Employee getEmployeeById(int id) {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.employeeGateway.getEmployeeById(id);
+        return this.employeeGateway.getId(id);
     }
 }

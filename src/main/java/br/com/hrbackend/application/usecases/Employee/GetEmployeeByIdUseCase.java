@@ -16,6 +16,6 @@ public class GetEmployeeByIdUseCase implements UseCase<Integer, Employee> {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.employeeGateway.getEmployeeById(id);
+        return this.employeeGateway.getId(id);
     }
 }

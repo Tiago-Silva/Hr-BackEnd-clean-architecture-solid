@@ -16,6 +16,6 @@ public class UpdateEmployeeUseCase implements UseCase<Employee, Employee> {
         if (employee == null || employee.getIdfuncionario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.employeeGateway.updateEmployee(employee);
+        return this.employeeGateway.update(employee);
     }
 }

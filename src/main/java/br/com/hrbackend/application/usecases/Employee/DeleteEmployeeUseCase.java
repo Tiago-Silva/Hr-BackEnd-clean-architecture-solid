@@ -16,7 +16,7 @@ public class DeleteEmployeeUseCase implements UseCase<Employee, Employee> {
         if (employee == null || employee.getIdfuncionario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.employeeGateway.deleteEmployee(employee);
+        this.employeeGateway.delete(employee);
         return employee;
     }
 }
