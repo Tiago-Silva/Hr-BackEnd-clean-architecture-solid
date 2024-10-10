@@ -9,9 +9,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "idempresa")
 public class Empress implements Serializable {
 	@Serial
@@ -39,15 +37,50 @@ public class Empress implements Serializable {
 
 	private String logoMarca;
 
-	private boolean filial;
+	private boolean filial = false;
 
 	private int empresaController;
 
-	private boolean matriz;
+	private boolean matriz = false;
 
 	private String status;
 
-    public Empress(EmpresaRequestDTO requestDTO) {
+	private Empress(
+		final int idempresa,
+		final String nomeFantasia,
+		final String razaoSocial,
+		final String cnpj,
+		final String inscricaoEstadual,
+		final String bairro,
+		final String cidade,
+		final String endereco,
+		final String estado,
+		final String telefone,
+		final String logoMarca,
+		final boolean filial,
+		final int empresaController,
+		final boolean matriz,
+		final String status
+	) {
+		this.idempresa = idempresa;
+		this.nomeFantasia = nomeFantasia;
+		this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
+		this.inscricaoEstadual = inscricaoEstadual;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.endereco = endereco;
+		this.estado = estado;
+		this.telefone = telefone;
+		this.logoMarca = logoMarca;
+		this.filial = filial;
+		this.empresaController = empresaController;
+		this.matriz = matriz;
+		this.status = status;
+		this.validate();
+	}
+
+	private Empress(final EmpresaRequestDTO requestDTO) {
 		this.nomeFantasia = requestDTO.nomeFantasia();
 		this.razaoSocial = requestDTO.razaoSocial();
 		this.cnpj = requestDTO.cnpj();
@@ -62,41 +95,64 @@ public class Empress implements Serializable {
 		this.empresaController = requestDTO.empresaController();
 		this.matriz = requestDTO.matriz();
 		this.status = requestDTO.status();
-    }
-
-	public Empress(EmpresaResponseDTO responseDTO) {
-		this.idempresa = responseDTO.idempresa();
-		this.nomeFantasia = responseDTO.nomeFantasia();
-		this.razaoSocial = responseDTO.razaoSocial();
-		this.cnpj = responseDTO.cnpj();
-		this.inscricaoEstadual = responseDTO.inscricaoEstadual();
-		this.bairro = responseDTO.bairro();
-		this.cidade = responseDTO.cidade();
-		this.endereco = responseDTO.endereco();
-		this.estado = responseDTO.estado();
-		this.telefone = responseDTO.telefone();
-		this.logoMarca = responseDTO.logoMarca();
-		this.filial = responseDTO.filial();
-		this.empresaController = responseDTO.empresaController();
-		this.matriz = responseDTO.matriz();
-		this.status = responseDTO.status();
+		this.validate();
 	}
 
-	public Empress(EmpresaDB empresaDB) {
-		this.idempresa = empresaDB.getIdempresa();
-		this.nomeFantasia = empresaDB.getNomeFantasia();
-		this.razaoSocial = empresaDB.getRazaoSocial();
-		this.cnpj = empresaDB.getCnpj();
-		this.inscricaoEstadual = empresaDB.getInscricaoEstadual();
-		this.bairro = empresaDB.getBairro();
-		this.cidade = empresaDB.getCidade();
-		this.endereco = empresaDB.getEndereco();
-		this.estado = empresaDB.getEstado();
-		this.telefone = empresaDB.getTelefone();
-		this.logoMarca = empresaDB.getLogoMarca();
-		this.filial = empresaDB.isFilial();
-		this.empresaController = empresaDB.getEmpresaController();
-		this.matriz = empresaDB.isMatriz();
-		this.status = empresaDB.getStatus();
+	private void validate() {
+		if (this.nomeFantasia.isBlank()) {
+			throw new IllegalArgumentException("Empress nomeFantasa should not be null or empty");
+		}
+
+		if (this.razaoSocial.isBlank()) {
+			throw new IllegalArgumentException("Empress razaoSocial should not be null or empty");
+		}
+
+		if (this.cnpj.isBlank()) {
+			throw new IllegalArgumentException("Empress cnpj should not be null or empty");
+		}
+	}
+
+    public static Empress withRequestDTO(EmpresaRequestDTO requestDTO) {
+		return new Empress(requestDTO);
+    }
+
+	public static Empress withResponseDTO(EmpresaResponseDTO responseDTO) {
+		return new Empress(
+			responseDTO.idempresa(),
+			responseDTO.nomeFantasia(),
+			responseDTO.razaoSocial(),
+			responseDTO.cnpj(),
+			responseDTO.inscricaoEstadual(),
+			responseDTO.bairro(),
+			responseDTO.cidade(),
+			responseDTO.endereco(),
+			responseDTO.estado(),
+			responseDTO.telefone(),
+			responseDTO.logoMarca(),
+			responseDTO.filial(),
+			responseDTO.empresaController(),
+			responseDTO.matriz(),
+			responseDTO.status()
+		);
+	}
+
+	public static Empress withEntityDB(EmpresaDB empresaDB) {
+		return new Empress(
+			empresaDB.getIdempresa(),
+			empresaDB.getNomeFantasia(),
+			empresaDB.getRazaoSocial(),
+			empresaDB.getCnpj(),
+			empresaDB.getInscricaoEstadual(),
+			empresaDB.getBairro(),
+			empresaDB.getCidade(),
+			empresaDB.getEndereco(),
+			empresaDB.getEstado(),
+			empresaDB.getTelefone(),
+			empresaDB.getLogoMarca(),
+			empresaDB.isFilial(),
+			empresaDB.getEmpresaController(),
+			empresaDB.isMatriz(),
+			empresaDB.getStatus()
+		);
 	}
 }
