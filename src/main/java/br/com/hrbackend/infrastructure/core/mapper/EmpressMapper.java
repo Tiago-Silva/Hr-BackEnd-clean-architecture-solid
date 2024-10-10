@@ -47,11 +47,11 @@ public class EmpressMapper {
     }
 
     public Empress requestDTOToDomainObject (EmpresaRequestDTO requestDTO) {
-        return new Empress(requestDTO);
+        return Empress.withRequestDTO(requestDTO);
     }
 
     public Empress responseDTOToDomainObject (EmpresaResponseDTO responseDTO) {
-        return new Empress(responseDTO);
+        return Empress.withResponseDTO(responseDTO);
     }
 
     public EmpresaDB toEmpressDB(Empress empress) {
@@ -59,6 +59,6 @@ public class EmpressMapper {
     }
 
     public Empress toEmpress(EmpresaDB empresaDB) {
-        return new Empress(empresaDB);
+        return Empress.withEntityDB(empresaDB);
     }
 }
