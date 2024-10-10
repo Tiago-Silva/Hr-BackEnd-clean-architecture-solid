@@ -125,11 +125,11 @@ public class EmployeeMapper {
     }
 
     public Employee requestDTOToDomainObject(EmployeeRequestDTO requestDTO) {
-        return new Employee(requestDTO);
+        return Employee.withRequestDTO(requestDTO);
     }
 
     public Employee responseDTOToDomainObject(EmployeeResponseDTO responseDTO) {
-        return new Employee(responseDTO);
+        return Employee.withResponseDTO(responseDTO);
     }
 
     public EmployeeDB toEmployeeDB(Employee employee) {
@@ -137,6 +137,6 @@ public class EmployeeMapper {
     }
 
     public Employee toEmployee(EmployeeDB employeeDB) {
-        return new Employee(employeeDB);
+        return Employee.withEntityDB(employeeDB);
     }
 }
