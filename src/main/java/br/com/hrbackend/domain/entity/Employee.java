@@ -11,9 +11,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "idfuncionario")
 public class Employee implements Serializable {
     @Serial
@@ -125,170 +123,543 @@ public class Employee implements Serializable {
 
     private Periodo periodo;
 
-    public Employee(EmployeeRequestDTO requestDTO) {
-        this.nome = requestDTO.nome();
-        this.sobrenome = requestDTO.sobrenome();
-        this.pis = requestDTO.pis();
-        this.cpf = requestDTO.cpf();
-        this.rg = requestDTO.rg();
-        this.expedicaoRg = new Date();
-        this.emissorRg = requestDTO.emissorRg();
-        this.ufRg = requestDTO.ufRg();
-        this.carteiraMotorista = requestDTO.carteiraMotorista();
-        this.categoriaCnh = requestDTO.categoriaCnh();
-        this.expedicaoCnh = new Date();
-        this.validadeCnh = new Date();
-        this.carteiraTrabalho = requestDTO.carteiraTrabalho();
-        this.serieCtps = requestDTO.serieCtps();
-        this.ufCtps = requestDTO.ufCtps();
-        this.tituloEleitor = requestDTO.tituloEleitor();
-        this.nascimento = new Date();
-        this.nacionalidade = requestDTO.nacionalidade();
-        this.cep = requestDTO.cep();
-        this.estado = requestDTO.estado();
-        this.bairro = requestDTO.bairro();
-        this.cidade = requestDTO.cidade();
-        this.endereco = requestDTO.endereco();
-        this.sexo = requestDTO.sexo();
-        this.estadoCivil = requestDTO.estadoCivil();
-        this.mae = requestDTO.mae();
-        this.pai = requestDTO.pai();
-        this.cracha = requestDTO.cracha();
-        this.telefone = requestDTO.telefone();
-        this.admissao = new Date();
-        this.demissao = new Date();
-        this.status = requestDTO.status();
-        this.motivoDemissao = requestDTO.motivoDemissao();
-        this.departamento = requestDTO.departamento();
-        this.cargo = requestDTO.cargo();
-        this.cargoDescricao = requestDTO.cargoDescricao();
-        this.exameAdmissional = new Date();
-        this.periodoExperiencia = requestDTO.periodoExperiencia();
-        this.primeiroEmprego = requestDTO.primeiroEmprego();
-        this.contribuicaoSocial = requestDTO.contribuicaoSocial();
-        this.idadmissao = requestDTO.idadmissao();
-        this.vinculo = requestDTO.vinculo();
-        this.salario = requestDTO.salario();
-        this.banco = requestDTO.banco();
-        this.agencia = requestDTO.agencia();
-        this.conta = requestDTO.conta();
-        this.emailGoogle = requestDTO.emailGoogle();
-        this.emailHotmail = requestDTO.emailHotmail();
-        this.localExame = requestDTO.localExame();
-        this.urlImage = requestDTO.urlImage();
-        this.empress = new Empress(requestDTO.empresa());
-        this.periodo = new Periodo(requestDTO.periodo());
+    private Employee(
+            final int idfuncionario,
+            final String nome,
+            final String sobrenome,
+            final String pis,
+            final String cpf,
+            final String rg,
+            final Date expedicaoRg,
+            final String emissorRg,
+            final String ufRg,
+            final String carteiraMotorista,
+            final String categoriaCnh,
+            final Date expedicaoCnh,
+            final Date validadeCnh,
+            final String carteiraTrabalho,
+            final String serieCtps,
+            final String ufCtps,
+            final String tituloEleitor,
+            final Date nascimento,
+            final String nacionalidade,
+            final String cep,
+            final String estado,
+            final String bairro,
+            final String cidade,
+            final String endereco,
+            final String sexo,
+            final String estadoCivil,
+            final String mae,
+            final String pai,
+            final String cracha,
+            final String telefone,
+            final Date admissao,
+            final Date demissao,
+            final String status,
+            final String motivoDemissao,
+            final String departamento,
+            final String cargo,
+            final String cargoDescricao,
+            final Date exameAdmissional,
+            final String periodoExperiencia,
+            final String primeiroEmprego,
+            final String contribuicaoSocial,
+            final int idadmissao,
+            final String vinculo,
+            final BigDecimal salario,
+            final String banco,
+            final String agencia,
+            final String conta,
+            final String emailGoogle,
+            final String emailHotmail,
+            final String localExame,
+            final String urlImage,
+            final Empress empress,
+            final Periodo periodo
+    ) {
+        this.idfuncionario = idfuncionario;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.pis = pis;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.expedicaoRg = expedicaoRg;
+        this.emissorRg = emissorRg;
+        this.ufRg = ufRg;
+        this.carteiraMotorista = carteiraMotorista;
+        this.categoriaCnh = categoriaCnh;
+        this.expedicaoCnh = expedicaoCnh;
+        this.validadeCnh = validadeCnh;
+        this.carteiraTrabalho = carteiraTrabalho;
+        this.serieCtps = serieCtps;
+        this.ufCtps = ufCtps;
+        this.tituloEleitor = tituloEleitor;
+        this.nascimento = nascimento;
+        this.nacionalidade = nacionalidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.endereco = endereco;
+        this.sexo = sexo;
+        this.estadoCivil = estadoCivil;
+        this.mae = mae;
+        this.pai = pai;
+        this.cracha = cracha;
+        this.telefone = telefone;
+        this.admissao = admissao;
+        this.demissao = demissao;
+        this.status = status;
+        this.motivoDemissao = motivoDemissao;
+        this.departamento = departamento;
+        this.cargo = cargo;
+        this.cargoDescricao = cargoDescricao;
+        this.exameAdmissional = exameAdmissional;
+        this.periodoExperiencia = periodoExperiencia;
+        this.primeiroEmprego = primeiroEmprego;
+        this.contribuicaoSocial = contribuicaoSocial;
+        this.idadmissao = idadmissao;
+        this.vinculo = vinculo;
+        this.salario = salario;
+        this.banco = banco;
+        this.agencia = agencia;
+        this.conta = conta;
+        this.emailGoogle = emailGoogle;
+        this.emailHotmail = emailHotmail;
+        this.localExame = localExame;
+        this.urlImage = urlImage;
+        this.empress = empress;
+        this.periodo = periodo;
+        this.validate();
     }
 
-    public Employee(EmployeeResponseDTO responseDTO) {
-        this.idfuncionario = responseDTO.idfuncionario();
-        this.nome = responseDTO.nome();
-        this.sobrenome = responseDTO.sobrenome();
-        this.pis = responseDTO.pis();
-        this.cpf = responseDTO.cpf();
-        this.rg = responseDTO.rg();
-        this.expedicaoRg = new Date();
-        this.emissorRg = responseDTO.emissorRg();
-        this.ufRg = responseDTO.ufRg();
-        this.carteiraMotorista = responseDTO.carteiraMotorista();
-        this.categoriaCnh = responseDTO.categoriaCnh();
-        this.expedicaoCnh = new Date();
-        this.validadeCnh = new Date();
-        this.carteiraTrabalho = responseDTO.carteiraTrabalho();
-        this.serieCtps = responseDTO.serieCtps();
-        this.ufCtps = responseDTO.ufCtps();
-        this.tituloEleitor = responseDTO.tituloEleitor();
-        this.nascimento = new Date();
-        this.nacionalidade = responseDTO.nacionalidade();
-        this.cep = responseDTO.cep();
-        this.estado = responseDTO.estado();
-        this.bairro = responseDTO.bairro();
-        this.cidade = responseDTO.cidade();
-        this.endereco = responseDTO.endereco();
-        this.sexo = responseDTO.sexo();
-        this.estadoCivil = responseDTO.estadoCivil();
-        this.mae = responseDTO.mae();
-        this.pai = responseDTO.pai();
-        this.cracha = responseDTO.cracha();
-        this.telefone = responseDTO.telefone();
-        this.admissao = new Date();
-        this.demissao = new Date();
-        this.status = responseDTO.status();
-        this.motivoDemissao = responseDTO.motivoDemissao();
-        this.departamento = responseDTO.departamento();
-        this.cargo = responseDTO.cargo();
-        this.cargoDescricao = responseDTO.cargoDescricao();
-        this.exameAdmissional = new Date();
-        this.periodoExperiencia = responseDTO.periodoExperiencia();
-        this.primeiroEmprego = responseDTO.primeiroEmprego();
-        this.contribuicaoSocial = responseDTO.contribuicaoSocial();
-        this.idadmissao = responseDTO.idadmissao();
-        this.vinculo = responseDTO.vinculo();
-        this.salario = responseDTO.salario();
-        this.banco = responseDTO.banco();
-        this.agencia = responseDTO.agencia();
-        this.conta = responseDTO.conta();
-        this.emailGoogle = responseDTO.emailGoogle();
-        this.emailHotmail = responseDTO.emailHotmail();
-        this.localExame = responseDTO.localExame();
-        this.urlImage = responseDTO.urlImage();
-        this.empress = new Empress(responseDTO.empresa());
-        this.periodo = new Periodo(responseDTO.periodo());
+    private Employee(
+            final String nome,
+            final String sobrenome,
+            final String pis,
+            final String cpf,
+            final String rg,
+            final Date expedicaoRg,
+            final String emissorRg,
+            final String ufRg,
+            final String carteiraMotorista,
+            final String categoriaCnh,
+            final Date expedicaoCnh,
+            final Date validadeCnh,
+            final String carteiraTrabalho,
+            final String serieCtps,
+            final String ufCtps,
+            final String tituloEleitor,
+            final Date nascimento,
+            final String nacionalidade,
+            final String cep,
+            final String estado,
+            final String bairro,
+            final String cidade,
+            final String endereco,
+            final String sexo,
+            final String estadoCivil,
+            final String mae,
+            final String pai,
+            final String cracha,
+            final String telefone,
+            final Date admissao,
+            final Date demissao,
+            final String status,
+            final String motivoDemissao,
+            final String departamento,
+            final String cargo,
+            final String cargoDescricao,
+            final Date exameAdmissional,
+            final String periodoExperiencia,
+            final String primeiroEmprego,
+            final String contribuicaoSocial,
+            final int idadmissao,
+            final String vinculo,
+            final BigDecimal salario,
+            final String banco,
+            final String agencia,
+            final String conta,
+            final String emailGoogle,
+            final String emailHotmail,
+            final String localExame,
+            final String urlImage,
+            final Empress empress,
+            final Periodo periodo
+    ) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.pis = pis;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.expedicaoRg = expedicaoRg;
+        this.emissorRg = emissorRg;
+        this.ufRg = ufRg;
+        this.carteiraMotorista = carteiraMotorista;
+        this.categoriaCnh = categoriaCnh;
+        this.expedicaoCnh = expedicaoCnh;
+        this.validadeCnh = validadeCnh;
+        this.carteiraTrabalho = carteiraTrabalho;
+        this.serieCtps = serieCtps;
+        this.ufCtps = ufCtps;
+        this.tituloEleitor = tituloEleitor;
+        this.nascimento = nascimento;
+        this.nacionalidade = nacionalidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.endereco = endereco;
+        this.sexo = sexo;
+        this.estadoCivil = estadoCivil;
+        this.mae = mae;
+        this.pai = pai;
+        this.cracha = cracha;
+        this.telefone = telefone;
+        this.admissao = admissao;
+        this.demissao = demissao;
+        this.status = status;
+        this.motivoDemissao = motivoDemissao;
+        this.departamento = departamento;
+        this.cargo = cargo;
+        this.cargoDescricao = cargoDescricao;
+        this.exameAdmissional = exameAdmissional;
+        this.periodoExperiencia = periodoExperiencia;
+        this.primeiroEmprego = primeiroEmprego;
+        this.contribuicaoSocial = contribuicaoSocial;
+        this.idadmissao = idadmissao;
+        this.vinculo = vinculo;
+        this.salario = salario;
+        this.banco = banco;
+        this.agencia = agencia;
+        this.conta = conta;
+        this.emailGoogle = emailGoogle;
+        this.emailHotmail = emailHotmail;
+        this.localExame = localExame;
+        this.urlImage = urlImage;
+        this.empress = empress;
+        this.periodo = periodo;
+        this.validate();
     }
 
-    public Employee(EmployeeDB employeeDB) {
-        this.idfuncionario = employeeDB.getIdfuncionario();
-        this.nome = employeeDB.getNome();
-        this.sobrenome = employeeDB.getSobrenome();
-        this.pis = employeeDB.getPis();
-        this.cpf = employeeDB.getCpf();
-        this.rg = employeeDB.getRg();
-        this.expedicaoRg = employeeDB.getExpedicaoRg();
-        this.emissorRg = employeeDB.getEmissorRg();
-        this.ufRg = employeeDB.getUfRg();
-        this.carteiraMotorista = employeeDB.getCarteiraMotorista();
-        this.categoriaCnh = employeeDB.getCategoriaCnh();
-        this.expedicaoCnh = employeeDB.getExpedicaoCnh();
-        this.validadeCnh = employeeDB.getValidadeCnh();
-        this.carteiraTrabalho = employeeDB.getCarteiraTrabalho();
-        this.serieCtps = employeeDB.getSerieCtps();
-        this.ufCtps = employeeDB.getUfCtps();
-        this.tituloEleitor = employeeDB.getTituloEleitor();
-        this.nascimento = employeeDB.getNascimento();
-        this.nacionalidade = employeeDB.getNacionalidade();
-        this.cep = employeeDB.getCep();
-        this.estado = employeeDB.getEstado();
-        this.bairro = employeeDB.getBairro();
-        this.cidade = employeeDB.getCidade();
-        this.endereco = employeeDB.getEndereco();
-        this.sexo = employeeDB.getSexo();
-        this.estadoCivil = employeeDB.getEstadoCivil();
-        this.mae = employeeDB.getMae();
-        this.pai = employeeDB.getPai();
-        this.cracha = employeeDB.getCracha();
-        this.telefone = employeeDB.getTelefone();
-        this.admissao = employeeDB.getAdmissao();
-        this.demissao = employeeDB.getDemissao();
-        this.status = employeeDB.getStatus();
-        this.motivoDemissao = employeeDB.getMotivoDemissao();
-        this.departamento = employeeDB.getDepartamento();
-        this.cargo = employeeDB.getCargo();
-        this.cargoDescricao = employeeDB.getCargoDescricao();
-        this.exameAdmissional = employeeDB.getExameAdmissional();
-        this.periodoExperiencia = employeeDB.getPeriodoExperiencia();
-        this.primeiroEmprego = employeeDB.getPrimeiroEmprego();
-        this.contribuicaoSocial = employeeDB.getContribuicaoSocial();
-        this.idadmissao = employeeDB.getIdadmissao();
-        this.vinculo = employeeDB.getVinculo();
-        this.salario = employeeDB.getSalario();
-        this.banco = employeeDB.getBanco();
-        this.agencia = employeeDB.getAgencia();
-        this.conta = employeeDB.getConta();
-        this.emailGoogle = employeeDB.getEmailGoogle();
-        this.emailHotmail = employeeDB.getEmailHotmail();
-        this.localExame = employeeDB.getLocalExame();
-        this.urlImage = employeeDB.getUrlImage();
-        this.empress = new Empress(employeeDB.getEmpresa());
-        this.periodo = new Periodo(employeeDB.getPeriodo());
+    private void validate() {
+        if (this.nome == null || this.nome.isBlank()) {
+            throw new IllegalArgumentException("Employee nome should not be null or empty");
+        }
+        if (this.sobrenome == null || this.sobrenome.isBlank()) {
+            throw new IllegalArgumentException("Employee sobrenome should not be null or empty");
+        }
+        if (this.pis == null || this.pis.isBlank()) {
+            throw new IllegalArgumentException("Employee pis should not be null or empty");
+        }
+        if (this.cpf == null || this.cpf.isBlank()) {
+            throw new IllegalArgumentException("Employee cpf should not be null or empty");
+        }
+        if (this.rg == null || this.rg.isBlank()) {
+            throw new IllegalArgumentException("Employee rg should not be null or empty");
+        }
+        if (this.expedicaoRg == null) {
+            throw new IllegalArgumentException("Employee expedicaoRg should not be null");
+        }
+        if (this.emissorRg == null || this.emissorRg.isBlank()) {
+            throw new IllegalArgumentException("Employee emissorRg should not be null or empty");
+        }
+        if (this.ufRg == null || this.ufRg.isBlank()) {
+            throw new IllegalArgumentException("Employee ufRg should not be null or empty");
+        }
+        if (this.carteiraMotorista == null || this.carteiraMotorista.isBlank()) {
+            throw new IllegalArgumentException("Employee carteiraMotorista should not be null or empty");
+        }
+        if (this.categoriaCnh == null || this.categoriaCnh.isBlank()) {
+            throw new IllegalArgumentException("Employee categoriaCnh should not be null or empty");
+        }
+        if (this.expedicaoCnh == null) {
+            throw new IllegalArgumentException("Employee expedicaoCnh should not be null");
+        }
+        if (this.validadeCnh == null) {
+            throw new IllegalArgumentException("Employee validadeCnh should not be null");
+        }
+        if (this.carteiraTrabalho == null || this.carteiraTrabalho.isBlank()) {
+            throw new IllegalArgumentException("Employee carteiraTrabalho should not be null or empty");
+        }
+        if (this.serieCtps == null || this.serieCtps.isBlank()) {
+            throw new IllegalArgumentException("Employee serieCtps should not be null or empty");
+        }
+        if (this.ufCtps == null || this.ufCtps.isBlank()) {
+            throw new IllegalArgumentException("Employee ufCtps should not be null or empty");
+        }
+        if (this.tituloEleitor == null || this.tituloEleitor.isBlank()) {
+            throw new IllegalArgumentException("Employee tituloEleitor should not be null or empty");
+        }
+        if (this.nascimento == null) {
+            throw new IllegalArgumentException("Employee nascimento should not be null");
+        }
+        if (this.nacionalidade == null || this.nacionalidade.isBlank()) {
+            throw new IllegalArgumentException("Employee nacionalidade should not be null or empty");
+        }
+        if (this.cep == null || this.cep.isBlank()) {
+            throw new IllegalArgumentException("Employee cep should not be null or empty");
+        }
+        if (this.estado == null || this.estado.isBlank()) {
+            throw new IllegalArgumentException("Employee estado should not be null or empty");
+        }
+        if (this.bairro == null || this.bairro.isBlank()) {
+            throw new IllegalArgumentException("Employee bairro should not be null or empty");
+        }
+        if (this.cidade == null || this.cidade.isBlank()) {
+            throw new IllegalArgumentException("Employee cidade should not be null or empty");
+        }
+        if (this.endereco == null || this.endereco.isBlank()) {
+            throw new IllegalArgumentException("Employee endereco should not be null or empty");
+        }
+        if (this.sexo == null || this.sexo.isBlank()) {
+            throw new IllegalArgumentException("Employee sexo should not be null or empty");
+        }
+        if (this.estadoCivil == null || this.estadoCivil.isBlank()) {
+            throw new IllegalArgumentException("Employee estadoCivil should not be null or empty");
+        }
+        if (this.mae == null || this.mae.isBlank()) {
+            throw new IllegalArgumentException("Employee mae should not be null or empty");
+        }
+        if (this.pai == null || this.pai.isBlank()) {
+            throw new IllegalArgumentException("Employee pai should not be null or empty");
+        }
+        if (this.cracha == null || this.cracha.isBlank()) {
+            throw new IllegalArgumentException("Employee cracha should not be null or empty");
+        }
+        if (this.telefone == null || this.telefone.isBlank()) {
+            throw new IllegalArgumentException("Employee telefone should not be null or empty");
+        }
+        if (this.admissao == null) {
+            throw new IllegalArgumentException("Employee admissao should not be null");
+        }
+        if (this.status == null || this.status.isBlank()) {
+            throw new IllegalArgumentException("Employee status should not be null or empty");
+        }
+        if (this.departamento == null || this.departamento.isBlank()) {
+            throw new IllegalArgumentException("Employee departamento should not be null or empty");
+        }
+        if (this.cargo == null || this.cargo.isBlank()) {
+            throw new IllegalArgumentException("Employee cargo should not be null or empty");
+        }
+        if (this.cargoDescricao == null || this.cargoDescricao.isBlank()) {
+            throw new IllegalArgumentException("Employee cargoDescricao should not be null or empty");
+        }
+        if (this.periodoExperiencia == null || this.periodoExperiencia.isBlank()) {
+            throw new IllegalArgumentException("Employee periodoExperiencia should not be null or empty");
+        }
+        if (this.primeiroEmprego == null || this.primeiroEmprego.isBlank()) {
+            throw new IllegalArgumentException("Employee primeiroEmprego should not be null or empty");
+        }
+        if (this.contribuicaoSocial == null || this.contribuicaoSocial.isBlank()) {
+            throw new IllegalArgumentException("Employee contribuicaoSocial should not be null or empty");
+        }
+        if (this.vinculo == null || this.vinculo.isBlank()) {
+            throw new IllegalArgumentException("Employee vinculo should not be null or empty");
+        }
+        if (this.salario == null) {
+            throw new IllegalArgumentException("Employee salario should not be null");
+        }
+        if (this.banco == null || this.banco.isBlank()) {
+            throw new IllegalArgumentException("Employee banco should not be null or empty");
+        }
+        if (this.agencia == null || this.agencia.isBlank()) {
+            throw new IllegalArgumentException("Employee agencia should not be null or empty");
+        }
+        if (this.conta == null || this.conta.isBlank()) {
+            throw new IllegalArgumentException("Employee conta should not be null or empty");
+        }
+        if (this.emailGoogle == null || this.emailGoogle.isBlank()) {
+            throw new IllegalArgumentException("Employee emailGoogle should not be null or empty");
+        }
+        if (this.emailHotmail == null || this.emailHotmail.isBlank()) {
+            throw new IllegalArgumentException("Employee emailHotmail should not be null or empty");
+        }
+        if (this.localExame == null || this.localExame.isBlank()) {
+            throw new IllegalArgumentException("Employee localExame should not be null or empty");
+        }
+        if (this.urlImage == null || this.urlImage.isBlank()) {
+            throw new IllegalArgumentException("Employee urlImage should not be null or empty");
+        }
+        if (this.empress == null) {
+            throw new IllegalArgumentException("Employee empress should not be null");
+        }
+        if (this.periodo == null) {
+            throw new IllegalArgumentException("Employee periodo should not be null");
+        }
+    }
+
+    public static Employee withRequestDTO(EmployeeRequestDTO requestDTO) {
+        return new Employee(
+                requestDTO.nome(),
+                requestDTO.sobrenome(),
+                requestDTO.pis(),
+                requestDTO.cpf(),
+                requestDTO.rg(),
+                new Date(),
+                requestDTO.emissorRg(),
+                requestDTO.ufRg(),
+                requestDTO.carteiraMotorista(),
+                requestDTO.categoriaCnh(),
+                new Date(),
+                new Date(),
+                requestDTO.carteiraTrabalho(),
+                requestDTO.serieCtps(),
+                requestDTO.ufCtps(),
+                requestDTO.tituloEleitor(),
+                new Date(),
+                requestDTO.nacionalidade(),
+                requestDTO.cep(),
+                requestDTO.estado(),
+                requestDTO.bairro(),
+                requestDTO.cidade(),
+                requestDTO.endereco(),
+                requestDTO.sexo(),
+                requestDTO.estadoCivil(),
+                requestDTO.mae(),
+                requestDTO.pai(),
+                requestDTO.cracha(),
+                requestDTO.telefone(),
+                new Date(),
+                new Date(),
+                requestDTO.status(),
+                requestDTO.motivoDemissao(),
+                requestDTO.departamento(),
+                requestDTO.cargo(),
+                requestDTO.cargoDescricao(),
+                new Date(),
+                requestDTO.periodoExperiencia(),
+                requestDTO.primeiroEmprego(),
+                requestDTO.contribuicaoSocial(),
+                requestDTO.idadmissao(),
+                requestDTO.vinculo(),
+                requestDTO.salario(),
+                requestDTO.banco(),
+                requestDTO.agencia(),
+                requestDTO.conta(),
+                requestDTO.emailGoogle(),
+                requestDTO.emailHotmail(),
+                requestDTO.localExame(),
+                requestDTO.urlImage(),
+                Empress.withResponseDTO(requestDTO.empresa()),
+                new Periodo(requestDTO.periodo())
+        );
+    }
+
+    public static Employee withResponseDTO(EmployeeResponseDTO responseDTO) {
+        return new Employee(
+                responseDTO.idfuncionario(),
+                responseDTO.nome(),
+                responseDTO.sobrenome(),
+                responseDTO.pis(),
+                responseDTO.cpf(),
+                responseDTO.rg(),
+                new Date(),
+                responseDTO.emissorRg(),
+                responseDTO.ufRg(),
+                responseDTO.carteiraMotorista(),
+                responseDTO.categoriaCnh(),
+                new Date(),
+                new Date(),
+                responseDTO.carteiraTrabalho(),
+                responseDTO.serieCtps(),
+                responseDTO.ufCtps(),
+                responseDTO.tituloEleitor(),
+                new Date(),
+                responseDTO.nacionalidade(),
+                responseDTO.cep(),
+                responseDTO.estado(),
+                responseDTO.bairro(),
+                responseDTO.cidade(),
+                responseDTO.endereco(),
+                responseDTO.sexo(),
+                responseDTO.estadoCivil(),
+                responseDTO.mae(),
+                responseDTO.pai(),
+                responseDTO.cracha(),
+                responseDTO.telefone(),
+                new Date(),
+                new Date(),
+                responseDTO.status(),
+                responseDTO.motivoDemissao(),
+                responseDTO.departamento(),
+                responseDTO.cargo(),
+                responseDTO.cargoDescricao(),
+                new Date(),
+                responseDTO.periodoExperiencia(),
+                responseDTO.primeiroEmprego(),
+                responseDTO.contribuicaoSocial(),
+                responseDTO.idadmissao(),
+                responseDTO.vinculo(),
+                responseDTO.salario(),
+                responseDTO.banco(),
+                responseDTO.agencia(),
+                responseDTO.conta(),
+                responseDTO.emailGoogle(),
+                responseDTO.emailHotmail(),
+                responseDTO.localExame(),
+                responseDTO.urlImage(),
+                Empress.withResponseDTO(responseDTO.empresa()),
+                new Periodo(responseDTO.periodo())
+        );
+    }
+
+    public static Employee withEntityDB(EmployeeDB employeeDB) {
+        return new Employee(
+                employeeDB.getIdfuncionario(),
+                employeeDB.getNome(),
+                employeeDB.getSobrenome(),
+                employeeDB.getPis(),
+                employeeDB.getCpf(),
+                employeeDB.getRg(),
+                employeeDB.getExpedicaoRg(),
+                employeeDB.getEmissorRg(),
+                employeeDB.getUfRg(),
+                employeeDB.getCarteiraMotorista(),
+                employeeDB.getCategoriaCnh(),
+                employeeDB.getExpedicaoCnh(),
+                employeeDB.getValidadeCnh(),
+                employeeDB.getCarteiraTrabalho(),
+                employeeDB.getSerieCtps(),
+                employeeDB.getUfCtps(),
+                employeeDB.getTituloEleitor(),
+                employeeDB.getNascimento(),
+                employeeDB.getNacionalidade(),
+                employeeDB.getCep(),
+                employeeDB.getEstado(),
+                employeeDB.getBairro(),
+                employeeDB.getCidade(),
+                employeeDB.getEndereco(),
+                employeeDB.getSexo(),
+                employeeDB.getEstadoCivil(),
+                employeeDB.getMae(),
+                employeeDB.getPai(),
+                employeeDB.getCracha(),
+                employeeDB.getTelefone(),
+                employeeDB.getAdmissao(),
+                employeeDB.getDemissao(),
+                employeeDB.getStatus(),
+                employeeDB.getMotivoDemissao(),
+                employeeDB.getDepartamento(),
+                employeeDB.getCargo(),
+                employeeDB.getCargoDescricao(),
+                employeeDB.getExameAdmissional(),
+                employeeDB.getPeriodoExperiencia(),
+                employeeDB.getPrimeiroEmprego(),
+                employeeDB.getContribuicaoSocial(),
+                employeeDB.getIdadmissao(),
+                employeeDB.getVinculo(),
+                employeeDB.getSalario(),
+                employeeDB.getBanco(),
+                employeeDB.getAgencia(),
+                employeeDB.getConta(),
+                employeeDB.getEmailGoogle(),
+                employeeDB.getEmailHotmail(),
+                employeeDB.getLocalExame(),
+                employeeDB.getUrlImage(),
+                Empress.withEntityDB(employeeDB.getEmpresa()),
+                new Periodo(employeeDB.getPeriodo())
+        );
     }
 }
