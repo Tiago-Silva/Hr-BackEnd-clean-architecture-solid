@@ -16,6 +16,6 @@ public class GetEmpressByIdUseCase implements UseCase<Integer, Empress> {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.empressGateway.getEmpressById(id);
+        return this.empressGateway.getId(id);
     }
 }

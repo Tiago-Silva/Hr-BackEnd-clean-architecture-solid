@@ -21,6 +21,6 @@ public class CreateEmpressUseCase implements UseCase<Empress, Empress> {
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.empressGateway.createEmpress(empress);
+        return this.empressGateway.save(empress);
     }
 }

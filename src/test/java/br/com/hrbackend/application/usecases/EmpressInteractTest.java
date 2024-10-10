@@ -33,7 +33,7 @@ class EmpressInteractTest {
 
         createEmpressUseCase.execute(empress);
 
-        Mockito.verify(empressGateway, times(1)).createEmpress(empress);
+        Mockito.verify(empressGateway, times(1)).save(empress);
     }
 
     @Test
@@ -44,7 +44,7 @@ class EmpressInteractTest {
 
         updateEmpressUseCase.execute(empress);
 
-        Mockito.verify(empressGateway, times(1)).updateEmpress(empress);
+        Mockito.verify(empressGateway, times(1)).update(empress);
     }
 
     @Test
@@ -55,7 +55,7 @@ class EmpressInteractTest {
 
         deleteEmpressUseCase.execute(empress);
 
-        Mockito.verify(empressGateway, times(1)).deleteEmpress(empress);
+        Mockito.verify(empressGateway, times(1)).delete(empress);
     }
 
     @Test
@@ -64,12 +64,12 @@ class EmpressInteractTest {
         GetEmpressByIdUseCase getEmpressByIdUseCase = new GetEmpressByIdUseCase(empressGateway);
 
         Empress empress = this.createEmpress();
-        Mockito.when(empressGateway.getEmpressById(1)).thenReturn(empress);
+        Mockito.when(empressGateway.getId(1)).thenReturn(empress);
 
         Empress result = getEmpressByIdUseCase.execute(1);
 
         assertEquals(empress, result);
-        Mockito.verify(empressGateway, times(1)).getEmpressById(1);
+        Mockito.verify(empressGateway, times(1)).getId(1);
     }
 
     @Test

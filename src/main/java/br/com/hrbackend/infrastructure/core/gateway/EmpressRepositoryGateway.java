@@ -17,25 +17,24 @@ public class EmpressRepositoryGateway implements EmpressGateway {
     }
 
     @Override
-    public Empress createEmpress(Empress empressDomain) {
+    public Empress save(Empress empressDomain) {
         this.repository.save(this.mapper.toEmpressDB(empressDomain));
         return empressDomain;
     }
 
     @Override
-    public Empress updateEmpress(Empress empressDomain) {
+    public Empress update(Empress empressDomain) {
         this.repository.update(this.mapper.toEmpressDB(empressDomain));
         return empressDomain;
     }
 
     @Override
-    public Empress deleteEmpress(Empress empressDomain) {
+    public void delete(Empress empressDomain) {
         this.repository.delete(this.mapper.toEmpressDB(empressDomain));
-        return empressDomain;
     }
 
     @Override
-    public Empress getEmpressById(int id) {
+    public Empress getId(int id) {
         return this.mapper.toEmpress(this.repository.getEmpressById(id));
     }
 

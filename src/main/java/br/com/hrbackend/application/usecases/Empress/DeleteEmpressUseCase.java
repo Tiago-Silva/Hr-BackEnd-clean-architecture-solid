@@ -16,6 +16,6 @@ public class DeleteEmpressUseCase implements UseCase<Empress, Empress> {
         if (empress == null || empress.getIdempresa() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.empressGateway.deleteEmpress(empress);
+        return this.empressGateway.delete(empress);
     }
 }

@@ -16,6 +16,6 @@ public class UpdateEmpressUseCase implements UseCase<Empress, Empress> {
         if (empress == null || empress.getIdempresa() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.empressGateway.updateEmpress(empress);
+        return this.empressGateway.update(empress);
     }
 }
