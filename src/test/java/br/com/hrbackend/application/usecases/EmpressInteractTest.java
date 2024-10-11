@@ -3,6 +3,7 @@ package br.com.hrbackend.application.usecases;
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.Empress.*;
 import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -15,12 +16,24 @@ import static org.mockito.Mockito.times;
 class EmpressInteractTest {
 
     private Empress createEmpress() {
-        Empress empress = new Empress();
-        empress.setIdempresa(1);
-        empress.setCnpj("12345678901234");
-        empress.setRazaoSocial("Razao Social");
-        empress.setNomeFantasia("Nome Fantasia");
-        return empress;
+        return Empress.withRequestDTO(
+                new EmpresaRequestDTO(
+                        "Nome Fantasia",       // nomeFantasia
+                        "Razao Social",        // razaoSocial
+                        "12345678000195",      // cnpj
+                        "123456789",           // inscricaoEstadual
+                        "Bairro",              // bairro
+                        "Cidade",              // cidade
+                        "Endereco",            // endereco
+                        "Estado",              // estado
+                        "1234567890",          // telefone
+                        "Logo Marca",          // logoMarca
+                        true,                  // filial
+                        1,                     // empresaController
+                        false,                 // matriz
+                        "Ativo"                // status
+                )
+        );
     }
 
     @Test
