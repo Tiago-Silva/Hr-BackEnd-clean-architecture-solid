@@ -15,22 +15,24 @@ public class PeriodRepositoryGateway implements PeriodGateway {
     }
 
     @Override
-    public void createPeriod(Periodo periodo) {
+    public Periodo save(Periodo periodo) {
         this.repository.save(this.mapper.toPeriodDB(periodo));
+        return periodo;
     }
 
     @Override
-    public void updatePeriod(Periodo periodo) {
+    public Periodo update(Periodo periodo) {
         this.repository.save(this.mapper.toPeriodDB(periodo));
+        return periodo;
     }
 
     @Override
-    public void deletePeriod(Periodo periodo) {
+    public void delete(Periodo periodo) {
         this.repository.delete(this.mapper.toPeriodDB(periodo));
     }
 
     @Override
-    public Periodo getPeriodById(int id) {
+    public Periodo getId(int id) {
         return this.mapper.toPeriod(this.repository.findByIdperiodo(id));
     }
 }
