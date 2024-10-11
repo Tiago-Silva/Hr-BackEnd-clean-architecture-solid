@@ -23,27 +23,27 @@ public class UserInteract {
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.userGateway.createUser(usuario);
+        this.userGateway.save(usuario);
     }
 
     public void updateUser(Usuario usuario) {
         if (usuario == null || usuario.getIdusuario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.userGateway.updateUser(usuario);
+        this.userGateway.update(usuario);
     }
 
     public void deleteUser(Usuario usuario) {
         if (usuario == null || usuario.getIdusuario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.userGateway.deleteUser(usuario);
+        this.userGateway.delete(usuario);
     }
 
     public Usuario getUserById(int id) {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.userGateway.getUserById(id);
+        return this.userGateway.getId(id);
     }
 }
