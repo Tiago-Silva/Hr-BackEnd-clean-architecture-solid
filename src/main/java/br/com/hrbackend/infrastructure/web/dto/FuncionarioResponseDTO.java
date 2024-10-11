@@ -55,6 +55,6 @@ public record FuncionarioResponseDTO(
         String emailHotmail,
         String localExame,
         String urlImage,
-        EmpresaResponseDTO empresa,
+        EmpressResponseDTO empresa,
         PeriodoResponseDTO periodo
 ) { }

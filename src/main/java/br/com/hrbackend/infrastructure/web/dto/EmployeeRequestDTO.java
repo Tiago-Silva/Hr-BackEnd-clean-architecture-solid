@@ -53,7 +53,7 @@ public record EmployeeRequestDTO(
         String emailHotmail,
         String localExame,
         String urlImage,
-        EmpresaResponseDTO empresa,
+        EmpressResponseDTO empresa,
         PeriodResponseDTO periodo
 ) {
 }

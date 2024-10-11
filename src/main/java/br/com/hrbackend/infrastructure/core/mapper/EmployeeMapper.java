@@ -4,12 +4,12 @@ import br.com.hrbackend.domain.entity.Employee;
 import br.com.hrbackend.infrastructure.data.entityDB.EmployeeDB;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeResponseDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
 
 public class EmployeeMapper {
 
-    public EmployeeRequestDTO domainObjectToRequestDTO(Employee employee, EmpresaResponseDTO empress, PeriodResponseDTO period) {
+    public EmployeeRequestDTO domainObjectToRequestDTO(Employee employee, EmpressResponseDTO empress, PeriodResponseDTO period) {
         return new EmployeeRequestDTO(
                 employee.getNome(),
                 employee.getSobrenome(),
@@ -66,7 +66,7 @@ public class EmployeeMapper {
         );
     }
 
-    public EmployeeResponseDTO domainObjectToResponseDTO(Employee employee, EmpresaResponseDTO empress, PeriodResponseDTO period) {
+    public EmployeeResponseDTO domainObjectToResponseDTO(Employee employee, EmpressResponseDTO empress, PeriodResponseDTO period) {
         return new EmployeeResponseDTO(
                 employee.getIdfuncionario(),
                 employee.getNome(),

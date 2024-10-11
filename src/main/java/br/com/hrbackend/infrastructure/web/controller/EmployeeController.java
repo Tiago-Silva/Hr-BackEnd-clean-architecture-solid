@@ -10,7 +10,7 @@ import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
 import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeResponseDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -60,14 +60,14 @@ public class EmployeeController {
     @GetMapping("/id/{employeeId}")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById (@PathVariable("employeeId") int employeeID) {
         Employee employee = this.getEmployeeByIdUseCase.execute(employeeID);
-        EmpresaResponseDTO empresaResponseDTO = this.empressMapper.domainObjecToResponseDTO(employee.getEmpress());
+        EmpressResponseDTO empressResponseDTO = this.empressMapper.domainObjecToResponseDTO(employee.getEmpress());
         return ResponseEntity.ok(
                 this.mapper.domainObjectToResponseDTO(
                         employee,
-                        empresaResponseDTO,
+                        empressResponseDTO,
                         this.periodMapper.domainObjectToResponseDTO(
                                 employee.getPeriodo(),
-                                empresaResponseDTO
+                                empressResponseDTO
                         )
                 )
         );

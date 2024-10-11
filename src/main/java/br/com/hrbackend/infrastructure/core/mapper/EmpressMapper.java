@@ -2,13 +2,13 @@ package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.Empress;
 import br.com.hrbackend.infrastructure.data.entityDB.EmpresaDB;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 
 public class EmpressMapper {
 
-    public EmpresaRequestDTO domainObjectToRequestDTO(Empress empress) {
-        return new EmpresaRequestDTO(
+    public EmpressRequestDTO domainObjectToRequestDTO(Empress empress) {
+        return new EmpressRequestDTO(
                 empress.getNomeFantasia(),
                 empress.getRazaoSocial(),
                 empress.getCnpj(),
@@ -26,8 +26,8 @@ public class EmpressMapper {
         );
     }
 
-    public EmpresaResponseDTO domainObjecToResponseDTO (Empress empress) {
-        return new EmpresaResponseDTO(
+    public EmpressResponseDTO domainObjecToResponseDTO (Empress empress) {
+        return new EmpressResponseDTO(
                 empress.getIdempresa(),
                 empress.getNomeFantasia(),
                 empress.getRazaoSocial(),
@@ -46,11 +46,11 @@ public class EmpressMapper {
         );
     }
 
-    public Empress requestDTOToDomainObject (EmpresaRequestDTO requestDTO) {
+    public Empress requestDTOToDomainObject (EmpressRequestDTO requestDTO) {
         return Empress.withRequestDTO(requestDTO);
     }
 
-    public Empress responseDTOToDomainObject (EmpresaResponseDTO responseDTO) {
+    public Empress responseDTOToDomainObject (EmpressResponseDTO responseDTO) {
         return Empress.withResponseDTO(responseDTO);
     }
 

@@ -54,7 +54,7 @@ public record FuncionarioRequestDTO(
         String emailHotmail,
         String localExame,
         String urlImage,
-        EmpresaResponseDTO empresa,
+        EmpressResponseDTO empresa,
         PeriodoResponseDTO periodo
 ) {
 }

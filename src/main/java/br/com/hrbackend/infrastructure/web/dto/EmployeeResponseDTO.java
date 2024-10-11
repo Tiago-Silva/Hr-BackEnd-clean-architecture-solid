@@ -54,7 +54,7 @@ public record EmployeeResponseDTO(
         String emailHotmail,
         String localExame,
         String urlImage,
-        EmpresaResponseDTO empresa,
+        EmpressResponseDTO empresa,
         PeriodResponseDTO periodo
 ) {
 }

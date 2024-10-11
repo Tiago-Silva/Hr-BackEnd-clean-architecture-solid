@@ -3,7 +3,7 @@ package br.com.hrbackend.application.usecases;
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.Empress.*;
 import br.com.hrbackend.domain.entity.Empress;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressRequestDTO;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -17,7 +17,7 @@ class EmpressInteractTest {
 
     private Empress createEmpress() {
         return Empress.withRequestDTO(
-                new EmpresaRequestDTO(
+                new EmpressRequestDTO(
                         "Nome Fantasia",       // nomeFantasia
                         "Razao Social",        // razaoSocial
                         "12345678000195",      // cnpj

@@ -1,8 +1,8 @@
 package br.com.hrbackend.domain.entity;
 
 import br.com.hrbackend.infrastructure.data.entityDB.EmpresaDB;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaRequestDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpresaResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 import lombok.*;
 
 import java.io.Serial;
@@ -80,7 +80,7 @@ public class Empress implements Serializable {
 		this.validate();
 	}
 
-	private Empress(final EmpresaRequestDTO requestDTO) {
+	private Empress(final EmpressRequestDTO requestDTO) {
 		this.nomeFantasia = requestDTO.nomeFantasia();
 		this.razaoSocial = requestDTO.razaoSocial();
 		this.cnpj = requestDTO.cnpj();
@@ -112,11 +112,11 @@ public class Empress implements Serializable {
 		}
 	}
 
-    public static Empress withRequestDTO(EmpresaRequestDTO requestDTO) {
+    public static Empress withRequestDTO(EmpressRequestDTO requestDTO) {
 		return new Empress(requestDTO);
     }
 
-	public static Empress withResponseDTO(EmpresaResponseDTO responseDTO) {
+	public static Empress withResponseDTO(EmpressResponseDTO responseDTO) {
 		return new Empress(
 			responseDTO.idempresa(),
 			responseDTO.nomeFantasia(),

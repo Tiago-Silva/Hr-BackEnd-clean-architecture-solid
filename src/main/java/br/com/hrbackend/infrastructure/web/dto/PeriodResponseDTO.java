@@ -8,6 +8,6 @@ public record PeriodResponseDTO(
         String intervaloSaida,
         String jornada,
         String tipo,
-        EmpresaResponseDTO empresa
+        EmpressResponseDTO empresa
 ) {
 }
