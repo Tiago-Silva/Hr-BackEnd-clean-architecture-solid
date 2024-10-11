@@ -15,22 +15,24 @@ public class UserRepositoryGateway implements UserGateway {
     }
 
     @Override
-    public void createUser(Usuario usuario) {
+    public Usuario save(Usuario usuario) {
         this.repository.save(this.mapper.toUserDB(usuario));
+        return usuario;
     }
 
     @Override
-    public void updateUser(Usuario usuario) {
+    public Usuario update(Usuario usuario) {
         this.repository.save(this.mapper.toUserDB(usuario));
+        return usuario;
     }
 
     @Override
-    public void deleteUser(Usuario usuario) {
+    public void delete(Usuario usuario) {
         this.repository.delete(this.mapper.toUserDB(usuario));
     }
 
     @Override
-    public Usuario getUserById(int id) {
+    public Usuario getId(int id) {
         return this.mapper.toUser(this.repository.findByIdusuario(id));
     }
 }
