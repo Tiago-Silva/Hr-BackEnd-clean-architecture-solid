@@ -31,21 +31,21 @@ public class EmpressController {
     }
 
     @PostMapping
-    public ResponseEntity createEmpress(@RequestBody EmpresaRequestDTO requestDTO) {
+    public ResponseEntity<HttpStatus> createEmpress(@RequestBody EmpresaRequestDTO requestDTO) {
         Empress empress = this.mapper.requestDTOToDomainObject(requestDTO);
         this.createEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping
-    public ResponseEntity updateEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
+    public ResponseEntity<HttpStatus> updateEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
         Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
         this.updateEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping
-    public ResponseEntity deleteEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
+    public ResponseEntity<HttpStatus> deleteEmpress(@RequestBody EmpresaResponseDTO responseDTO) {
         Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
         this.deleteEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.OK);
