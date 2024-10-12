@@ -16,6 +16,6 @@ public class UpdatePeriodUseCase implements UseCase<Periodo, Periodo> {
         if (periodo == null || periodo.getIdperiodo() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.periodGateway.updatePeriod(periodo);
+        return this.periodGateway.update(periodo);
     }
 }

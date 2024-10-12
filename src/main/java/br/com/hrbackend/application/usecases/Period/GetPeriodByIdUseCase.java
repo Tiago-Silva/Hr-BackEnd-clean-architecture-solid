@@ -16,6 +16,6 @@ public class GetPeriodByIdUseCase implements UseCase<Integer, Periodo> {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.periodGateway.getPeriodById(id);
+        return this.periodGateway.getId(id);
     }
 }

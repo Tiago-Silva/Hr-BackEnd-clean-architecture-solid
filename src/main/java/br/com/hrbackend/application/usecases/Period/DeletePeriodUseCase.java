@@ -16,7 +16,7 @@ public class DeletePeriodUseCase implements UseCase<Periodo, Void> {
         if (periodo == null || periodo.getIdperiodo() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.periodGateway.deletePeriod(periodo);
+        this.periodGateway.delete(periodo);
         return null;
     }
 }
