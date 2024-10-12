@@ -24,6 +24,6 @@ public class CreateUserUseCase implements UseCase<Usuario, Usuario> {
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.userGateway.createUser(usuario);
+        return this.userGateway.save(usuario);
     }
 }

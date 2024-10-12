@@ -16,7 +16,7 @@ public class DeleteUserUseCase implements UseCase<Usuario, Void> {
         if (usuario == null || usuario.getIdusuario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        this.userGateway.deleteUser(usuario);
+        this.userGateway.delete(usuario);
         return null;
     }
 }

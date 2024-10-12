@@ -16,6 +16,6 @@ public class UpdateUserUseCase implements UseCase<Usuario, Usuario> {
         if (usuario == null || usuario.getIdusuario() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.userGateway.updateUser(usuario);
+        return this.userGateway.update(usuario);
     }
 }

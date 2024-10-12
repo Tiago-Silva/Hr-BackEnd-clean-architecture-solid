@@ -16,6 +16,6 @@ public class GetUserByIdUseCase implements UseCase<Integer, Usuario> {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.userGateway.getUserById(id);
+        return this.userGateway.getId(id);
     }
 }
