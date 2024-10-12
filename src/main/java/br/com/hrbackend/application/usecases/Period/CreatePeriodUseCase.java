@@ -25,6 +25,6 @@ public class CreatePeriodUseCase implements UseCase<Periodo, Periodo> {
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }
-        return this.periodGateway.createPeriod(periodo);
+        return this.periodGateway.save(periodo);
     }
 }
