@@ -1,6 +1,9 @@
 package br.com.hrbackend.infrastructure.web.controller;
 
-import br.com.hrbackend.application.usecases.PeriodInteract;
+import br.com.hrbackend.application.usecases.Period.CreatePeriodUseCase;
+import br.com.hrbackend.application.usecases.Period.DeletePeriodUseCase;
+import br.com.hrbackend.application.usecases.Period.GetPeriodByIdUseCase;
+import br.com.hrbackend.application.usecases.Period.UpdatePeriodUseCase;
 import br.com.hrbackend.domain.entity.Periodo;
 import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
@@ -14,11 +17,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/period")
 public class PeriodController {
 
-    private final PeriodInteract periodInteract;
+    private final CreatePeriodUseCase createPeriodUseCase;
+    private final UpdatePeriodUseCase updatePeriodUseCase;
+    private final DeletePeriodUseCase deletePeriodUseCase;
+    private final GetPeriodByIdUseCase getPeriodByIdUseCase;
     private final PeriodMapper mapper;
     private final EmpressMapper empressMapper;
-    public PeriodController(PeriodInteract periodInteract, PeriodMapper mapper, EmpressMapper empressMapper) {
-        this.periodInteract = periodInteract;
+    public PeriodController(CreatePeriodUseCase createPeriodUseCase, UpdatePeriodUseCase updatePeriodUseCase, DeletePeriodUseCase deletePeriodUseCase, GetPeriodByIdUseCase getPeriodByIdUseCase, PeriodMapper mapper, EmpressMapper empressMapper) {
+        this.createPeriodUseCase = createPeriodUseCase;
+        this.updatePeriodUseCase = updatePeriodUseCase;
+        this.deletePeriodUseCase = deletePeriodUseCase;
+        this.getPeriodByIdUseCase = getPeriodByIdUseCase;
         this.mapper = mapper;
         this.empressMapper = empressMapper;
     }
@@ -26,27 +35,27 @@ public class PeriodController {
     @PostMapping
     public ResponseEntity<HttpStatus> createPeriod(@RequestBody PeriodRequestDTO requestDTO) {
         Periodo periodo = this.mapper.requestDTOToDomainObject(requestDTO);
-        this.periodInteract.createPeriod(periodo);
+        this.createPeriodUseCase.execute(periodo);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity<HttpStatus> updatePeriod(@RequestBody PeriodRequestDTO requestDTO) {
         Periodo periodo = this.mapper.requestDTOToDomainObject(requestDTO);
-        this.periodInteract.updatePeriod(periodo);
+        this.updatePeriodUseCase.execute(periodo);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping
     public ResponseEntity<HttpStatus> deletePeriod(@RequestBody PeriodRequestDTO requestDTO) {
         Periodo periodo = this.mapper.requestDTOToDomainObject(requestDTO);
-        this.periodInteract.deletePeriod(periodo);
+        this.deletePeriodUseCase.execute(periodo);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/id/{idperiodo}")
     public ResponseEntity<PeriodResponseDTO> getPeriodById(@RequestParam("idperiodo") int idperiodo) {
-        Periodo periodo = this.periodInteract.getPeriodById(idperiodo);
+        Periodo periodo = this.getPeriodByIdUseCase.execute(idperiodo);
         return ResponseEntity.ok(
             this.mapper.domainObjectToResponseDTO(periodo, this.empressMapper.domainObjecToResponseDTO(periodo.getEmpress()))
         );
