@@ -121,7 +121,7 @@ public class Employee implements Serializable {
 
     private Enterprise enterprise;
 
-    private Periodo periodo;
+    private Period periodo;
 
     private Employee(
             final int idfuncionario,
@@ -176,7 +176,7 @@ public class Employee implements Serializable {
             final String localExame,
             final String urlImage,
             final Enterprise empress,
-            final Periodo periodo
+            final Period periodo
     ) {
         this.id = idfuncionario;
         this.name = nome;
@@ -286,7 +286,7 @@ public class Employee implements Serializable {
             final String localExame,
             final String urlImage,
             final Enterprise empress,
-            final Periodo periodo
+            final Period periodo
     ) {
         this.name = nome;
         this.lastName = sobrenome;
@@ -543,7 +543,7 @@ public class Employee implements Serializable {
                 requestDTO.localExame(),
                 requestDTO.urlImage(),
                 Enterprise.withResponseDTO(requestDTO.empresa()),
-                new Periodo(requestDTO.periodo())
+                new Period(requestDTO.periodo())
         );
     }
 
@@ -601,7 +601,7 @@ public class Employee implements Serializable {
                 responseDTO.localExame(),
                 responseDTO.urlImage(),
                 Enterprise.withResponseDTO(responseDTO.empresa()),
-                new Periodo(responseDTO.periodo())
+                new Period(responseDTO.periodo())
         );
     }
 
@@ -659,7 +659,7 @@ public class Employee implements Serializable {
                 employeeDB.getLocalExame(),
                 employeeDB.getUrlImage(),
                 Enterprise.withEntityDB(employeeDB.getEmpresa()),
-                new Periodo(employeeDB.getPeriodo())
+                new Period(employeeDB.getPeriodo())
         );
     }
 }
