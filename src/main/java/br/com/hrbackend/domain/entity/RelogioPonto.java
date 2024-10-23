@@ -22,5 +22,5 @@ public class RelogioPonto implements Serializable {
 
     private String descricao;
 
-    private Empress empress;
+    private Enterprise empress;
 }

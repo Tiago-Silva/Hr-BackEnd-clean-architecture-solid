@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.Empress;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.domain.entity.Enterprise;
 
-public class GetEmpressByIdUseCase implements UseCase<Integer, Empress> {
+public class GetEmpressByIdUseCase implements UseCase<Integer, Enterprise> {
 
     private final EmpressGateway empressGateway;
     public GetEmpressByIdUseCase(EmpressGateway empressGateway) {
@@ -12,7 +12,7 @@ public class GetEmpressByIdUseCase implements UseCase<Integer, Empress> {
     }
 
     @Override
-    public Empress execute(Integer id) {
+    public Enterprise execute(Integer id) {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

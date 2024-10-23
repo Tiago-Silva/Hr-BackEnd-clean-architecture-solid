@@ -1,6 +1,6 @@
 package br.com.hrbackend.infrastructure.data.entityDB;
 
-import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.domain.entity.Enterprise;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -84,7 +84,7 @@ public class EmpresaDB implements Serializable {
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
 	private List<BeneficioDB> beneficios;
 
-	public EmpresaDB(Empress empress) {
+	public EmpresaDB(Enterprise empress) {
 		this.idempresa = empress.getIdempresa();
 		this.nomeFantasia = empress.getNomeFantasia();
 		this.razaoSocial = empress.getRazaoSocial();

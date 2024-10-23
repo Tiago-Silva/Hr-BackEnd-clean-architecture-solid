@@ -45,7 +45,7 @@ public class Usuario implements Serializable {
 
     private boolean enabled;
 
-    private Empress empress;
+    private Enterprise empress;
 
     public Usuario(UsuarioRequestDTO requestDTO) {
         this.nome = requestDTO.nome();
@@ -61,7 +61,7 @@ public class Usuario implements Serializable {
         this.accountNonLocked = requestDTO.accountNonLocked();
         this.credentialsNonExpired = requestDTO.credentialsNonExpired();
         this.enabled = requestDTO.enabled();
-        this.empress = new Empress(requestDTO.empresa());
+        this.empress = Enterprise.withResponseDTO(requestDTO.empresa());
     }
 
     public Usuario(UsuarioResponseDTO responseDTO) {
@@ -79,7 +79,7 @@ public class Usuario implements Serializable {
         this.accountNonLocked = responseDTO.accountNonLocked();
         this.credentialsNonExpired = responseDTO.credentialsNonExpired();
         this.enabled = responseDTO.enabled();
-        this.empress = new Empress(responseDTO.empresa());
+        this.empress = Enterprise.withResponseDTO(responseDTO.empresa());
     }
 
     public Usuario(UsuarioDB usuarioDB) {
@@ -97,6 +97,6 @@ public class Usuario implements Serializable {
         this.accountNonLocked = usuarioDB.isAccountNonLocked();
         this.credentialsNonExpired = usuarioDB.isCredentialsNonExpired();
         this.enabled = usuarioDB.isEnabled();
-        this.empress = new Empress(usuarioDB.getEmpresa());
+        this.empress = Enterprise.withEntityDB(usuarioDB.getEmpresa());
     }
 }

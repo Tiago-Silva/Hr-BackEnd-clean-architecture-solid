@@ -1,7 +1,7 @@
 package br.com.hrbackend.infrastructure.web.controller;
 
 import br.com.hrbackend.application.usecases.Empress.*;
-import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.domain.entity.Enterprise;
 import br.com.hrbackend.infrastructure.web.dto.EmpressRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
@@ -32,21 +32,21 @@ public class EmpressController {
 
     @PostMapping
     public ResponseEntity<HttpStatus> createEmpress(@RequestBody EmpressRequestDTO requestDTO) {
-        Empress empress = this.mapper.requestDTOToDomainObject(requestDTO);
+        Enterprise empress = this.mapper.requestDTOToDomainObject(requestDTO);
         this.createEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity<HttpStatus> updateEmpress(@RequestBody EmpressResponseDTO responseDTO) {
-        Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
+        Enterprise empress = this.mapper.responseDTOToDomainObject(responseDTO);
         this.updateEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping
     public ResponseEntity<HttpStatus> deleteEmpress(@RequestBody EmpressResponseDTO responseDTO) {
-        Empress empress = this.mapper.responseDTOToDomainObject(responseDTO);
+        Enterprise empress = this.mapper.responseDTOToDomainObject(responseDTO);
         this.deleteEmpressUseCase.execute(empress);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -2,11 +2,11 @@ package br.com.hrbackend.application.usecases.Empress;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.domain.entity.Enterprise;
 
 import java.util.List;
 
-public class GetBranchesByIdEmpressControllerUseCase implements UseCase<Integer, List<Empress>> {
+public class GetBranchesByIdEmpressControllerUseCase implements UseCase<Integer, List<Enterprise>> {
 
     private final EmpressGateway empressGateway;
     public GetBranchesByIdEmpressControllerUseCase(EmpressGateway empressGateway) {
@@ -14,7 +14,7 @@ public class GetBranchesByIdEmpressControllerUseCase implements UseCase<Integer,
     }
 
     @Override
-    public List<Empress> execute(Integer id) {
+    public List<Enterprise> execute(Integer id) {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

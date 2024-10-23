@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.Empress;
 
 import br.com.hrbackend.application.gateway.EmpressGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Empress;
+import br.com.hrbackend.domain.entity.Enterprise;
 
-public class DeleteEmpressUseCase implements UseCase<Empress, Empress> {
+public class DeleteEmpressUseCase implements UseCase<Enterprise, Enterprise> {
 
     private final EmpressGateway empressGateway;
     public DeleteEmpressUseCase(EmpressGateway empressGateway) {
@@ -12,7 +12,7 @@ public class DeleteEmpressUseCase implements UseCase<Empress, Empress> {
     }
 
     @Override
-    public Empress execute(Empress empress) {
+    public Enterprise execute(Enterprise empress) {
         if (empress == null || empress.getIdempresa() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

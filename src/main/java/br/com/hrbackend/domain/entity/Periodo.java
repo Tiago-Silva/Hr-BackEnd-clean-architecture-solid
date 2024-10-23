@@ -32,7 +32,7 @@ public class Periodo implements Serializable {
 
     private String tipo;
 
-    private Empress empress;
+    private Enterprise empress;
 
     public Periodo(PeriodRequestDTO requestDTO) {
         this.entrada = Time.valueOf(requestDTO.entrada());
@@ -41,7 +41,7 @@ public class Periodo implements Serializable {
         this.intervaloSaida = Time.valueOf(requestDTO.intervaloSaida());
         this.jornada = requestDTO.jornada();
         this.tipo = requestDTO.tipo();
-        this.empress = new Empress(requestDTO.empresa());
+        this.empress = Enterprise.withResponseDTO(requestDTO.empresa());
     }
 
     public Periodo(PeriodResponseDTO responseDTO) {
@@ -52,7 +52,7 @@ public class Periodo implements Serializable {
         this.intervaloSaida = Time.valueOf(responseDTO.intervaloSaida());
         this.jornada = responseDTO.jornada();
         this.tipo = responseDTO.tipo();
-        this.empress = new Empress(responseDTO.empresa());
+        this.empress = Enterprise.withResponseDTO(responseDTO.empresa());
     }
 
     public Periodo(PeriodoDB periodDB) {
@@ -63,6 +63,6 @@ public class Periodo implements Serializable {
         this.intervaloSaida = periodDB.getIntervaloSaida();
         this.jornada = periodDB.getJornada();
         this.tipo = periodDB.getTipo();
-        this.empress = new Empress(periodDB.getEmpresa());
+        this.empress = Enterprise.withEntityDB(periodDB.getEmpresa());
     }
 }

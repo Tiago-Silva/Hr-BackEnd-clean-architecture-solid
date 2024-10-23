@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @NoArgsConstructor
 @EqualsAndHashCode(of = "idempresa")
-public class Empress implements Serializable {
+public class Enterprise implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 	
@@ -45,7 +45,7 @@ public class Empress implements Serializable {
 
 	private String status;
 
-	private Empress(
+	private Enterprise(
 		final int idempresa,
 		final String nomeFantasia,
 		final String razaoSocial,
@@ -80,7 +80,7 @@ public class Empress implements Serializable {
 		this.validate();
 	}
 
-	private Empress(final EmpressRequestDTO requestDTO) {
+	private Enterprise(final EmpressRequestDTO requestDTO) {
 		this.nomeFantasia = requestDTO.nomeFantasia();
 		this.razaoSocial = requestDTO.razaoSocial();
 		this.cnpj = requestDTO.cnpj();
@@ -112,12 +112,12 @@ public class Empress implements Serializable {
 		}
 	}
 
-    public static Empress withRequestDTO(EmpressRequestDTO requestDTO) {
-		return new Empress(requestDTO);
+    public static Enterprise withRequestDTO(EmpressRequestDTO requestDTO) {
+		return new Enterprise(requestDTO);
     }
 
-	public static Empress withResponseDTO(EmpressResponseDTO responseDTO) {
-		return new Empress(
+	public static Enterprise withResponseDTO(EmpressResponseDTO responseDTO) {
+		return new Enterprise(
 			responseDTO.idempresa(),
 			responseDTO.nomeFantasia(),
 			responseDTO.razaoSocial(),
@@ -136,8 +136,8 @@ public class Empress implements Serializable {
 		);
 	}
 
-	public static Empress withEntityDB(EmpresaDB empresaDB) {
-		return new Empress(
+	public static Enterprise withEntityDB(EmpresaDB empresaDB) {
+		return new Enterprise(
 			empresaDB.getIdempresa(),
 			empresaDB.getNomeFantasia(),
 			empresaDB.getRazaoSocial(),
