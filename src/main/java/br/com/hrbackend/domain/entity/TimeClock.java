@@ -9,18 +9,19 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idrelogioPonto")
-public class RelogioPonto implements Serializable {
+@EqualsAndHashCode(of = "id")
+public class TimeClock implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private int idrelogioPonto;
+    private int id;
 
     private String rep;
 
-    private String local;
+    private String location;
 
-    private String descricao;
+    private String description;
 
-    private Enterprise empress;
+    private Enterprise enterprise;
 }
