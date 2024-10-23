@@ -38,17 +38,17 @@ public class PeriodoDB implements Serializable {
     private String tipo;
 
     @ManyToOne
-    @JoinColumn(name = "empresa_idempresa")
-    private EmpresaDB empresa;
+    @JoinColumn(name = "enterprise_id")
+    private EnterpriseDB enterprise;
 
     public PeriodoDB(Period period) {
-        this.idperiodo = period.getIdperiodo();
+        this.idperiodo = period.getId();
         this.entrada = period.getStartTime();
         this.saida = period.getEndTime();
         this.intervaloEntrada = period.getBreakStart();
         this.intervaloSaida = period.getBreakEnd();
         this.jornada = period.getWorkday();
         this.tipo = period.getType();
-        this.empresa = new EmpresaDB(period.getEnterprise());
+        this.enterprise = new EnterpriseDB(period.getEnterprise());
     }
 }

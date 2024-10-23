@@ -7,7 +7,7 @@ import br.com.hrbackend.application.usecases.Period.UpdatePeriodUseCase;
 import br.com.hrbackend.domain.entity.Period;
 import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
-import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.core.mapper.EnterpriseMapper;
 import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +22,14 @@ public class PeriodController {
     private final DeletePeriodUseCase deletePeriodUseCase;
     private final GetPeriodByIdUseCase getPeriodByIdUseCase;
     private final PeriodMapper mapper;
-    private final EmpressMapper empressMapper;
-    public PeriodController(CreatePeriodUseCase createPeriodUseCase, UpdatePeriodUseCase updatePeriodUseCase, DeletePeriodUseCase deletePeriodUseCase, GetPeriodByIdUseCase getPeriodByIdUseCase, PeriodMapper mapper, EmpressMapper empressMapper) {
+    private final EnterpriseMapper enterpriseMapper;
+    public PeriodController(CreatePeriodUseCase createPeriodUseCase, UpdatePeriodUseCase updatePeriodUseCase, DeletePeriodUseCase deletePeriodUseCase, GetPeriodByIdUseCase getPeriodByIdUseCase, PeriodMapper mapper, EnterpriseMapper empressMapper) {
         this.createPeriodUseCase = createPeriodUseCase;
         this.updatePeriodUseCase = updatePeriodUseCase;
         this.deletePeriodUseCase = deletePeriodUseCase;
         this.getPeriodByIdUseCase = getPeriodByIdUseCase;
         this.mapper = mapper;
-        this.empressMapper = empressMapper;
+        this.enterpriseMapper = empressMapper;
     }
 
     @PostMapping
@@ -57,7 +57,7 @@ public class PeriodController {
     public ResponseEntity<PeriodResponseDTO> getPeriodById(@RequestParam("idperiodo") int idperiodo) {
         Period periodo = this.getPeriodByIdUseCase.execute(idperiodo);
         return ResponseEntity.ok(
-            this.mapper.domainObjectToResponseDTO(periodo, this.empressMapper.domainObjecToResponseDTO(periodo.getEnterprise()))
+            this.mapper.domainObjectToResponseDTO(periodo, this.enterpriseMapper.domainObjecToResponseDTO(periodo.getEnterprise()))
         );
     }
 }

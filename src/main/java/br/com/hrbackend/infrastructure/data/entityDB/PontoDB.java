@@ -58,6 +58,6 @@ public class PontoDB implements Serializable {
     private boolean atrasadoEntrada;
 
     @ManyToOne
-    @JoinColumn(name = "empresa_idempresa")
-    private EmpresaDB empresa;
+    @JoinColumn(name = "enterprise_id")
+    private EnterpriseDB enterprise;
 }

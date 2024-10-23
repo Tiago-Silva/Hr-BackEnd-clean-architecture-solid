@@ -6,11 +6,11 @@ import br.com.hrbackend.application.usecases.Employee.GetEmployeeByIdUseCase;
 import br.com.hrbackend.application.usecases.Employee.UpdateEmployeeUseCase;
 import br.com.hrbackend.domain.entity.Employee;
 import br.com.hrbackend.infrastructure.core.mapper.EmployeeMapper;
-import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.core.mapper.EnterpriseMapper;
 import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.EmployeeResponseDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EnterpriseResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,15 +24,15 @@ public class EmployeeController {
     private final DeleteEmployeeUseCase deleteEmployeeUseCase;
     private final GetEmployeeByIdUseCase getEmployeeByIdUseCase;
     private final EmployeeMapper mapper;
-    private final EmpressMapper empressMapper;
+    private final EnterpriseMapper enterpriseMapper;
     private final PeriodMapper periodMapper;
-    public EmployeeController(CreateEmployeeUseCase createEmployeeUseCase, UpdateEmployeeUseCase updateEmployeeUseCase, DeleteEmployeeUseCase deleteEmployeeUseCase, GetEmployeeByIdUseCase getEmployeeByIdUseCase, EmployeeMapper mapper, EmpressMapper empressMapper, PeriodMapper periodMapper) {
+    public EmployeeController(CreateEmployeeUseCase createEmployeeUseCase, UpdateEmployeeUseCase updateEmployeeUseCase, DeleteEmployeeUseCase deleteEmployeeUseCase, GetEmployeeByIdUseCase getEmployeeByIdUseCase, EmployeeMapper mapper, EnterpriseMapper empressMapper, PeriodMapper periodMapper) {
         this.createEmployeeUseCase = createEmployeeUseCase;
         this.updateEmployeeUseCase = updateEmployeeUseCase;
         this.deleteEmployeeUseCase = deleteEmployeeUseCase;
         this.getEmployeeByIdUseCase = getEmployeeByIdUseCase;
         this.mapper = mapper;
-        this.empressMapper = empressMapper;
+        this.enterpriseMapper = empressMapper;
         this.periodMapper = periodMapper;
     }
 
@@ -60,14 +60,14 @@ public class EmployeeController {
     @GetMapping("/id/{employeeId}")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById (@PathVariable("employeeId") int employeeID) {
         Employee employee = this.getEmployeeByIdUseCase.execute(employeeID);
-        EmpressResponseDTO empressResponseDTO = this.empressMapper.domainObjecToResponseDTO(employee.getEmpress());
+        EnterpriseResponseDTO enterpriseResponseDTO = this.enterpriseMapper.domainObjecToResponseDTO(employee.getEnterprise());
         return ResponseEntity.ok(
                 this.mapper.domainObjectToResponseDTO(
                         employee,
-                        empressResponseDTO,
+                        enterpriseResponseDTO,
                         this.periodMapper.domainObjectToResponseDTO(
                                 employee.getPeriodo(),
-                                empressResponseDTO
+                                enterpriseResponseDTO
                         )
                 )
         );

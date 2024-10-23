@@ -4,7 +4,7 @@ import br.com.hrbackend.application.usecases.UserInteract;
 import br.com.hrbackend.domain.entity.User;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioResponseDTO;
-import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
+import br.com.hrbackend.infrastructure.core.mapper.EnterpriseMapper;
 import br.com.hrbackend.infrastructure.core.mapper.UserMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +16,11 @@ public class UserController {
 
     private final UserInteract userInteract;
     private final UserMapper mapper;
-    private final EmpressMapper empressMapper;
-    public UserController(UserInteract userInteract, UserMapper mapper, EmpressMapper empressMapper) {
+    private final EnterpriseMapper enterpriseMapper;
+    public UserController(UserInteract userInteract, UserMapper mapper, EnterpriseMapper enterpriseMapper) {
         this.userInteract = userInteract;
         this.mapper = mapper;
-        this.empressMapper = empressMapper;
+        this.enterpriseMapper = enterpriseMapper;
     }
 
     @PostMapping
@@ -48,7 +48,7 @@ public class UserController {
     public ResponseEntity<UsuarioResponseDTO> getUserById(@PathVariable("idusuario") int idusuario) {
         User usuario = this.userInteract.getUserById(idusuario);
         return ResponseEntity.ok(
-            this.mapper.domainObjectToResponseDTO(usuario, this.empressMapper.domainObjecToResponseDTO(usuario.getEnterprise()))
+            this.mapper.domainObjectToResponseDTO(usuario, this.enterpriseMapper.domainObjecToResponseDTO(usuario.getEnterprise()))
         );
     }
 }

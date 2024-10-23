@@ -41,7 +41,7 @@ public class Period implements Serializable {
         this.breakEnd = Time.valueOf(requestDTO.intervaloSaida());
         this.workday = requestDTO.jornada();
         this.type = requestDTO.tipo();
-        this.enterprise = Enterprise.withResponseDTO(requestDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(requestDTO.enterprise());
     }
 
     public Period(PeriodResponseDTO responseDTO) {
@@ -52,7 +52,7 @@ public class Period implements Serializable {
         this.breakEnd = Time.valueOf(responseDTO.intervaloSaida());
         this.workday = responseDTO.jornada();
         this.type = responseDTO.tipo();
-        this.enterprise = Enterprise.withResponseDTO(responseDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(responseDTO.enterprise());
     }
 
     public Period(PeriodoDB periodDB) {
@@ -63,6 +63,6 @@ public class Period implements Serializable {
         this.breakEnd = periodDB.getIntervaloSaida();
         this.workday = periodDB.getJornada();
         this.type = periodDB.getTipo();
-        this.enterprise = Enterprise.withEntityDB(periodDB.getEmpresa());
+        this.enterprise = Enterprise.withEntityDB(periodDB.getEnterprise());
     }
 }

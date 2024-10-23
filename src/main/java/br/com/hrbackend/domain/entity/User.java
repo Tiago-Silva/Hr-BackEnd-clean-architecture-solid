@@ -62,7 +62,7 @@ public class User implements Serializable {
         this.accountNonLocked = requestDTO.accountNonLocked();
         this.credentialsNonExpired = requestDTO.credentialsNonExpired();
         this.enabled = requestDTO.enabled();
-        this.enterprise = Enterprise.withResponseDTO(requestDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(requestDTO.enterprise());
     }
 
     public User(UsuarioResponseDTO responseDTO) {
@@ -80,7 +80,7 @@ public class User implements Serializable {
         this.accountNonLocked = responseDTO.accountNonLocked();
         this.credentialsNonExpired = responseDTO.credentialsNonExpired();
         this.enabled = responseDTO.enabled();
-        this.enterprise = Enterprise.withResponseDTO(responseDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(responseDTO.enterprise());
     }
 
     public User(UsuarioDB usuarioDB) {
@@ -98,6 +98,6 @@ public class User implements Serializable {
         this.accountNonLocked = usuarioDB.isAccountNonLocked();
         this.credentialsNonExpired = usuarioDB.isCredentialsNonExpired();
         this.enabled = usuarioDB.isEnabled();
-        this.enterprise = Enterprise.withEntityDB(usuarioDB.getEmpresa());
+        this.enterprise = Enterprise.withEntityDB(usuarioDB.getEnterprise());
     }
 }

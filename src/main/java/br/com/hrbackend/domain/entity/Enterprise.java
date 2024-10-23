@@ -1,8 +1,8 @@
 package br.com.hrbackend.domain.entity;
 
-import br.com.hrbackend.infrastructure.data.entityDB.EmpresaDB;
-import br.com.hrbackend.infrastructure.web.dto.EmpressRequestDTO;
-import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
+import br.com.hrbackend.infrastructure.data.entityDB.EnterpriseDB;
+import br.com.hrbackend.infrastructure.web.dto.EnterpriseRequestDTO;
+import br.com.hrbackend.infrastructure.web.dto.EnterpriseResponseDTO;
 import lombok.*;
 
 import java.io.Serial;
@@ -80,20 +80,20 @@ public class Enterprise implements Serializable {
 		this.validate();
 	}
 
-	private Enterprise(final EmpressRequestDTO requestDTO) {
-		this.tradeName = requestDTO.nomeFantasia();
-		this.enterpriseName = requestDTO.razaoSocial();
+	private Enterprise(final EnterpriseRequestDTO requestDTO) {
+		this.tradeName = requestDTO.tradeName();
+		this.enterpriseName = requestDTO.enterpriseName();
 		this.cnpj = requestDTO.cnpj();
-		this.stateRegistration = requestDTO.inscricaoEstadual();
-		this.neighborhood = requestDTO.bairro();
-		this.city = requestDTO.cidade();
-		this.address = requestDTO.endereco();
-		this.state = requestDTO.estado();
-		this.phone = requestDTO.telefone();
-		this.logo = requestDTO.logoMarca();
-		this.isBranch = requestDTO.filial();
-		this.enterpriseParent = requestDTO.empresaController();
-		this.isHeadOffice = requestDTO.matriz();
+		this.stateRegistration = requestDTO.stateRegistration();
+		this.neighborhood = requestDTO.neighborhood();
+		this.city = requestDTO.city();
+		this.address = requestDTO.address();
+		this.state = requestDTO.state();
+		this.phone = requestDTO.phone();
+		this.logo = requestDTO.logo();
+		this.isBranch = requestDTO.isBranch();
+		this.enterpriseParent = requestDTO.enterpriseParent();
+		this.isHeadOffice = requestDTO.isHeadOffice();
 		this.status = requestDTO.status();
 		this.validate();
 	}
@@ -104,7 +104,7 @@ public class Enterprise implements Serializable {
 		}
 
 		if (this.enterpriseName.isBlank()) {
-			throw new IllegalArgumentException("Empress razaoSocial should not be null or empty");
+			throw new IllegalArgumentException("Empress enterpriseName should not be null or empty");
 		}
 
 		if (this.cnpj.isBlank()) {
@@ -112,47 +112,47 @@ public class Enterprise implements Serializable {
 		}
 	}
 
-    public static Enterprise withRequestDTO(EmpressRequestDTO requestDTO) {
+    public static Enterprise withRequestDTO(EnterpriseRequestDTO requestDTO) {
 		return new Enterprise(requestDTO);
     }
 
-	public static Enterprise withResponseDTO(EmpressResponseDTO responseDTO) {
+	public static Enterprise withResponseDTO(EnterpriseResponseDTO responseDTO) {
 		return new Enterprise(
-			responseDTO.idempresa(),
-			responseDTO.nomeFantasia(),
-			responseDTO.razaoSocial(),
+			responseDTO.id(),
+			responseDTO.tradeName(),
+			responseDTO.enterpriseName(),
 			responseDTO.cnpj(),
-			responseDTO.inscricaoEstadual(),
-			responseDTO.bairro(),
-			responseDTO.cidade(),
-			responseDTO.endereco(),
-			responseDTO.estado(),
-			responseDTO.telefone(),
-			responseDTO.logoMarca(),
-			responseDTO.filial(),
-			responseDTO.empresaController(),
-			responseDTO.matriz(),
+			responseDTO.stateRegistration(),
+			responseDTO.neighborhood(),
+			responseDTO.city(),
+			responseDTO.address(),
+			responseDTO.state(),
+			responseDTO.phone(),
+			responseDTO.logo(),
+			responseDTO.isBranch(),
+			responseDTO.enterpriseParent(),
+			responseDTO.isHeadOffice(),
 			responseDTO.status()
 		);
 	}
 
-	public static Enterprise withEntityDB(EmpresaDB empresaDB) {
+	public static Enterprise withEntityDB(EnterpriseDB enterpriseDB) {
 		return new Enterprise(
-			empresaDB.getIdempresa(),
-			empresaDB.getNomeFantasia(),
-			empresaDB.getRazaoSocial(),
-			empresaDB.getCnpj(),
-			empresaDB.getInscricaoEstadual(),
-			empresaDB.getBairro(),
-			empresaDB.getCidade(),
-			empresaDB.getEndereco(),
-			empresaDB.getEstado(),
-			empresaDB.getTelefone(),
-			empresaDB.getLogoMarca(),
-			empresaDB.isFilial(),
-			empresaDB.getEmpresaController(),
-			empresaDB.isMatriz(),
-			empresaDB.getStatus()
+			enterpriseDB.getId(),
+			enterpriseDB.getTradeName(),
+			enterpriseDB.getEnterpriseName(),
+			enterpriseDB.getCnpj(),
+			enterpriseDB.getStateRegistration(),
+			enterpriseDB.getNeighborhood(),
+			enterpriseDB.getCity(),
+			enterpriseDB.getAddress(),
+			enterpriseDB.getState(),
+			enterpriseDB.getPhone(),
+			enterpriseDB.getLogo(),
+			enterpriseDB.isBranch(),
+			enterpriseDB.getEnterpriseParent(),
+			enterpriseDB.isHeadOffice(),
+			enterpriseDB.getStatus()
 		);
 	}
 }

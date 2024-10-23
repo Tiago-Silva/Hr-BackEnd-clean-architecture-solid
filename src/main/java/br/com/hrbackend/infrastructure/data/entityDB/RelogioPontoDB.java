@@ -29,6 +29,6 @@ public class RelogioPontoDB implements Serializable {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "empresa_idempresa")
-    private EmpresaDB empresa;
+    @JoinColumn(name = "enterprise_id")
+    private EnterpriseDB enterprise;
 }

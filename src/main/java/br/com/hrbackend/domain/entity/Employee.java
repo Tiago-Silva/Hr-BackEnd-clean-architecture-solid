@@ -402,16 +402,16 @@ public class Employee implements Serializable {
             throw new IllegalArgumentException("Employee cep should not be null or empty");
         }
         if (this.state == null || this.state.isBlank()) {
-            throw new IllegalArgumentException("Employee estado should not be null or empty");
+            throw new IllegalArgumentException("Employee state should not be null or empty");
         }
         if (this.neighborhood == null || this.neighborhood.isBlank()) {
-            throw new IllegalArgumentException("Employee bairro should not be null or empty");
+            throw new IllegalArgumentException("Employee neighborhood should not be null or empty");
         }
         if (this.city == null || this.city.isBlank()) {
-            throw new IllegalArgumentException("Employee cidade should not be null or empty");
+            throw new IllegalArgumentException("Employee city should not be null or empty");
         }
         if (this.address == null || this.address.isBlank()) {
-            throw new IllegalArgumentException("Employee endereco should not be null or empty");
+            throw new IllegalArgumentException("Employee address should not be null or empty");
         }
         if (this.gender == null || this.gender.isBlank()) {
             throw new IllegalArgumentException("Employee sexo should not be null or empty");
@@ -429,7 +429,7 @@ public class Employee implements Serializable {
             throw new IllegalArgumentException("Employee cracha should not be null or empty");
         }
         if (this.phone == null || this.phone.isBlank()) {
-            throw new IllegalArgumentException("Employee telefone should not be null or empty");
+            throw new IllegalArgumentException("Employee phone should not be null or empty");
         }
         if (this.hireDate == null) {
             throw new IllegalArgumentException("Employee admissao should not be null");
@@ -542,7 +542,7 @@ public class Employee implements Serializable {
                 requestDTO.emailHotmail(),
                 requestDTO.localExame(),
                 requestDTO.urlImage(),
-                Enterprise.withResponseDTO(requestDTO.empresa()),
+                Enterprise.withResponseDTO(requestDTO.enterprise()),
                 new Period(requestDTO.periodo())
         );
     }
@@ -600,7 +600,7 @@ public class Employee implements Serializable {
                 responseDTO.emailHotmail(),
                 responseDTO.localExame(),
                 responseDTO.urlImage(),
-                Enterprise.withResponseDTO(responseDTO.empresa()),
+                Enterprise.withResponseDTO(responseDTO.enterprise()),
                 new Period(responseDTO.periodo())
         );
     }
@@ -658,7 +658,7 @@ public class Employee implements Serializable {
                 employeeDB.getEmailHotmail(),
                 employeeDB.getLocalExame(),
                 employeeDB.getUrlImage(),
-                Enterprise.withEntityDB(employeeDB.getEmpresa()),
+                Enterprise.withEntityDB(employeeDB.getEnterprise()),
                 new Period(employeeDB.getPeriodo())
         );
     }

@@ -2,13 +2,13 @@ package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.Period;
 import br.com.hrbackend.infrastructure.data.entityDB.PeriodoDB;
-import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EnterpriseResponseDTO;
 import br.com.hrbackend.infrastructure.web.dto.PeriodRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.PeriodResponseDTO;
 
 public class PeriodMapper {
 
-    public PeriodRequestDTO domainObjectToRequestDTO(Period period, EmpressResponseDTO empresa) {
+    public PeriodRequestDTO domainObjectToRequestDTO(Period period, EnterpriseResponseDTO enterprise) {
         return new PeriodRequestDTO(
                 period.getStartTime().toString(),
                 period.getEndTime().toString(),
@@ -16,20 +16,20 @@ public class PeriodMapper {
                 period.getBreakEnd().toString(),
                 period.getWorkday(),
                 period.getType(),
-                empresa
+                enterprise
         );
     }
 
-    public PeriodResponseDTO domainObjectToResponseDTO(Period period, EmpressResponseDTO empresa) {
+    public PeriodResponseDTO domainObjectToResponseDTO(Period period, EnterpriseResponseDTO enterprise) {
         return new PeriodResponseDTO(
-                period.getIdperiodo(),
+                period.getId(),
                 period.getStartTime().toString(),
                 period.getEndTime().toString(),
                 period.getBreakStart().toString(),
                 period.getBreakEnd().toString(),
                 period.getWorkday(),
                 period.getType(),
-                empresa
+                enterprise
         );
     }
 

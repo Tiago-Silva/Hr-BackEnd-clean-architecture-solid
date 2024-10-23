@@ -53,8 +53,8 @@ public class UsuarioDB implements Serializable {
 	private boolean enabled;
 
 	@ManyToOne
-	@JoinColumn(name = "empresa_idempresa")
-	private EmpresaDB empresa;
+	@JoinColumn(name = "enterprise_id")
+	private EnterpriseDB enterprise;
 
 	public UsuarioDB(User usuario) {
 		this.idusuario = usuario.getUserId();
@@ -71,6 +71,6 @@ public class UsuarioDB implements Serializable {
 		this.accountNonLocked = usuario.isAccountNonLocked();
 		this.credentialsNonExpired = usuario.isCredentialsNonExpired();
 		this.enabled = usuario.isEnabled();
-		this.empresa = new EmpresaDB(usuario.getEnterprise());
+		this.enterprise = new EnterpriseDB(usuario.getEnterprise());
 	}
 }

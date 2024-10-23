@@ -2,13 +2,13 @@ package br.com.hrbackend.infrastructure.core.mapper;
 
 import br.com.hrbackend.domain.entity.User;
 import br.com.hrbackend.infrastructure.data.entityDB.UsuarioDB;
-import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
+import br.com.hrbackend.infrastructure.web.dto.EnterpriseResponseDTO;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioResponseDTO;
 
 public class UserMapper {
 
-    public UsuarioRequestDTO domainObjectToRequestDTO(User usuario, EmpressResponseDTO empresa) {
+    public UsuarioRequestDTO domainObjectToRequestDTO(User usuario, EnterpriseResponseDTO enterprise) {
         return new UsuarioRequestDTO(
                 usuario.getFirstName(),
                 usuario.getLastName(),
@@ -23,11 +23,11 @@ public class UserMapper {
                 usuario.isAccountNonLocked(),
                 usuario.isCredentialsNonExpired(),
                 usuario.isEnabled(),
-                empresa
+                enterprise
         );
     }
 
-    public UsuarioResponseDTO domainObjectToResponseDTO(User usuario, EmpressResponseDTO empresa) {
+    public UsuarioResponseDTO domainObjectToResponseDTO(User usuario, EnterpriseResponseDTO enterprise) {
         return new UsuarioResponseDTO(
                 usuario.getUserId(),
                 usuario.getFirstName(),
@@ -43,7 +43,7 @@ public class UserMapper {
                 usuario.isAccountNonLocked(),
                 usuario.isCredentialsNonExpired(),
                 usuario.isEnabled(),
-                empresa
+                enterprise
         );
     }
 

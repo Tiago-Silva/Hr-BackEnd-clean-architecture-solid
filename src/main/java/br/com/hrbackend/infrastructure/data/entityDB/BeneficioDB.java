@@ -56,5 +56,5 @@ public class BeneficioDB implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "empresa_idempresa")
-    private EmpresaDB empresa;
+    private EnterpriseDB enterprise;
 }
