@@ -5,7 +5,6 @@ CREATE TABLE prior_notice (
     start_date DATE,
     end_date DATE,
     employee_name VARCHAR(45),
-    idemployee INT,
     department VARCHAR(45),
     enterprise_id INT,
     return_date DATE,
