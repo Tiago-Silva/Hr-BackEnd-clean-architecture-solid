@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.Period;
 
 import br.com.hrbackend.application.gateway.PeriodGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Periodo;
+import br.com.hrbackend.domain.entity.Period;
 
-public class GetPeriodByIdUseCase implements UseCase<Integer, Periodo> {
+public class GetPeriodByIdUseCase implements UseCase<Integer, Period> {
 
     private final PeriodGateway periodGateway;
     public GetPeriodByIdUseCase(PeriodGateway periodGateway) {
@@ -12,7 +12,7 @@ public class GetPeriodByIdUseCase implements UseCase<Integer, Periodo> {
     }
 
     @Override
-    public Periodo execute(Integer id) {
+    public Period execute(Integer id) {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

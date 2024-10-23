@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.Period;
 
 import br.com.hrbackend.application.gateway.PeriodGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Periodo;
+import br.com.hrbackend.domain.entity.Period;
 
-public class CreatePeriodUseCase implements UseCase<Periodo, Periodo> {
+public class CreatePeriodUseCase implements UseCase<Period, Period> {
 
     private final PeriodGateway periodGateway;
     public CreatePeriodUseCase(PeriodGateway periodGateway) {
@@ -12,16 +12,16 @@ public class CreatePeriodUseCase implements UseCase<Periodo, Periodo> {
     }
 
     @Override
-    public Periodo execute(Periodo periodo) {
+    public Period execute(Period periodo) {
         if (
             periodo == null ||
-            periodo.getEntrada() == null ||
-            periodo.getSaida() == null ||
-            periodo.getIntervaloEntrada() == null ||
-            periodo.getIntervaloSaida() == null ||
-            periodo.getJornada().isEmpty() ||
-            periodo.getTipo().isEmpty() ||
-            periodo.getEmpress() == null
+            periodo.getStartTime() == null ||
+            periodo.getEndTime() == null ||
+            periodo.getBreakStart() == null ||
+            periodo.getBreakEnd() == null ||
+            periodo.getWorkday().isEmpty() ||
+            periodo.getType().isEmpty() ||
+            periodo.getEnterprise() == null
         ) {
             throw new IllegalArgumentException("Invalid arguments");
         }

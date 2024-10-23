@@ -1,6 +1,6 @@
 package br.com.hrbackend.infrastructure.data.entityDB;
 
-import br.com.hrbackend.domain.entity.Periodo;
+import br.com.hrbackend.domain.entity.Period;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -41,14 +41,14 @@ public class PeriodoDB implements Serializable {
     @JoinColumn(name = "empresa_idempresa")
     private EmpresaDB empresa;
 
-    public PeriodoDB(Periodo period) {
+    public PeriodoDB(Period period) {
         this.idperiodo = period.getIdperiodo();
-        this.entrada = period.getEntrada();
-        this.saida = period.getSaida();
-        this.intervaloEntrada = period.getIntervaloEntrada();
-        this.intervaloSaida = period.getIntervaloSaida();
-        this.jornada = period.getJornada();
-        this.tipo = period.getTipo();
-        this.empresa = new EmpresaDB(period.getEmpress());
+        this.entrada = period.getStartTime();
+        this.saida = period.getEndTime();
+        this.intervaloEntrada = period.getBreakStart();
+        this.intervaloSaida = period.getBreakEnd();
+        this.jornada = period.getWorkday();
+        this.tipo = period.getType();
+        this.empresa = new EmpresaDB(period.getEnterprise());
     }
 }

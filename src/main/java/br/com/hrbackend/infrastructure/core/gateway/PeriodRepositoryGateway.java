@@ -1,7 +1,7 @@
 package br.com.hrbackend.infrastructure.core.gateway;
 
 import br.com.hrbackend.application.gateway.PeriodGateway;
-import br.com.hrbackend.domain.entity.Periodo;
+import br.com.hrbackend.domain.entity.Period;
 import br.com.hrbackend.infrastructure.core.mapper.PeriodMapper;
 import br.com.hrbackend.infrastructure.data.repository.PeriodRepository;
 
@@ -15,24 +15,24 @@ public class PeriodRepositoryGateway implements PeriodGateway {
     }
 
     @Override
-    public Periodo save(Periodo periodo) {
+    public Period save(Period periodo) {
         this.repository.save(this.mapper.toPeriodDB(periodo));
         return periodo;
     }
 
     @Override
-    public Periodo update(Periodo periodo) {
+    public Period update(Period periodo) {
         this.repository.save(this.mapper.toPeriodDB(periodo));
         return periodo;
     }
 
     @Override
-    public void delete(Periodo periodo) {
+    public void delete(Period periodo) {
         this.repository.delete(this.mapper.toPeriodDB(periodo));
     }
 
     @Override
-    public Periodo getId(int id) {
+    public Period getId(int id) {
         return this.mapper.toPeriod(this.repository.findByIdperiodo(id));
     }
 }
