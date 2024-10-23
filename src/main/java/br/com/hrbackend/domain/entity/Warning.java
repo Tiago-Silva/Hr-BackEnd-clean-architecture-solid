@@ -2,6 +2,7 @@ package br.com.hrbackend.domain.entity;
 
 import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
@@ -11,21 +12,23 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idadvertencia")
-public class Advertencia implements Serializable {
+@EqualsAndHashCode(of = "id")
+public class Warning implements Serializable {
+
+    @Serial
     private static final long serialVersionUID = 1L;
 
-    private int idadvertencia;
+    private int id;
 
-    private Date data;
+    private Date date;
 
-    private String descricao;
+    private String description;
 
-    private Time hora;
+    private Time time;
 
-    private String responsavel;
+    private String responsible;
 
-    private String tipo;
+    private String type;
 
     private Employee employee;
 }
