@@ -12,8 +12,6 @@ CREATE TABLE point (
     pis VARCHAR(45),
     employee_name VARCHAR(45),
     employee_id INT,
-    cnpj VARCHAR(45),
-    enterprise_name VARCHAR(45),
     late_start BOOLEAN,
     enterprise_id INT,
     PRIMARY KEY (id),
