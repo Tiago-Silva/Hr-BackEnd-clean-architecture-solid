@@ -1,4 +1,4 @@
-CREATE TABLE lack (
+CREATE TABLE inss (
     id INT AUTO_INCREMENT,
     start_date DATE,
     end_date DATE,
@@ -8,9 +8,8 @@ CREATE TABLE lack (
     department VARCHAR(255),
     return_date DATE,
     enterprise_id INT,
-    idemployee INT,
-    reminder_id INT,
     employee_id INT,
+    reminder_id INT,
     PRIMARY KEY (id),
     FOREIGN KEY (employee_id) REFERENCES employee(id)
 );
