@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.User;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
-public class UpdateUserUseCase implements UseCase<Usuario, Usuario> {
+public class UpdateUserUseCase implements UseCase<User, User> {
 
     private final UserGateway userGateway;
     public UpdateUserUseCase(UserGateway userGateway) {
@@ -12,8 +12,8 @@ public class UpdateUserUseCase implements UseCase<Usuario, Usuario> {
     }
 
     @Override
-    public Usuario execute(Usuario usuario) {
-        if (usuario == null || usuario.getIdusuario() <= 0) {
+    public User execute(User usuario) {
+        if (usuario == null || usuario.getUserId() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
         return this.userGateway.update(usuario);

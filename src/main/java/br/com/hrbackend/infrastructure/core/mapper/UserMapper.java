@@ -1,6 +1,6 @@
 package br.com.hrbackend.infrastructure.core.mapper;
 
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 import br.com.hrbackend.infrastructure.data.entityDB.UsuarioDB;
 import br.com.hrbackend.infrastructure.web.dto.EmpressResponseDTO;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioRequestDTO;
@@ -8,16 +8,16 @@ import br.com.hrbackend.infrastructure.web.dto.UsuarioResponseDTO;
 
 public class UserMapper {
 
-    public UsuarioRequestDTO domainObjectToRequestDTO(Usuario usuario, EmpressResponseDTO empresa) {
+    public UsuarioRequestDTO domainObjectToRequestDTO(User usuario, EmpressResponseDTO empresa) {
         return new UsuarioRequestDTO(
-                usuario.getNome(),
-                usuario.getSobrenome(),
-                usuario.getLogin(),
-                usuario.getSenha(),
+                usuario.getFirstName(),
+                usuario.getLastName(),
+                usuario.getUserName(),
+                usuario.getPassword(),
                 usuario.getToken(),
                 usuario.getImage(),
-                usuario.getFoto(),
-                usuario.getTipo(),
+                usuario.getPhoto(),
+                usuario.getType(),
                 usuario.getRole(),
                 usuario.isAccountNonExpired(),
                 usuario.isAccountNonLocked(),
@@ -27,17 +27,17 @@ public class UserMapper {
         );
     }
 
-    public UsuarioResponseDTO domainObjectToResponseDTO(Usuario usuario, EmpressResponseDTO empresa) {
+    public UsuarioResponseDTO domainObjectToResponseDTO(User usuario, EmpressResponseDTO empresa) {
         return new UsuarioResponseDTO(
-                usuario.getIdusuario(),
-                usuario.getNome(),
-                usuario.getSobrenome(),
-                usuario.getLogin(),
-                usuario.getSenha(),
+                usuario.getUserId(),
+                usuario.getFirstName(),
+                usuario.getLastName(),
+                usuario.getUserName(),
+                usuario.getPassword(),
                 usuario.getToken(),
                 usuario.getImage(),
-                usuario.getFoto(),
-                usuario.getTipo(),
+                usuario.getPhoto(),
+                usuario.getType(),
                 usuario.getRole(),
                 usuario.isAccountNonExpired(),
                 usuario.isAccountNonLocked(),
@@ -47,19 +47,19 @@ public class UserMapper {
         );
     }
 
-    public Usuario requestDTOToDomainObject(UsuarioRequestDTO requestDTO) {
-        return new Usuario(requestDTO);
+    public User requestDTOToDomainObject(UsuarioRequestDTO requestDTO) {
+        return new User(requestDTO);
     }
 
-    public Usuario responseDTOToDomainObject(UsuarioResponseDTO responseDTO) {
-        return new Usuario(responseDTO);
+    public User responseDTOToDomainObject(UsuarioResponseDTO responseDTO) {
+        return new User(responseDTO);
     }
 
-    public UsuarioDB toUserDB(Usuario usuario) {
+    public UsuarioDB toUserDB(User usuario) {
         return new UsuarioDB(usuario);
     }
 
-    public Usuario toUser(UsuarioDB usuarioDB) {
-        return new Usuario(usuarioDB);
+    public User toUser(UsuarioDB usuarioDB) {
+        return new User(usuarioDB);
     }
 }

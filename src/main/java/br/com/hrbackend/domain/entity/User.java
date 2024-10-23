@@ -12,28 +12,29 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idusuario")
-public class Usuario implements Serializable {
+@EqualsAndHashCode(of = "id")
+public class User implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private int idusuario;
+    private int userId;
 
-    private String nome;
+    private String firstName;
 
-    private String sobrenome;
+    private String lastName;
 
-    private String login;
+    private String userName;
 
-    private String senha;
+    private String password;
 
     private String token;
 
     private String image;
 
-    private byte[] foto;
+    private byte[] photo;
 
-    private String tipo;
+    private String type;
 
     private String role;
 
@@ -45,58 +46,58 @@ public class Usuario implements Serializable {
 
     private boolean enabled;
 
-    private Enterprise empress;
+    private Enterprise enterprise;
 
-    public Usuario(UsuarioRequestDTO requestDTO) {
-        this.nome = requestDTO.nome();
-        this.sobrenome = requestDTO.sobrenome();
-        this.login = requestDTO.login();
-        this.senha = requestDTO.senha();
+    public User(UsuarioRequestDTO requestDTO) {
+        this.firstName = requestDTO.nome();
+        this.lastName = requestDTO.sobrenome();
+        this.userName = requestDTO.login();
+        this.password = requestDTO.senha();
         this.token = requestDTO.token();
         this.image = requestDTO.image();
-        this.foto = requestDTO.foto();
-        this.tipo = requestDTO.tipo();
+        this.photo = requestDTO.foto();
+        this.type = requestDTO.tipo();
         this.role = requestDTO.role();
         this.accountNonExpired = requestDTO.accountNonExpired();
         this.accountNonLocked = requestDTO.accountNonLocked();
         this.credentialsNonExpired = requestDTO.credentialsNonExpired();
         this.enabled = requestDTO.enabled();
-        this.empress = Enterprise.withResponseDTO(requestDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(requestDTO.empresa());
     }
 
-    public Usuario(UsuarioResponseDTO responseDTO) {
-        this.idusuario = responseDTO.idusuario();
-        this.nome = responseDTO.nome();
-        this.sobrenome = responseDTO.sobrenome();
-        this.login = responseDTO.login();
-        this.senha = responseDTO.senha();
+    public User(UsuarioResponseDTO responseDTO) {
+        this.userId = responseDTO.idusuario();
+        this.firstName = responseDTO.nome();
+        this.lastName = responseDTO.sobrenome();
+        this.userName = responseDTO.login();
+        this.password = responseDTO.senha();
         this.token = responseDTO.token();
         this.image = responseDTO.image();
-        this.foto = responseDTO.foto();
-        this.tipo = responseDTO.tipo();
+        this.photo = responseDTO.foto();
+        this.type = responseDTO.tipo();
         this.role = responseDTO.role();
         this.accountNonExpired = responseDTO.accountNonExpired();
         this.accountNonLocked = responseDTO.accountNonLocked();
         this.credentialsNonExpired = responseDTO.credentialsNonExpired();
         this.enabled = responseDTO.enabled();
-        this.empress = Enterprise.withResponseDTO(responseDTO.empresa());
+        this.enterprise = Enterprise.withResponseDTO(responseDTO.empresa());
     }
 
-    public Usuario(UsuarioDB usuarioDB) {
-        this.idusuario = usuarioDB.getIdusuario();
-        this.nome = usuarioDB.getNome();
-        this.sobrenome = usuarioDB.getSobrenome();
-        this.login = usuarioDB.getLogin();
-        this.senha = usuarioDB.getSenha();
+    public User(UsuarioDB usuarioDB) {
+        this.userId = usuarioDB.getIdusuario();
+        this.firstName = usuarioDB.getNome();
+        this.lastName = usuarioDB.getSobrenome();
+        this.userName = usuarioDB.getLogin();
+        this.password = usuarioDB.getSenha();
         this.token = usuarioDB.getToken();
         this.image = usuarioDB.getImage();
-        this.foto = usuarioDB.getFoto();
-        this.tipo = usuarioDB.getTipo();
+        this.photo = usuarioDB.getFoto();
+        this.type = usuarioDB.getTipo();
         this.role = usuarioDB.getRole();
         this.accountNonExpired = usuarioDB.isAccountNonExpired();
         this.accountNonLocked = usuarioDB.isAccountNonLocked();
         this.credentialsNonExpired = usuarioDB.isCredentialsNonExpired();
         this.enabled = usuarioDB.isEnabled();
-        this.empress = Enterprise.withEntityDB(usuarioDB.getEmpresa());
+        this.enterprise = Enterprise.withEntityDB(usuarioDB.getEmpresa());
     }
 }

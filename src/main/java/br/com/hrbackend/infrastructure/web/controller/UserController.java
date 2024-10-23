@@ -1,7 +1,7 @@
 package br.com.hrbackend.infrastructure.web.controller;
 
 import br.com.hrbackend.application.usecases.UserInteract;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioRequestDTO;
 import br.com.hrbackend.infrastructure.web.dto.UsuarioResponseDTO;
 import br.com.hrbackend.infrastructure.core.mapper.EmpressMapper;
@@ -25,30 +25,30 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<HttpStatus> createUser(@RequestBody UsuarioRequestDTO requestDTO) {
-        Usuario usuario = this.mapper.requestDTOToDomainObject(requestDTO);
+        User usuario = this.mapper.requestDTOToDomainObject(requestDTO);
         this.userInteract.createUser(usuario);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity<HttpStatus> updateUser(@RequestBody UsuarioResponseDTO responseDTO) {
-        Usuario usuario = this.mapper.responseDTOToDomainObject(responseDTO);
+        User usuario = this.mapper.responseDTOToDomainObject(responseDTO);
         this.userInteract.updateUser(usuario);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping
     public ResponseEntity<HttpStatus> deleteUser(@RequestBody UsuarioResponseDTO responseDTO) {
-        Usuario usuario = this.mapper.responseDTOToDomainObject(responseDTO);
+        User usuario = this.mapper.responseDTOToDomainObject(responseDTO);
         this.userInteract.deleteUser(usuario);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/id/{idusuario}")
     public ResponseEntity<UsuarioResponseDTO> getUserById(@PathVariable("idusuario") int idusuario) {
-        Usuario usuario = this.userInteract.getUserById(idusuario);
+        User usuario = this.userInteract.getUserById(idusuario);
         return ResponseEntity.ok(
-            this.mapper.domainObjectToResponseDTO(usuario, this.empressMapper.domainObjecToResponseDTO(usuario.getEmpress()))
+            this.mapper.domainObjectToResponseDTO(usuario, this.empressMapper.domainObjecToResponseDTO(usuario.getEnterprise()))
         );
     }
 }

@@ -1,6 +1,6 @@
 package br.com.hrbackend.application.gateway;
 
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
 
-public interface UserGateway extends Gateway<Usuario> {}
+public interface UserGateway extends Gateway<User> {}

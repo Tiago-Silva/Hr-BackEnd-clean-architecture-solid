@@ -1,6 +1,6 @@
 package br.com.hrbackend.infrastructure.data.entityDB;
 
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idusuario")
+@EqualsAndHashCode(of = "userId")
 public class UsuarioDB implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
@@ -56,21 +56,21 @@ public class UsuarioDB implements Serializable {
 	@JoinColumn(name = "empresa_idempresa")
 	private EmpresaDB empresa;
 
-	public UsuarioDB(Usuario usuario) {
-		this.idusuario = usuario.getIdusuario();
-		this.nome = usuario.getNome();
-		this.sobrenome = usuario.getSobrenome();
-		this.login = usuario.getLogin();
-		this.senha = usuario.getSenha();
+	public UsuarioDB(User usuario) {
+		this.idusuario = usuario.getUserId();
+		this.nome = usuario.getFirstName();
+		this.sobrenome = usuario.getLastName();
+		this.login = usuario.getUserName();
+		this.senha = usuario.getPassword();
 		this.token = usuario.getToken();
 		this.image = usuario.getImage();
-		this.foto = usuario.getFoto();
-		this.tipo = usuario.getTipo();
+		this.foto = usuario.getPhoto();
+		this.tipo = usuario.getType();
 		this.role = usuario.getRole();
 		this.accountNonExpired = usuario.isAccountNonExpired();
 		this.accountNonLocked = usuario.isAccountNonLocked();
 		this.credentialsNonExpired = usuario.isCredentialsNonExpired();
 		this.enabled = usuario.isEnabled();
-		this.empresa = new EmpresaDB(usuario.getEmpress());
+		this.empresa = new EmpresaDB(usuario.getEnterprise());
 	}
 }

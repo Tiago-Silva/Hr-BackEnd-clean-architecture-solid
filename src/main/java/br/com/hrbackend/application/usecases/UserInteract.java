@@ -1,7 +1,7 @@
 package br.com.hrbackend.application.usecases;
 
 import br.com.hrbackend.application.gateway.UserGateway;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
 
 public class UserInteract {
@@ -11,14 +11,14 @@ public class UserInteract {
         this.userGateway = userGateway;
     }
 
-    public void createUser(Usuario usuario) {
+    public void createUser(User usuario) {
         if (
             usuario == null ||
-            usuario.getNome().isEmpty() ||
-            usuario.getSobrenome().isEmpty() ||
-            usuario.getLogin().isEmpty() ||
-            usuario.getSenha().isEmpty() ||
-            usuario.getTipo().isEmpty() ||
+            usuario.getFirstName().isEmpty() ||
+            usuario.getLastName().isEmpty() ||
+            usuario.getUserName().isEmpty() ||
+            usuario.getPassword().isEmpty() ||
+            usuario.getType().isEmpty() ||
             usuario.getRole().isEmpty()
         ) {
             throw new IllegalArgumentException("Invalid arguments");
@@ -26,21 +26,21 @@ public class UserInteract {
         this.userGateway.save(usuario);
     }
 
-    public void updateUser(Usuario usuario) {
-        if (usuario == null || usuario.getIdusuario() <= 0) {
+    public void updateUser(User usuario) {
+        if (usuario == null || usuario.getUserId() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
         this.userGateway.update(usuario);
     }
 
-    public void deleteUser(Usuario usuario) {
-        if (usuario == null || usuario.getIdusuario() <= 0) {
+    public void deleteUser(User usuario) {
+        if (usuario == null || usuario.getUserId() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
         this.userGateway.delete(usuario);
     }
 
-    public Usuario getUserById(int id) {
+    public User getUserById(int id) {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
