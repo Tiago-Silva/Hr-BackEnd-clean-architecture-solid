@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.User;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
-public class CreateUserUseCase implements UseCase<Usuario, Usuario> {
+public class CreateUserUseCase implements UseCase<User, User> {
 
     private final UserGateway userGateway;
     public CreateUserUseCase(UserGateway userGateway) {
@@ -12,14 +12,14 @@ public class CreateUserUseCase implements UseCase<Usuario, Usuario> {
     }
 
     @Override
-    public Usuario execute(Usuario usuario) {
+    public User execute(User usuario) {
         if (
             usuario == null ||
-            usuario.getNome().isEmpty() ||
-            usuario.getSobrenome().isEmpty() ||
-            usuario.getLogin().isEmpty() ||
-            usuario.getSenha().isEmpty() ||
-            usuario.getTipo().isEmpty() ||
+            usuario.getFirstName().isEmpty() ||
+            usuario.getLastName().isEmpty() ||
+            usuario.getUserName().isEmpty() ||
+            usuario.getPassword().isEmpty() ||
+            usuario.getType().isEmpty() ||
             usuario.getRole().isEmpty()
         ) {
             throw new IllegalArgumentException("Invalid arguments");

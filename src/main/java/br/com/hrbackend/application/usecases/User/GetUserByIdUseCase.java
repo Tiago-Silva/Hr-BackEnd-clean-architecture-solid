@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.User;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
-public class GetUserByIdUseCase implements UseCase<Integer, Usuario> {
+public class GetUserByIdUseCase implements UseCase<Integer, User> {
 
     private final UserGateway userGateway;
     public GetUserByIdUseCase(UserGateway userGateway) {
@@ -12,7 +12,7 @@ public class GetUserByIdUseCase implements UseCase<Integer, Usuario> {
     }
 
     @Override
-    public Usuario execute(Integer id) {
+    public User execute(Integer id) {
         if (id <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }

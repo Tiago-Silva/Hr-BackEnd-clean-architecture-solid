@@ -2,9 +2,9 @@ package br.com.hrbackend.application.usecases.User;
 
 import br.com.hrbackend.application.gateway.UserGateway;
 import br.com.hrbackend.application.usecases.UseCase;
-import br.com.hrbackend.domain.entity.Usuario;
+import br.com.hrbackend.domain.entity.User;
 
-public class DeleteUserUseCase implements UseCase<Usuario, Void> {
+public class DeleteUserUseCase implements UseCase<User, Void> {
 
     private final UserGateway userGateway;
     public DeleteUserUseCase(UserGateway userGateway) {
@@ -12,8 +12,8 @@ public class DeleteUserUseCase implements UseCase<Usuario, Void> {
     }
 
     @Override
-    public Void execute(Usuario usuario) {
-        if (usuario == null || usuario.getIdusuario() <= 0) {
+    public Void execute(User usuario) {
+        if (usuario == null || usuario.getUserId() <= 0) {
             throw new IllegalArgumentException("Invalid arguments");
         }
         this.userGateway.delete(usuario);
