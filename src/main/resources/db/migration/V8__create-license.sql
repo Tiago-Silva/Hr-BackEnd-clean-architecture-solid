@@ -5,8 +5,6 @@ CREATE TABLE license (
     start_date DATE,
     end_date DATE,
     return_date DATE,
-    employee_name VARCHAR(45),
-    idemployee INT,
     department VARCHAR(45),
     enterprise_id INT,
     reminder_id INT,
