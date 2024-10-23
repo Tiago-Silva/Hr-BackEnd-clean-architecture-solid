@@ -4,8 +4,6 @@ CREATE TABLE documents (
     document_url VARCHAR(45),
     name VARCHAR(45),
     description VARCHAR(45),
-    idemployee INT,
-    employee_name VARCHAR(45),
     department VARCHAR(45),
     enterprise_id INT,
     date DATE,
