@@ -12,16 +12,16 @@ import java.util.Date;
 
 @Getter
 @NoArgsConstructor
-@EqualsAndHashCode(of = "idfuncionario")
+@EqualsAndHashCode(of = "id")
 public class Employee implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private int idfuncionario;
+    private int id;
 
-    private String nome;
+    private String name;
 
-    private String sobrenome;
+    private String lastName;
 
     private String pis;
 
@@ -29,97 +29,97 @@ public class Employee implements Serializable {
 
     private String rg;
 
-    private Date expedicaoRg;
+    private Date rgIssueDate;
 
-    private String emissorRg;
+    private String rgIssuer;
 
-    private String ufRg;
+    private String rgState;
 
-    private String carteiraMotorista;
+    private String driverLicense;
 
-    private String categoriaCnh;
+    private String driverLicenseCategory;
 
-    private Date expedicaoCnh;
+    private Date driverLicenseIssueDate;
 
-    private Date validadeCnh;
+    private Date driverLicenseExpiryDate;
 
-    private String carteiraTrabalho;
+    private String workCard;
 
-    private String serieCtps;
+    private String workCardSeries;
 
-    private String ufCtps;
+    private String workCardState;
 
-    private String tituloEleitor;
+    private String voterRegistration;
 
-    private Date nascimento;
+    private Date birthDate;
 
-    private String nacionalidade;
+    private String nationality;
 
-    private String cep;
+    private String zipCode;
 
-    private String estado;
+    private String state;
 
-    private String bairro;
+    private String neighborhood;
 
-    private String cidade;
+    private String city;
 
-    private String endereco;
+    private String address;
 
-    private String sexo;
+    private String gender;
 
-    private String estadoCivil;
+    private String maritalStatus;
 
-    private String mae;
+    private String motherName;
 
-    private String pai;
+    private String fatherName;
 
-    private String cracha;
+    private String badge;
 
-    private String telefone;
+    private String phone;
 
-    private Date admissao;
+    private Date hireDate;
 
-    private Date demissao;
+    private Date terminationDate;
 
     private String status;
 
-    private String motivoDemissao;
+    private String terminationReason;
 
-    private String departamento;
+    private String department;
 
-    private String cargo;
+    private String position;
 
-    private String cargoDescricao;
+    private String positionDescription;
 
-    private Date exameAdmissional;
+    private Date admissionExam;
 
-    private String periodoExperiencia;
+    private String probationPeriod;
 
-    private String primeiroEmprego;
+    private String firstJob;
 
-    private String contribuicaoSocial;
+    private String socialContribution;
 
-    private int idadmissao;
+    private int admissionId;
 
-    private String vinculo;
+    private String relationship;
 
-    private BigDecimal salario;
+    private BigDecimal salary;
 
-    private String banco;
+    private String bank;
 
-    private String agencia;
+    private String agency;
 
-    private String conta;
+    private String account;
 
-    private String emailGoogle;
+    private String googleEmail;
 
-    private String emailHotmail;
+    private String hotmailEmail;
 
-    private String localExame;
+    private String examLocation;
 
-    private String urlImage;
+    private String imageUrl;
 
-    private Empress empress;
+    private Enterprise enterprise;
 
     private Periodo periodo;
 
@@ -175,61 +175,61 @@ public class Employee implements Serializable {
             final String emailHotmail,
             final String localExame,
             final String urlImage,
-            final Empress empress,
+            final Enterprise empress,
             final Periodo periodo
     ) {
-        this.idfuncionario = idfuncionario;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+        this.id = idfuncionario;
+        this.name = nome;
+        this.lastName = sobrenome;
         this.pis = pis;
         this.cpf = cpf;
         this.rg = rg;
-        this.expedicaoRg = expedicaoRg;
-        this.emissorRg = emissorRg;
-        this.ufRg = ufRg;
-        this.carteiraMotorista = carteiraMotorista;
-        this.categoriaCnh = categoriaCnh;
-        this.expedicaoCnh = expedicaoCnh;
-        this.validadeCnh = validadeCnh;
-        this.carteiraTrabalho = carteiraTrabalho;
-        this.serieCtps = serieCtps;
-        this.ufCtps = ufCtps;
-        this.tituloEleitor = tituloEleitor;
-        this.nascimento = nascimento;
-        this.nacionalidade = nacionalidade;
-        this.cep = cep;
-        this.estado = estado;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.endereco = endereco;
-        this.sexo = sexo;
-        this.estadoCivil = estadoCivil;
-        this.mae = mae;
-        this.pai = pai;
-        this.cracha = cracha;
-        this.telefone = telefone;
-        this.admissao = admissao;
-        this.demissao = demissao;
+        this.rgIssueDate = expedicaoRg;
+        this.rgIssuer = emissorRg;
+        this.rgState = ufRg;
+        this.driverLicense = carteiraMotorista;
+        this.driverLicenseCategory = categoriaCnh;
+        this.driverLicenseIssueDate = expedicaoCnh;
+        this.driverLicenseExpiryDate = validadeCnh;
+        this.workCard = carteiraTrabalho;
+        this.workCardSeries = serieCtps;
+        this.workCardState = ufCtps;
+        this.voterRegistration = tituloEleitor;
+        this.birthDate = nascimento;
+        this.nationality = nacionalidade;
+        this.zipCode = cep;
+        this.state = estado;
+        this.neighborhood = bairro;
+        this.city = cidade;
+        this.address = endereco;
+        this.gender = sexo;
+        this.maritalStatus = estadoCivil;
+        this.motherName = mae;
+        this.fatherName = pai;
+        this.badge = cracha;
+        this.phone = telefone;
+        this.hireDate = admissao;
+        this.terminationDate = demissao;
         this.status = status;
-        this.motivoDemissao = motivoDemissao;
-        this.departamento = departamento;
-        this.cargo = cargo;
-        this.cargoDescricao = cargoDescricao;
-        this.exameAdmissional = exameAdmissional;
-        this.periodoExperiencia = periodoExperiencia;
-        this.primeiroEmprego = primeiroEmprego;
-        this.contribuicaoSocial = contribuicaoSocial;
-        this.idadmissao = idadmissao;
-        this.vinculo = vinculo;
-        this.salario = salario;
-        this.banco = banco;
-        this.agencia = agencia;
-        this.conta = conta;
-        this.emailGoogle = emailGoogle;
-        this.emailHotmail = emailHotmail;
-        this.localExame = localExame;
-        this.urlImage = urlImage;
-        this.empress = empress;
+        this.terminationReason = motivoDemissao;
+        this.department = departamento;
+        this.position = cargo;
+        this.positionDescription = cargoDescricao;
+        this.admissionExam = exameAdmissional;
+        this.probationPeriod = periodoExperiencia;
+        this.firstJob = primeiroEmprego;
+        this.socialContribution = contribuicaoSocial;
+        this.admissionId = idadmissao;
+        this.relationship = vinculo;
+        this.salary = salario;
+        this.bank = banco;
+        this.agency = agencia;
+        this.account = conta;
+        this.googleEmail = emailGoogle;
+        this.hotmailEmail = emailHotmail;
+        this.examLocation = localExame;
+        this.imageUrl = urlImage;
+        this.enterprise = empress;
         this.periodo = periodo;
         this.validate();
     }
@@ -285,69 +285,69 @@ public class Employee implements Serializable {
             final String emailHotmail,
             final String localExame,
             final String urlImage,
-            final Empress empress,
+            final Enterprise empress,
             final Periodo periodo
     ) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+        this.name = nome;
+        this.lastName = sobrenome;
         this.pis = pis;
         this.cpf = cpf;
         this.rg = rg;
-        this.expedicaoRg = expedicaoRg;
-        this.emissorRg = emissorRg;
-        this.ufRg = ufRg;
-        this.carteiraMotorista = carteiraMotorista;
-        this.categoriaCnh = categoriaCnh;
-        this.expedicaoCnh = expedicaoCnh;
-        this.validadeCnh = validadeCnh;
-        this.carteiraTrabalho = carteiraTrabalho;
-        this.serieCtps = serieCtps;
-        this.ufCtps = ufCtps;
-        this.tituloEleitor = tituloEleitor;
-        this.nascimento = nascimento;
-        this.nacionalidade = nacionalidade;
-        this.cep = cep;
-        this.estado = estado;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.endereco = endereco;
-        this.sexo = sexo;
-        this.estadoCivil = estadoCivil;
-        this.mae = mae;
-        this.pai = pai;
-        this.cracha = cracha;
-        this.telefone = telefone;
-        this.admissao = admissao;
-        this.demissao = demissao;
+        this.rgIssueDate = expedicaoRg;
+        this.rgIssuer = emissorRg;
+        this.rgState = ufRg;
+        this.driverLicense = carteiraMotorista;
+        this.driverLicenseCategory = categoriaCnh;
+        this.driverLicenseIssueDate = expedicaoCnh;
+        this.driverLicenseExpiryDate = validadeCnh;
+        this.workCard = carteiraTrabalho;
+        this.workCardSeries = serieCtps;
+        this.workCardState = ufCtps;
+        this.voterRegistration = tituloEleitor;
+        this.birthDate = nascimento;
+        this.nationality = nacionalidade;
+        this.zipCode = cep;
+        this.state = estado;
+        this.neighborhood = bairro;
+        this.city = cidade;
+        this.address = endereco;
+        this.gender = sexo;
+        this.maritalStatus = estadoCivil;
+        this.motherName = mae;
+        this.fatherName = pai;
+        this.badge = cracha;
+        this.phone = telefone;
+        this.hireDate = admissao;
+        this.terminationDate = demissao;
         this.status = status;
-        this.motivoDemissao = motivoDemissao;
-        this.departamento = departamento;
-        this.cargo = cargo;
-        this.cargoDescricao = cargoDescricao;
-        this.exameAdmissional = exameAdmissional;
-        this.periodoExperiencia = periodoExperiencia;
-        this.primeiroEmprego = primeiroEmprego;
-        this.contribuicaoSocial = contribuicaoSocial;
-        this.idadmissao = idadmissao;
-        this.vinculo = vinculo;
-        this.salario = salario;
-        this.banco = banco;
-        this.agencia = agencia;
-        this.conta = conta;
-        this.emailGoogle = emailGoogle;
-        this.emailHotmail = emailHotmail;
-        this.localExame = localExame;
-        this.urlImage = urlImage;
-        this.empress = empress;
+        this.terminationReason = motivoDemissao;
+        this.department = departamento;
+        this.position = cargo;
+        this.positionDescription = cargoDescricao;
+        this.admissionExam = exameAdmissional;
+        this.probationPeriod = periodoExperiencia;
+        this.firstJob = primeiroEmprego;
+        this.socialContribution = contribuicaoSocial;
+        this.admissionId = idadmissao;
+        this.relationship = vinculo;
+        this.salary = salario;
+        this.bank = banco;
+        this.agency = agencia;
+        this.account = conta;
+        this.googleEmail = emailGoogle;
+        this.hotmailEmail = emailHotmail;
+        this.examLocation = localExame;
+        this.imageUrl = urlImage;
+        this.enterprise = empress;
         this.periodo = periodo;
         this.validate();
     }
 
     private void validate() {
-        if (this.nome == null || this.nome.isBlank()) {
+        if (this.name == null || this.name.isBlank()) {
             throw new IllegalArgumentException("Employee nome should not be null or empty");
         }
-        if (this.sobrenome == null || this.sobrenome.isBlank()) {
+        if (this.lastName == null || this.lastName.isBlank()) {
             throw new IllegalArgumentException("Employee sobrenome should not be null or empty");
         }
         if (this.pis == null || this.pis.isBlank()) {
@@ -359,130 +359,130 @@ public class Employee implements Serializable {
         if (this.rg == null || this.rg.isBlank()) {
             throw new IllegalArgumentException("Employee rg should not be null or empty");
         }
-        if (this.expedicaoRg == null) {
+        if (this.rgIssueDate == null) {
             throw new IllegalArgumentException("Employee expedicaoRg should not be null");
         }
-        if (this.emissorRg == null || this.emissorRg.isBlank()) {
+        if (this.rgIssuer == null || this.rgIssuer.isBlank()) {
             throw new IllegalArgumentException("Employee emissorRg should not be null or empty");
         }
-        if (this.ufRg == null || this.ufRg.isBlank()) {
+        if (this.rgState == null || this.rgState.isBlank()) {
             throw new IllegalArgumentException("Employee ufRg should not be null or empty");
         }
-        if (this.carteiraMotorista == null || this.carteiraMotorista.isBlank()) {
+        if (this.driverLicense == null || this.driverLicense.isBlank()) {
             throw new IllegalArgumentException("Employee carteiraMotorista should not be null or empty");
         }
-        if (this.categoriaCnh == null || this.categoriaCnh.isBlank()) {
+        if (this.driverLicenseCategory == null || this.driverLicenseCategory.isBlank()) {
             throw new IllegalArgumentException("Employee categoriaCnh should not be null or empty");
         }
-        if (this.expedicaoCnh == null) {
+        if (this.driverLicenseIssueDate == null) {
             throw new IllegalArgumentException("Employee expedicaoCnh should not be null");
         }
-        if (this.validadeCnh == null) {
+        if (this.driverLicenseExpiryDate == null) {
             throw new IllegalArgumentException("Employee validadeCnh should not be null");
         }
-        if (this.carteiraTrabalho == null || this.carteiraTrabalho.isBlank()) {
+        if (this.workCard == null || this.workCard.isBlank()) {
             throw new IllegalArgumentException("Employee carteiraTrabalho should not be null or empty");
         }
-        if (this.serieCtps == null || this.serieCtps.isBlank()) {
+        if (this.workCardSeries == null || this.workCardSeries.isBlank()) {
             throw new IllegalArgumentException("Employee serieCtps should not be null or empty");
         }
-        if (this.ufCtps == null || this.ufCtps.isBlank()) {
+        if (this.workCardState == null || this.workCardState.isBlank()) {
             throw new IllegalArgumentException("Employee ufCtps should not be null or empty");
         }
-        if (this.tituloEleitor == null || this.tituloEleitor.isBlank()) {
+        if (this.voterRegistration == null || this.voterRegistration.isBlank()) {
             throw new IllegalArgumentException("Employee tituloEleitor should not be null or empty");
         }
-        if (this.nascimento == null) {
+        if (this.birthDate == null) {
             throw new IllegalArgumentException("Employee nascimento should not be null");
         }
-        if (this.nacionalidade == null || this.nacionalidade.isBlank()) {
+        if (this.nationality == null || this.nationality.isBlank()) {
             throw new IllegalArgumentException("Employee nacionalidade should not be null or empty");
         }
-        if (this.cep == null || this.cep.isBlank()) {
+        if (this.zipCode == null || this.zipCode.isBlank()) {
             throw new IllegalArgumentException("Employee cep should not be null or empty");
         }
-        if (this.estado == null || this.estado.isBlank()) {
+        if (this.state == null || this.state.isBlank()) {
             throw new IllegalArgumentException("Employee estado should not be null or empty");
         }
-        if (this.bairro == null || this.bairro.isBlank()) {
+        if (this.neighborhood == null || this.neighborhood.isBlank()) {
             throw new IllegalArgumentException("Employee bairro should not be null or empty");
         }
-        if (this.cidade == null || this.cidade.isBlank()) {
+        if (this.city == null || this.city.isBlank()) {
             throw new IllegalArgumentException("Employee cidade should not be null or empty");
         }
-        if (this.endereco == null || this.endereco.isBlank()) {
+        if (this.address == null || this.address.isBlank()) {
             throw new IllegalArgumentException("Employee endereco should not be null or empty");
         }
-        if (this.sexo == null || this.sexo.isBlank()) {
+        if (this.gender == null || this.gender.isBlank()) {
             throw new IllegalArgumentException("Employee sexo should not be null or empty");
         }
-        if (this.estadoCivil == null || this.estadoCivil.isBlank()) {
+        if (this.maritalStatus == null || this.maritalStatus.isBlank()) {
             throw new IllegalArgumentException("Employee estadoCivil should not be null or empty");
         }
-        if (this.mae == null || this.mae.isBlank()) {
+        if (this.motherName == null || this.motherName.isBlank()) {
             throw new IllegalArgumentException("Employee mae should not be null or empty");
         }
-        if (this.pai == null || this.pai.isBlank()) {
+        if (this.fatherName == null || this.fatherName.isBlank()) {
             throw new IllegalArgumentException("Employee pai should not be null or empty");
         }
-        if (this.cracha == null || this.cracha.isBlank()) {
+        if (this.badge == null || this.badge.isBlank()) {
             throw new IllegalArgumentException("Employee cracha should not be null or empty");
         }
-        if (this.telefone == null || this.telefone.isBlank()) {
+        if (this.phone == null || this.phone.isBlank()) {
             throw new IllegalArgumentException("Employee telefone should not be null or empty");
         }
-        if (this.admissao == null) {
+        if (this.hireDate == null) {
             throw new IllegalArgumentException("Employee admissao should not be null");
         }
         if (this.status == null || this.status.isBlank()) {
             throw new IllegalArgumentException("Employee status should not be null or empty");
         }
-        if (this.departamento == null || this.departamento.isBlank()) {
+        if (this.department == null || this.department.isBlank()) {
             throw new IllegalArgumentException("Employee departamento should not be null or empty");
         }
-        if (this.cargo == null || this.cargo.isBlank()) {
+        if (this.position == null || this.position.isBlank()) {
             throw new IllegalArgumentException("Employee cargo should not be null or empty");
         }
-        if (this.cargoDescricao == null || this.cargoDescricao.isBlank()) {
+        if (this.positionDescription == null || this.positionDescription.isBlank()) {
             throw new IllegalArgumentException("Employee cargoDescricao should not be null or empty");
         }
-        if (this.periodoExperiencia == null || this.periodoExperiencia.isBlank()) {
+        if (this.probationPeriod == null || this.probationPeriod.isBlank()) {
             throw new IllegalArgumentException("Employee periodoExperiencia should not be null or empty");
         }
-        if (this.primeiroEmprego == null || this.primeiroEmprego.isBlank()) {
+        if (this.firstJob == null || this.firstJob.isBlank()) {
             throw new IllegalArgumentException("Employee primeiroEmprego should not be null or empty");
         }
-        if (this.contribuicaoSocial == null || this.contribuicaoSocial.isBlank()) {
+        if (this.socialContribution == null || this.socialContribution.isBlank()) {
             throw new IllegalArgumentException("Employee contribuicaoSocial should not be null or empty");
         }
-        if (this.vinculo == null || this.vinculo.isBlank()) {
+        if (this.relationship == null || this.relationship.isBlank()) {
             throw new IllegalArgumentException("Employee vinculo should not be null or empty");
         }
-        if (this.salario == null) {
+        if (this.salary == null) {
             throw new IllegalArgumentException("Employee salario should not be null");
         }
-        if (this.banco == null || this.banco.isBlank()) {
+        if (this.bank == null || this.bank.isBlank()) {
             throw new IllegalArgumentException("Employee banco should not be null or empty");
         }
-        if (this.agencia == null || this.agencia.isBlank()) {
+        if (this.agency == null || this.agency.isBlank()) {
             throw new IllegalArgumentException("Employee agencia should not be null or empty");
         }
-        if (this.conta == null || this.conta.isBlank()) {
+        if (this.account == null || this.account.isBlank()) {
             throw new IllegalArgumentException("Employee conta should not be null or empty");
         }
-        if (this.emailGoogle == null || this.emailGoogle.isBlank()) {
+        if (this.googleEmail == null || this.googleEmail.isBlank()) {
             throw new IllegalArgumentException("Employee emailGoogle should not be null or empty");
         }
-        if (this.emailHotmail == null || this.emailHotmail.isBlank()) {
+        if (this.hotmailEmail == null || this.hotmailEmail.isBlank()) {
             throw new IllegalArgumentException("Employee emailHotmail should not be null or empty");
         }
-        if (this.localExame == null || this.localExame.isBlank()) {
+        if (this.examLocation == null || this.examLocation.isBlank()) {
             throw new IllegalArgumentException("Employee localExame should not be null or empty");
         }
-        if (this.urlImage == null || this.urlImage.isBlank()) {
+        if (this.imageUrl == null || this.imageUrl.isBlank()) {
             throw new IllegalArgumentException("Employee urlImage should not be null or empty");
         }
-        if (this.empress == null) {
+        if (this.enterprise == null) {
             throw new IllegalArgumentException("Employee empress should not be null");
         }
         if (this.periodo == null) {
@@ -542,7 +542,7 @@ public class Employee implements Serializable {
                 requestDTO.emailHotmail(),
                 requestDTO.localExame(),
                 requestDTO.urlImage(),
-                Empress.withResponseDTO(requestDTO.empresa()),
+                Enterprise.withResponseDTO(requestDTO.empresa()),
                 new Periodo(requestDTO.periodo())
         );
     }
@@ -600,7 +600,7 @@ public class Employee implements Serializable {
                 responseDTO.emailHotmail(),
                 responseDTO.localExame(),
                 responseDTO.urlImage(),
-                Empress.withResponseDTO(responseDTO.empresa()),
+                Enterprise.withResponseDTO(responseDTO.empresa()),
                 new Periodo(responseDTO.periodo())
         );
     }
@@ -658,7 +658,7 @@ public class Employee implements Serializable {
                 employeeDB.getEmailHotmail(),
                 employeeDB.getLocalExame(),
                 employeeDB.getUrlImage(),
-                Empress.withEntityDB(employeeDB.getEmpresa()),
+                Enterprise.withEntityDB(employeeDB.getEmpresa()),
                 new Periodo(employeeDB.getPeriodo())
         );
     }
