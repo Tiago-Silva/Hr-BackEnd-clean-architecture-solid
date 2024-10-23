@@ -10,38 +10,38 @@ import java.io.Serializable;
 
 @Getter
 @NoArgsConstructor
-@EqualsAndHashCode(of = "idempresa")
+@EqualsAndHashCode(of = "id")
 public class Enterprise implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 	
-	private int idempresa;
+	private int id;
 
-	private String nomeFantasia;
+	private String tradeName;
 
-	private String razaoSocial;
+	private String enterpriseName;
 
 	private String cnpj;
 
-	private String inscricaoEstadual;
+	private String stateRegistration;
 
-	private String bairro;
+	private String neighborhood;
 
-	private String cidade;
+	private String city;
 
-	private String endereco;
+	private String address;
 
-	private String estado;
+	private String state;
 
-	private String telefone;
+	private String phone;
 
-	private String logoMarca;
+	private String logo;
 
-	private boolean filial = false;
+	private boolean isBranch;
 
-	private int empresaController;
+	private int enterpriseParent;
 
-	private boolean matriz = false;
+	private boolean isHeadOffice;
 
 	private String status;
 
@@ -62,48 +62,48 @@ public class Enterprise implements Serializable {
 		final boolean matriz,
 		final String status
 	) {
-		this.idempresa = idempresa;
-		this.nomeFantasia = nomeFantasia;
-		this.razaoSocial = razaoSocial;
+		this.id = idempresa;
+		this.tradeName = nomeFantasia;
+		this.enterpriseName = razaoSocial;
 		this.cnpj = cnpj;
-		this.inscricaoEstadual = inscricaoEstadual;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.endereco = endereco;
-		this.estado = estado;
-		this.telefone = telefone;
-		this.logoMarca = logoMarca;
-		this.filial = filial;
-		this.empresaController = empresaController;
-		this.matriz = matriz;
+		this.stateRegistration = inscricaoEstadual;
+		this.neighborhood = bairro;
+		this.city = cidade;
+		this.address = endereco;
+		this.state = estado;
+		this.phone = telefone;
+		this.logo = logoMarca;
+		this.isBranch = filial;
+		this.enterpriseParent = empresaController;
+		this.isHeadOffice = matriz;
 		this.status = status;
 		this.validate();
 	}
 
 	private Enterprise(final EmpressRequestDTO requestDTO) {
-		this.nomeFantasia = requestDTO.nomeFantasia();
-		this.razaoSocial = requestDTO.razaoSocial();
+		this.tradeName = requestDTO.nomeFantasia();
+		this.enterpriseName = requestDTO.razaoSocial();
 		this.cnpj = requestDTO.cnpj();
-		this.inscricaoEstadual = requestDTO.inscricaoEstadual();
-		this.bairro = requestDTO.bairro();
-		this.cidade = requestDTO.cidade();
-		this.endereco = requestDTO.endereco();
-		this.estado = requestDTO.estado();
-		this.telefone = requestDTO.telefone();
-		this.logoMarca = requestDTO.logoMarca();
-		this.filial = requestDTO.filial();
-		this.empresaController = requestDTO.empresaController();
-		this.matriz = requestDTO.matriz();
+		this.stateRegistration = requestDTO.inscricaoEstadual();
+		this.neighborhood = requestDTO.bairro();
+		this.city = requestDTO.cidade();
+		this.address = requestDTO.endereco();
+		this.state = requestDTO.estado();
+		this.phone = requestDTO.telefone();
+		this.logo = requestDTO.logoMarca();
+		this.isBranch = requestDTO.filial();
+		this.enterpriseParent = requestDTO.empresaController();
+		this.isHeadOffice = requestDTO.matriz();
 		this.status = requestDTO.status();
 		this.validate();
 	}
 
 	private void validate() {
-		if (this.nomeFantasia.isBlank()) {
+		if (this.tradeName.isBlank()) {
 			throw new IllegalArgumentException("Empress nomeFantasa should not be null or empty");
 		}
 
-		if (this.razaoSocial.isBlank()) {
+		if (this.enterpriseName.isBlank()) {
 			throw new IllegalArgumentException("Empress razaoSocial should not be null or empty");
 		}
 
